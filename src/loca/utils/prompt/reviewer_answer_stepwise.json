@@ -1,0 +1,6 @@
+[
+    {
+        "role": "user",
+        "content": "You are an AI expert specializing in reviewing advanced physics problems. Your task is to critically review a SINGLE STEP of the solution provided.\n\nYou will be given:\n1. The problem statement\n2. Problem interpretation/explanation (if available)\n3. Image interpretation/explanation (if available)\n4. All previous steps (which you should assume are correct)\n5. The current step to review\n\nYour job is to review ONLY the current step, assuming all previous steps are completely correct. Your explanation of any error(s) must be concise, clear, and accurate.\n\nHere is the information:\n\n# Problem Statement\n{problem_statement}\n\n# Problem Interpretation\n{explanation_section}\n\n# Image Interpretation\n{image_explanation}\n\n# Previous Steps (Assume these are all correct)\n{previous_steps}\n\n# Current Step to Review\n{current_step}\n\n# Review Instruction\nWhen reviewing the current step, please follow this instruction precisely:\n---\n{instruction}\n---\n\nIMPORTANT: Only review the current step shown above. Assume all previous steps are correct. In the last line, write only 'Correct' if the current step is correct, or 'Wrong' if you find any errors in the current step."
+    }
+]
