@@ -1,0 +1,51 @@
+Here is a detailed solution for the sub-problem B.2.
+
+### Part B. Acoustic emission of a bursting bubble
+
+When the film bursts, it releases internal pressure and emits a sound. We model this acoustic emission by a Helmholtz resonator: a cavity open to the atmosphere at \(P_{0}\) through a bottleneck aperture of area \(S\) (Fig. 5. left). In the neck, a mass \(m_{p}\) makes small amplitude position oscillations due to the pressure forces it experiences as the gas in the cavity expands or compresses adiabatically. The gravity force on \(m_{p}\) is negligible compared to pressure forces. Let \(V_{0}\) be the volume of gas under the mass \(m_{p}\) for \(P=P_{0}\) as \(z=0\).
+
+<div style="border: 1px solid #333; padding: 8px; border-radius: 4px;">
+  <b>B.2</b> Express the frequency of oscillation \(f_{0}\) of \(m_{p}\) . Hint: for \(\varepsilon \ll 1\) , \((1+\varepsilon)^{\alpha} \approx 1+\alpha \varepsilon\) (1.1 pt)
+</div>
+
+To find the frequency of oscillation \(f_0\), we will model the system as a simple harmonic oscillator. We will derive the equation of motion for the mass \(m_p\) and identify the angular frequency from it.
+
+**1. Equation of Motion**
+Let \(z\) be the small vertical displacement of the mass \(m_p\) from its equilibrium position, with the positive direction pointing outwards from the cavity. According to Newton's second law, the equation of motion for the mass is:
+\[ m_p \frac{d^2z}{dt^2} = F_{net} \]
+where \(F_{net}\) is the net force acting on the mass.
+
+**2. Net Force Calculation**
+The net force is due to the pressure difference between the gas inside the cavity (\(P\)) and the atmosphere outside (\(P_0\)). The area of the aperture (piston) is \(S\).
+\[ F_{net} = (P - P_0)S \]
+At equilibrium (\(z=0\)), the pressure inside is \(P_0\) and the volume is \(V_0\). When the mass is displaced by \(z\), the volume of the gas in the cavity changes to:
+\[ V = V_0 + Sz \]
+
+**3. Adiabatic Process**
+The problem states that the gas in the cavity expands and compresses adiabatically. The relationship between pressure and volume for an adiabatic process is given by:
+\[ PV^\gamma = \text{constant} = P_0 V_0^\gamma \]
+We can express the pressure \(P\) inside the cavity as a function of the displacement \(z\):
+\[ P = P_0 \left(\frac{V_0}{V}\right)^\gamma = P_0 \left(\frac{V_0}{V_0 + Sz}\right)^\gamma = P_0 \left(1 + \frac{Sz}{V_0}\right)^{-\gamma} \]
+
+**4. Linearization for Small Oscillations**
+For small amplitude oscillations, the displacement \(z\) is small, which means the term \(\varepsilon = \frac{Sz}{V_0}\) is much less than 1. We can use the provided hint, the binomial approximation \((1+\varepsilon)^\alpha \approx 1 + \alpha\varepsilon\), with \(\alpha = -\gamma\).
+\[ P \approx P_0 \left(1 - \gamma \frac{Sz}{V_0}\right) \]
+Now, we can find the net force by substituting this linearized pressure into the force equation:
+\[ F_{net} = (P - P_0)S \approx \left[ P_0 \left(1 - \gamma \frac{Sz}{V_0}\right) - P_0 \right] S \]
+\[ F_{net} \approx \left( P_0 - \gamma \frac{P_0 Sz}{V_0} - P_0 \right) S \]
+\[ F_{net} \approx - \left(\frac{\gamma P_0 S^2}{V_0}\right) z \]
+This is a linear restoring force of the form \(F = -kz\), where the effective spring constant is \(k = \frac{\gamma P_0 S^2}{V_0}\).
+
+**5. Frequency of Oscillation**
+Substituting the restoring force into Newton's second law gives the equation for a simple harmonic oscillator:
+\[ m_p \frac{d^2z}{dt^2} = - \left(\frac{\gamma P_0 S^2}{V_0}\right) z \]
+\[ \frac{d^2z}{dt^2} + \left(\frac{\gamma P_0 S^2}{m_p V_0}\right) z = 0 \]
+This equation is of the standard form \(\frac{d^2z}{dt^2} + \omega_0^2 z = 0\), where \(\omega_0\) is the angular frequency of oscillation. By comparison, we have:
+\[ \omega_0^2 = \frac{\gamma P_0 S^2}{m_p V_0} \]
+The angular frequency is:
+\[ \omega_0 = \sqrt{\frac{\gamma P_0 S^2}{m_p V_0}} = S \sqrt{\frac{\gamma P_0}{m_p V_0}} \]
+The frequency of oscillation \(f_0\) is related to the angular frequency by \(f_0 = \frac{\omega_0}{2\pi}\). Therefore, the frequency of the Helmholtz resonator is:
+\[ f_0 = \frac{1}{2\pi} S \sqrt{\frac{\gamma P_0}{m_p V_0}} \]
+
+### Final Answer
+\[ \boxed{ f_{0} = \frac{S}{2\pi} \sqrt{\frac{\gamma P_{0}}{m_{p} V_{0}}} } \]

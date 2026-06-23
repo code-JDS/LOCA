@@ -1,0 +1,60 @@
+This problem asks for the circular velocity profile, \(v_c(r)\), for a test mass orbiting a spherically symmetric, homogeneous mass distribution of total mass \(M\) and radius \(R_b\), according to the MOdified Newtonian Dynamics (MOND) theory.
+
+The MOND equation relates the true acceleration \(\vec{a}\) to the Newtonian gravitational force \(\vec{F}_N\) via:
+\[ \vec{F}_N = m \mu\left(\frac{a}{a_0}\right) \vec{a} \]
+where \(a = |\vec{a}|\) and \(\mu(x) = \frac{x}{1+x}\). For a circular orbit, the acceleration is the centripetal acceleration, \(a = a_c = v_c^2/r\), and the Newtonian force is purely radial, so the equation becomes a scalar relation for the magnitudes:
+\[ g_N(r) = \mu\left(\frac{a_c}{a_0}\right) a_c = \frac{a_c/a_0}{1+a_c/a_0} a_c = \frac{a_c^2}{a_0 + a_c} \]
+where \(g_N(r) = F_N(r)/m\) is the magnitude of the Newtonian gravitational acceleration. This can be rearranged into a quadratic equation for \(a_c\):
+\[ a_c^2 - g_N(r) a_c - g_N(r) a_0 = 0 \]
+The physically meaningful (positive) solution for the acceleration is:
+\[ a_c(r) = \frac{g_N(r) + \sqrt{g_N(r)^2 + 4 g_N(r) a_0}}{2} \]
+The circular velocity is then found using \(v_c(r) = \sqrt{r \cdot a_c(r)}\). We need to determine \(g_N(r)\) for the two relevant regions: inside and outside the mass distribution.
+
+### Case 1: Outside the sphere (\(r > R_b\))
+
+For a spherically symmetric mass distribution, the Newtonian gravitational acceleration outside the sphere is equivalent to that of a point mass \(M\) at the center:
+\[ g_N(r) = \frac{GM}{r^2} \]
+Substituting this into the solution for \(a_c(r)\):
+\[ a_c(r) = \frac{1}{2} \left( \frac{GM}{r^2} + \sqrt{\left(\frac{GM}{r^2}\right)^2 + 4 \frac{GM}{r^2} a_0} \right) = \frac{GM}{2r^2} \left( 1 + \sqrt{1 + \frac{4 a_0 r^2}{GM}} \right) \]
+The circular velocity is then \(v_c(r) = \sqrt{r \cdot a_c(r)}\):
+\[ v_c(r) = \sqrt{\frac{GM}{2r} \left( 1 + \sqrt{1 + \frac{4 a_0 r^2}{GM}} \right)} \quad \text{for } r > R_b \]
+
+**Relevant Sub-cases for \(r > R_b\):**
+*   **High-acceleration (Newtonian) regime:** This occurs when \(g_N(r) \gg a_0\), or \(\frac{GM}{r^2} \gg a_0\). In this limit, the term under the square root \(\frac{4 a_0 r^2}{GM} \ll 1\). Using the approximation \(\sqrt{1+x} \approx 1+x/2\), we get:
+    \[ v_c^2(r) \approx \frac{GM}{2r} \left( 1 + \left(1 + \frac{1}{2}\frac{4 a_0 r^2}{GM}\right) \right) = \frac{GM}{r} + a_0 r \approx \frac{GM}{r} \]
+    This recovers the standard Keplerian velocity profile, \(v_c(r) \approx \sqrt{GM/r}\).
+*   **Low-acceleration (deep MOND) regime:** This occurs at very large radii where \(g_N(r) \ll a_0\), or \(\frac{GM}{r^2} \ll a_0\). In this limit, \(\frac{4 a_0 r^2}{GM} \gg 1\). The square root term dominates:
+    \[ v_c^2(r) \approx \frac{GM}{2r} \left( \sqrt{\frac{4 a_0 r^2}{GM}} \right) = \frac{GM}{2r} \frac{2r\sqrt{a_0}}{\sqrt{GM}} = \sqrt{GMa_0} \]
+    This gives a constant velocity, \(v_c(r) \approx (GMa_0)^{1/4}\), which explains the flat rotation curves of galaxies.
+
+### Case 2: Inside the sphere (\(r \le R_b\))
+
+The mass is distributed homogeneously, so the density is \(\rho = M / (\frac{4}{3}\pi R_b^3)\). The mass enclosed within a radius \(r\) is \(M(r) = \rho \cdot (\frac{4}{3}\pi r^3) = M \frac{r^3}{R_b^3}\). The Newtonian gravitational acceleration inside the sphere is:
+\[ g_N(r) = \frac{G M(r)}{r^2} = \frac{G}{r^2} \left( M \frac{r^3}{R_b^3} \right) = \frac{GMr}{R_b^3} \]
+Substituting this into the solution for \(a_c(r)\):
+\[ a_c(r) = \frac{1}{2} \left( \frac{GMr}{R_b^3} + \sqrt{\left(\frac{GMr}{R_b^3}\right)^2 + 4 \frac{GMr}{R_b^3} a_0} \right) = \frac{GMr}{2R_b^3} \left( 1 + \sqrt{1 + \frac{4 a_0 R_b^3}{GMr}} \right) \]
+The circular velocity is \(v_c(r) = \sqrt{r \cdot a_c(r)}\):
+\[ v_c(r) = \sqrt{\frac{GMr^2}{2R_b^3} \left( 1 + \sqrt{1 + \frac{4 a_0 R_b^3}{GMr}} \right)} \quad \text{for } r \le R_b \]
+
+**Relevant Sub-cases for \(r \le R_b\):**
+*   **High-acceleration (Newtonian) regime:** This occurs when \(g_N(r) \gg a_0\), or \(\frac{GMr}{R_b^3} \gg a_0\). This is most likely near the edge of the sphere, \(r \approx R_b\), if the mass is sufficiently dense. In this limit, \(\frac{4 a_0 R_b^3}{GMr} \ll 1\). Using \(\sqrt{1+x} \approx 1+x/2\):
+    \[ v_c^2(r) \approx \frac{GMr^2}{2R_b^3} \left( 1 + \left(1 + \frac{1}{2}\frac{4 a_0 R_b^3}{GMr}\right) \right) = \frac{GMr^2}{R_b^3} + a_0 r \approx \frac{GMr^2}{R_b^3} \]
+    This recovers the standard Newtonian result for a homogeneous sphere, \(v_c(r) \approx \sqrt{\frac{GM}{R_b^3}} r\), where velocity increases linearly with radius.
+*   **Low-acceleration (deep MOND) regime:** This occurs when \(g_N(r) \ll a_0\), or \(\frac{GMr}{R_b^3} \ll a_0\). This applies near the center (\(r \to 0\)). In this limit, \(\frac{4 a_0 R_b^3}{GMr} \gg 1\). The square root term dominates:
+    \[ v_c^2(r) \approx \frac{GMr^2}{2R_b^3} \left( \sqrt{\frac{4 a_0 R_b^3}{GMr}} \right) = \frac{GMr^2}{2R_b^3} \frac{2\sqrt{a_0 R_b^3}}{\sqrt{GMr}} = \sqrt{\frac{GMa_0}{R_b^3}} r^{3/2} \]
+    This gives the velocity profile \(v_c(r) \approx \left(\frac{GMa_0}{R_b^3}\right)^{1/4} r^{3/4}\).
+
+### Final Answer
+The circular velocity profile \(v_c(r)\) in MOND for a homogeneous spherical mass distribution is given by a piecewise function.
+
+For \(r \le R_b\) (inside the sphere):
+\[ v_c(r) = \sqrt{\frac{GMr^2}{2R_b^3} \left( 1 + \sqrt{1 + \frac{4 a_0 R_b^3}{GMr}} \right)} \]
+- In the high-acceleration limit (\(g_N \gg a_0\)), \(v_c(r) \propto r\).
+- In the low-acceleration limit (\(g_N \ll a_0\)), \(v_c(r) \propto r^{3/4}\).
+
+For \(r > R_b\) (outside the sphere):
+\[ v_c(r) = \sqrt{\frac{GM}{2r} \left( 1 + \sqrt{1 + \frac{4 a_0 r^2}{GM}} \right)} \]
+- In the high-acceleration limit (\(g_N \gg a_0\)), \(v_c(r) \propto 1/\sqrt{r}\) (Keplerian).
+- In the low-acceleration limit (\(g_N \ll a_0\)), \(v_c(r) \approx (GMa_0)^{1/4}\) (flat rotation curve).
+
+\[ \boxed{ v_c(r) = \begin{cases} \sqrt{\frac{GMr^2}{2R_b^3} \left( 1 + \sqrt{1 + \frac{4 a_0 R_b^3}{GMr}} \right)} & \text{if } r \le R_b \\ \sqrt{\frac{GM}{2r} \left( 1 + \sqrt{1 + \frac{4 a_0 r^2}{GM}} \right)} & \text{if } r > R_b \end{cases} } \]

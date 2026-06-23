@@ -1,0 +1,83 @@
+Here is a detailed solution to the problem.
+
+### B.3 Find the radius a and the thickness h of the champagne film separating the bubble from the atmosphere.
+
+This problem requires us to find two unknowns, the bubble radius `a` and the film thickness `h`. We are given two key pieces of information to establish two independent equations: the maximum frequency of the emitted sound (`f_max = 40 kHz`) and the bursting time (`t_b = 3 × 10⁻² ms`).
+
+#### 1. Finding the bubble radius `a` from the maximum frequency `f_max`
+
+We start with the formula for the Helmholtz resonance frequency derived in sub-problem B.2:
+\[f_{0} = \frac{S}{2\pi} \sqrt{\frac{\gamma P_{0}}{m_{p} V_{0}}}\]
+
+We adapt this formula to our bursting bubble model using the provided expressions:
+- The cavity volume is the bubble volume: \(V_{0} = \frac{4}{3}\pi a^3\)
+- The aperture area is: \(S = \pi r^2\)
+- The equivalent mass of the oscillating gas piston is: \(m_{p} = \frac{8}{3} \rho_{g} r^{3}\)
+
+Substituting these into the frequency formula gives the frequency `f₀` as a function of the aperture radius `r` and the bubble radius `a`:
+\[f_{0}(r, a) = \frac{\pi r^2}{2\pi} \sqrt{\frac{\gamma P_{0}}{(\frac{8}{3} \rho_{g} r^{3}) (\frac{4}{3}\pi a^3)}} = \frac{r^2}{2} \sqrt{\frac{\gamma P_{0}}{\frac{32\pi}{9} \rho_{g} r^3 a^3}}\]
+\[f_{0}(r, a) = \frac{r^2}{2} \frac{3}{\sqrt{32\pi \rho_{g} r^3 a^3}} \sqrt{\gamma P_{0}} = \frac{3 r^2}{2 \cdot 4\sqrt{2\pi} \cdot r^{3/2} a^{3/2}} \sqrt{\frac{\gamma P_{0}}{\rho_{g}}}\]
+\[f_{0}(r, a) = \frac{3}{8\sqrt{2\pi}} \frac{\sqrt{r}}{\sqrt{a^3}} \sqrt{\frac{\gamma P_{0}}{\rho_{g}}}\]
+This shows that the frequency `f₀` is proportional to `√r`. Therefore, the frequency is maximum when the aperture radius `r` is maximum. The maximum aperture radius is given as `r_c`.
+\[f_{\text{max}} = f_{0}(r_c, a) = \frac{3}{8\sqrt{2\pi}} \frac{\sqrt{r_c}}{a^{3/2}} \sqrt{\frac{\gamma P_{0}}{\rho_{g}}}\]
+
+We are given the expression for `r_c`:
+\[r_{c}=\frac{2}{\sqrt{3}} a^{2} \sqrt{\frac{\rho_{\ell} g_{0}}{\sigma}}\]
+Substituting this into the equation for `f_max`:
+\[f_{\text{max}} = \frac{3}{8\sqrt{2\pi}} \frac{1}{a^{3/2}} \left( \frac{2}{\sqrt{3}} a^{2} \sqrt{\frac{\rho_{\ell} g_{0}}{\sigma}} \right)^{1/2} \sqrt{\frac{\gamma P_{0}}{\rho_{g}}}\]
+\[f_{\text{max}} = \frac{3}{8\sqrt{2\pi}} \frac{1}{a^{3/2}} \left(\frac{2}{\sqrt{3}}\right)^{1/2} a \left(\frac{\rho_{\ell} g_{0}}{\sigma}\right)^{1/4} \sqrt{\frac{\gamma P_{0}}{\rho_{g}}}\]
+\[f_{\text{max}} = \frac{3 \cdot (2/\sqrt{3})^{1/2}}{8\sqrt{2\pi}} \frac{1}{\sqrt{a}} \left(\frac{\rho_{\ell} g_{0}}{\sigma}\right)^{1/4} \sqrt{\frac{\gamma P_{0}}{\rho_{g}}}\]
+To solve for `a`, we square both sides:
+\[f_{\text{max}}^2 = \left( \frac{3^2 \cdot (2/\sqrt{3})}{64 \cdot 2\pi} \right) \frac{1}{a} \left(\frac{\rho_{\ell} g_{0}}{\sigma}\right)^{1/2} \left(\frac{\gamma P_{0}}{\rho_{g}}\right)\]
+\[f_{\text{max}}^2 = \frac{18/\sqrt{3}}{128\pi} \frac{1}{a} \sqrt{\frac{\rho_{\ell} g_{0}}{\sigma}} \frac{\gamma P_{0}}{\rho_{g}} = \frac{9\sqrt{3}}{64\pi} \frac{1}{a} \sqrt{\frac{\rho_{\ell} g_{0}}{\sigma}} \frac{\gamma P_{0}}{\rho_{g}}\]
+Solving for `a`:
+\[a = \frac{1}{f_{\text{max}}^2} \frac{9\sqrt{3}}{64\pi} \sqrt{\frac{\rho_{\ell} g_{0}}{\sigma}} \frac{\gamma P_{0}}{\rho_{g}}\]
+
+Now, we plug in the numerical values:
+- \(f_{\text{max}} = 40 \text{ kHz} = 4.0 \times 10^4 \text{ s}^{-1}\)
+- \(\gamma = 1.3\)
+- \(P_0 = 1.0 \times 10^5 \text{ Pa}\)
+- \(\rho_g = 1.8 \text{ kg} \cdot \text{m}^{-3}\)
+- \(\rho_{\ell} = 1.0 \times 10^3 \text{ kg} \cdot \text{m}^{-3}\)
+- \(g_0 = 9.8 \text{ m} \cdot \text{s}^{-2}\) (standard gravity)
+- \(\sigma = 47 \times 10^{-3} \text{ J} \cdot \text{m}^{-2}\)
+
+\[\sqrt{\frac{\rho_{\ell} g_{0}}{\sigma}} = \sqrt{\frac{1.0 \times 10^3 \cdot 9.8}{47 \times 10^{-3}}} \approx 456.6 \text{ m}^{-1}\]
+\[\frac{\gamma P_{0}}{\rho_{g}} = \frac{1.3 \cdot 1.0 \times 10^5}{1.8} \approx 72222 \text{ m}^2 \cdot \text{s}^{-2}\]
+\[\frac{9\sqrt{3}}{64\pi} \approx \frac{9 \cdot 1.732}{64 \cdot 3.1416} \approx 0.0775\]
+\[a = \frac{1}{(4.0 \times 10^4)^2} \cdot (0.0775) \cdot (456.6) \cdot (72222)\]
+\[a = \frac{1}{1.6 \times 10^9} \cdot (2.555 \times 10^6) \approx 1.597 \times 10^{-3} \text{ m}\]
+Let's re-check the constant `9*sqrt(3)/(64*pi)`. It should be `3*sqrt(3)/(64*pi)`. Let's re-derive `f_max^2`.
+`f_max^2 = (9 / (128π)) * (r_c / a³) * (γ P₀ / ρ_g) = (9 / (128π a³)) * [ (2/√3) a² √(ρ_ℓ g₀ / σ) ] * (γ P₀ / ρ_g) = (18 / (128π√3)) * (1/a) * ... = (9 / (64π√3)) * (1/a) * ...`
+`9/(64*pi*sqrt(3)) = 9/(64*pi*1.732) = 9/348.2 = 0.0258`
+`a = (1 / (1.6 \times 10^9)) \cdot (0.0258) \cdot (456.6) \cdot (72222) = (1 / (1.6 \times 10^9)) \cdot 851646 \approx 5.32 \times 10^{-4} \text{ m}\]
+\[a \approx 0.53 \text{ mm}\]
+
+#### 2. Finding the film thickness `h` from the bursting time `t_b`
+
+The problem states that the hole opens at a constant speed `v_f`. The bursting time `t_b` is the time it takes for the hole radius to grow from 0 to `r_c`. Therefore:
+\[r_c = v_f \cdot t_b\]
+From sub-problem B.1, we have the expression for the film retraction speed:
+\[v_f = \sqrt{\frac{2\sigma}{\rho_{\ell} h}}\]
+Substituting this into the equation for `r_c`:
+\[r_c = \sqrt{\frac{2\sigma}{\rho_{\ell} h}} \cdot t_b\]
+We can solve this for the film thickness `h`:
+\[r_c^2 = \frac{2\sigma t_b^2}{\rho_{\ell} h} \implies h = \frac{2\sigma t_b^2}{\rho_{\ell} r_c^2}\]
+
+To calculate `h`, we first need the numerical value of `r_c`. We use the value of `a` we just found:
+\[r_{c} = \frac{2}{\sqrt{3}} a^{2} \sqrt{\frac{\rho_{\ell} g_{0}}{\sigma}} = \frac{2}{\sqrt{3}} (5.32 \times 10^{-4})^2 \cdot (456.6)\]
+\[r_{c} \approx 1.155 \cdot (2.83 \times 10^{-7}) \cdot 456.6 \approx 1.49 \times 10^{-4} \text{ m}\]
+
+Now we can calculate `h` using the given values:
+- \(t_b = 3 \times 10^{-2} \text{ ms} = 3 \times 10^{-5} \text{ s}\)
+- \(\sigma = 47 \times 10^{-3} \text{ J} \cdot \text{m}^{-2}\)
+- \(\rho_{\ell} = 1.0 \times 10^3 \text{ kg} \cdot \text{m}^{-3}\)
+- \(r_c \approx 1.49 \times 10^{-4} \text{ m}\)
+
+\[h = \frac{2 \cdot (47 \times 10^{-3}) \cdot (3 \times 10^{-5})^2}{(1.0 \times 10^3) \cdot (1.49 \times 10^{-4})^2}\]
+\[h = \frac{2 \cdot 47 \times 10^{-3} \cdot 9 \times 10^{-10}}{10^3 \cdot 2.22 \times 10^{-8}} = \frac{8.46 \times 10^{-11}}{2.22 \times 10^{-5}}\]
+\[h \approx 3.81 \times 10^{-6} \text{ m} = 3.8 \text{ µm}\]
+
+### Final Answer
+The radius of the bubble is approximately 0.53 mm and the thickness of the film is approximately 3.8 µm.
+\[ \boxed{ a \approx 5.3 \times 10^{-4} \text{ m}, \quad h \approx 3.8 \times 10^{-6} \text{ m} } \]

@@ -1,0 +1,103 @@
+### C.3 Analysis of Motion Regimes
+
+This problem requires us to determine the conditions for two different behaviors of the mass M and to describe the corresponding evolution of its position `x(t)`. The motion is driven by the pressure fluctuations `P_1(t)` and counteracted by a friction force `F_s` and a restoring force due to the displacement `x`.
+
+#### 1. Force Analysis
+
+The net force exerted by the cables on the mass M, `T_{net} = T_R - T_L`, depends on both the pressure perturbation `P_1` and the displacement `x`. Based on the results from C.1 and C.2, and using the approximations `S_t \ll S_b, S_c`, we can write the total net force as the sum of a pressure-dependent term and a position-dependent term:
+
+*   Force due to pressure change `P_1` (at `x=0`): `T_{net, P_1} \approx \frac{2 S_b S_c}{S_b + S_c} P_1`
+*   Force due to displacement `x` (at `P_1=0`): `T_{net, x} \approx -\frac{4 \rho g S_b S_c}{S_b + S_c} x`
+
+The total net force from the cables is:
+`T_{net}(x, P_1) = T_{net, P_1} + T_{net, x} \approx \frac{2 S_b S_c}{S_b + S_c} (P_1 - 2 \rho g x)`
+
+The mass M will move only if the magnitude of this net force exceeds the static friction force `F_s`. Since the motion is slow (quasi-static), when the mass is moving, the net force from the cables is balanced by the kinetic friction force.
+*   Moving to the right (`dx/dt > 0`): `T_{net}(x, P_1) = F_s`
+*   Moving to the left (`dx/dt < 0`): `T_{net}(x, P_1) = -F_s`
+
+#### 2. Equation of Motion in Dimensionless Form
+
+Let's express the equations of motion using the dimensionless parameters `\xi` and `\lambda`:
+`\xi \simeq \frac{S_b+S_c}{S_b S_c} \frac{F_s}{A}` and `\lambda \simeq \frac{2 \rho g X}{A}`.
+
+From the definition of `\xi`, we can write `F_s \simeq A \xi \frac{S_b S_c}{S_b+S_c}`.
+
+Substituting this into the equation for motion to the right:
+`\frac{2 S_b S_c}{S_b + S_c} (P_1 - 2 \rho g x) = A \xi \frac{S_b S_c}{S_b+S_c}`
+`2(P_1 - 2 \rho g x) = A \xi`
+`P_1 - 2 \rho g x = \frac{A \xi}{2}`
+
+Solving for `x` and normalizing by `X`:
+`x = \frac{1}{2\rho g} \left( P_1 - \frac{A\xi}{2} \right)`
+`\frac{x}{X} = \frac{A}{2\rho g X} \left( \frac{P_1}{A} - \frac{\xi}{2} \right)`
+
+Using the definition of `\lambda`, we get the equation for `x/X` when moving to the right:
+`\frac{x}{X} = \frac{1}{\lambda} \left( \frac{P_1}{A} - \frac{\xi}{2} \right)` (for `dx/dt > 0`)
+
+Similarly, for motion to the left (`T_{net} = -F_s`):
+`\frac{x}{X} = \frac{1}{\lambda} \left( \frac{P_1}{A} + \frac{\xi}{2} \right)` (for `dx/dt < 0`)
+
+These two equations describe the "slip" phases of the motion on a `(P_1/A, x/X)` diagram.
+
+#### 3. Distinguishing the Regimes
+
+The two regimes are distinguished by whether the mass M reaches the stops at `x = \pm X`. Let's consider the maximum possible displacement `x_{peak}` that would occur if the stops were absent. This happens when `P_1` reaches its maximum value, `A`.
+Starting from a state of motion to the right, the position at `P_1 = A` would be:
+`\frac{x_{peak}}{X} = \frac{1}{\lambda} \left( 1 - \frac{\xi}{2} \right)`
+
+*   **Regime 1:** The mass does not reach the stops. This occurs if the maximum potential displacement is less than `X`.
+    `x_{peak} < X \implies \frac{x_{peak}}{X} < 1`
+    `\frac{1}{\lambda} \left( 1 - \frac{\xi}{2} \right) < 1 \implies 1 - \frac{\xi}{2} < \lambda`
+    Condition: `\lambda > 1 - \xi/2`
+
+*   **Regime 2:** The mass reaches the stops. This occurs if the maximum potential displacement is greater than or equal to `X`.
+    `x_{peak} \ge X \implies \frac{x_{peak}}{X} \ge 1`
+    `\frac{1}{\lambda} \left( 1 - \frac{\xi}{2} \right) \ge 1 \implies 1 - \frac{\xi}{2} \ge \lambda`
+    Condition: `\lambda \le 1 - \xi/2`
+
+#### 4. Sketching the Motion `x(t)/X`
+
+We now describe the steady-state motion for each regime, which is established after an initial transient. The motion of `x(t)` is periodic with the same period `\tau_1` as `P_1(t)`.
+
+**Regime 1: `\lambda > 1 - \xi/2` (No contact with stops)**
+
+The mass oscillates between a maximum position `x_{max} = X(1/\lambda)(1-\xi/2)` and a minimum position `x_{min} = -x_{max}`. The motion is characterized by "stick-slip" behavior.
+*   **Slip (moving):** When the magnitude of the driving force `|T_{net}|` is equal to `F_s`, the mass moves. Since `x` is a linear function of `P_1` and `P_1` is a linear function of `t`, `x` moves linearly with time.
+*   **Stick (stationary):** When the mass reverses direction, it must wait for the pressure `P_1` to change enough to overcome the static friction in the opposite direction. During this time, `x` remains constant. This happens when `P_1` is near its peak (`A`) and trough (`-A`).
+
+The graph of `x(t)/X` is a periodic wave with an amplitude of `(1/\lambda)(1-\xi/2)`, which is less than 1. Each cycle consists of four segments:
+1.  A linear increase in `x`.
+2.  A flat plateau at `x_{max}/X`.
+3.  A linear decrease in `x`.
+4.  A flat plateau at `x_{min}/X`.
+
+**Regime 2: `\lambda \le 1 - \xi/2` (Contact with stops)**
+
+The mass hits the stops at `x=X` and `x=-X`.
+*   The mass moves from one stop to the other when the pressure conditions are met. For example, it moves from `x=-X` to `x=X` when `P_1/A` sweeps through the range `[\xi/2 - \lambda, \xi/2 + \lambda]`.
+*   The mass then remains stationary at the stop (`x=X` or `x=-X`) for a significant portion of the cycle, waiting for the pressure to change enough to initiate movement in the opposite direction.
+
+The graph of `x(t)/X` is a trapezoidal wave with an amplitude of exactly 1. Each cycle consists of four segments:
+1.  A linear increase from -1 to +1.
+2.  A long flat plateau at +1.
+3.  A linear decrease from +1 to -1.
+4.  A long flat plateau at -1.
+
+### Final Answer
+
+The completed table is as follows:
+
+\[
+\boxed{
+\begin{array}{|l|l|l|}
+\hline
+ & \textbf{Condition for Observation} & \textbf{Graph of x(t)/X} \\
+\hline
+\textbf{Regime 1} & \lambda > 1 - \frac{\xi}{2} & \begin{array}{l} \text{A periodic wave oscillating between } \pm x_{max}/X \text{ where } \\ |x_{max}/X| < 1. \text{ The graph has four segments per cycle:} \\ \text{a linear ramp up, a short flat top, a linear ramp down,} \\ \text{and a short flat bottom. The flat sections occur when the} \\ \text{pressure } P_1(t) \text{ is near its maximum and minimum values.} \end{array} \\
+\hline
+\textbf{Regime 2} & \lambda \le 1 - \frac{\xi}{2} & \begin{array}{l} \text{A periodic trapezoidal wave oscillating between +1 and -1.} \\ \text{The graph has four segments per cycle: a linear ramp up} \\ \text{from -1 to +1, a long flat top at +1, a linear ramp down} \\ \text{from +1 to -1, and a long flat bottom at -1. The mass} \\ \text{spends a significant amount of time stationary at the stops.} \end{array} \\
+\hline
+\end{array}
+}
+\]

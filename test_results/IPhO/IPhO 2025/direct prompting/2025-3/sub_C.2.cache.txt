@@ -1,0 +1,80 @@
+This problem asks us to determine the final temperature of the CO₂ gas after a champagne bottle is opened, for two different initial temperatures. We then need to use this information to predict whether a "blue fog" (solid CO₂) or a "grey-white fog" (condensed water vapor) will form.
+
+### Part 1: Calculation of the Final Temperature \(T_f\)
+
+The problem states that the expansion of the CO₂ gas from the headspace of the bottle is adiabatic and reversible. For an ideal gas undergoing such a process, the relationship between pressure \(P\) and temperature \(T\) is given by:
+\[ T P^{\frac{1-\gamma}{\gamma}} = \text{constant} \]
+where \(\gamma\) is the adiabatic coefficient.
+
+This means that the initial state \((P_i, T_i)\) and the final state \((P_f, T_f)\) are related by:
+\[ T_i P_i^{\frac{1-\gamma}{\gamma}} = T_f P_f^{\frac{1-\gamma}{\gamma}} \]
+We can solve for the final temperature \(T_f\):
+\[ T_f = T_i \left( \frac{P_i}{P_f} \right)^{\frac{1-\gamma}{\gamma}} \]
+
+The problem provides the following data:
+- Adiabatic coefficient: \(\gamma = 1.3\)
+- Final pressure (atmospheric pressure): \(P_f = P_0 = 1.0\) bar
+- The exponent is \(\frac{1-\gamma}{\gamma} = \frac{1 - 1.3}{1.3} = -\frac{0.3}{1.3} = -\frac{3}{13} \approx -0.23077\).
+
+We need to calculate \(T_f\) for two different initial conditions. Note that temperatures must be in Kelvin for this calculation (\(T(\text{K}) = T(^{\circ}\text{C}) + 273.15\)).
+
+**Case 1: Initial temperature \(T_0 = 6^{\circ} \text{C}\)**
+- Initial temperature: \(T_i = 6 + 273.15 = 279.15\) K
+- Initial pressure (given for this sub-problem): \(P_i = 4.69\) bar
+
+\[ T_f(6^{\circ}\text{C}) = 279.15 \text{ K} \times \left( \frac{4.69 \text{ bar}}{1.0 \text{ bar}} \right)^{-3/13} \]
+\[ T_f(6^{\circ}\text{C}) = 279.15 \times (4.69)^{-0.23077} \approx 279.15 \times 0.69996 \approx 195.396 \text{ K} \]
+So, \(T_f(6^{\circ}\text{C}) \approx 195.4 \text{ K}\).
+
+**Case 2: Initial temperature \(T_0 = 20^{\circ} \text{C}\)**
+- Initial temperature: \(T_i = 20 + 273.15 = 293.15\) K
+- Initial pressure (given for this sub-problem): \(P_i = 7.45\) bar
+
+\[ T_f(20^{\circ}\text{C}) = 293.15 \text{ K} \times \left( \frac{7.45 \text{ bar}}{1.0 \text{ bar}} \right)^{-3/13} \]
+\[ T_f(20^{\circ}\text{C}) = 293.15 \times (7.45)^{-0.23077} \approx 293.15 \times 0.62908 \approx 184.423 \text{ K} \]
+So, \(T_f(20^{\circ}\text{C}) \approx 184.4 \text{ K}\).
+
+### Part 2: Predicting Fog Formation
+
+The type of fog depends on whether the CO₂ gas solidifies. Solidification occurs if the final state of the gas \((P_f, T_f)\) falls into the solid phase region of the CO₂ phase diagram. This means the final temperature \(T_f\) must be below the sublimation temperature \(T_{sub}\) corresponding to the final pressure \(P_f = 1\) bar.
+
+We can find this sublimation temperature using the given equation for the saturated vapor pressure of CO₂:
+\[ \log_{10}\left(\frac{P_{sat}^{\text{CO}_{2}}}{P_{0}}\right) = A - \frac{B}{T+C} \]
+with \(A=6.81\), \(B=1.30 \times 10^3\) K, and \(C=-3.49\) K.
+
+We want to find the temperature \(T_{sub}\) at which the saturation pressure is \(P_{sat}^{\text{CO}_{2}} = P_0 = 1\) bar.
+\[ \log_{10}\left(\frac{P_0}{P_0}\right) = \log_{10}(1) = 0 \]
+So, the equation becomes:
+\[ 0 = A - \frac{B}{T_{sub}+C} \]
+\[ T_{sub} + C = \frac{B}{A} \]
+\[ T_{sub} = \frac{B}{A} - C = \frac{1.30 \times 10^3}{6.81} - (-3.49) \]
+\[ T_{sub} = 190.896 + 3.49 = 194.386 \text{ K} \]
+The sublimation temperature of CO₂ at 1 bar is \(T_{sub} \approx 194.4\) K.
+
+Now we compare the final temperatures with this sublimation temperature:
+
+**For \(T_0 = 6^{\circ} \text{C}\):**
+- The calculated final temperature is \(T_f(6^{\circ}\text{C}) \approx 195.4\) K.
+- Since \(195.4 \text{ K} > 194.4 \text{ K}\) (\(T_f > T_{sub}\)), the CO₂ does not solidify.
+- The problem states that if solid CO₂ does not form, a grey-white fog appears due to the condensation of water vapor from the surrounding air, which is cooled by the expanding CO₂.
+- Therefore, statement **1. At \(T_{0}=6^{\circ} C\) a grey-white fog appears while opening the bottle.** is **TRUE**.
+- Statement 2 is false.
+
+**For \(T_0 = 20^{\circ} \text{C}\):**
+- The calculated final temperature is \(T_f(20^{\circ}\text{C}) \approx 184.4\) K.
+- Since \(184.4 \text{ K} < 194.4 \text{ K}\) (\(T_f < T_{sub}\)), the CO₂ gas cools below its sublimation point. It will solidify, forming solid CO₂ crystals.
+- This formation of solid CO₂ crystals is described as a blue fog.
+- Therefore, statement **4. At \(T_{0}=20^{\circ} C\) a blue fog appears while opening the bottle.** is **TRUE**.
+- Statement 3 is false.
+
+The counter-intuitive result that the hotter bottle produces solid CO₂ is because its much higher initial pressure (\(P_i = 7.45\) bar vs. \(4.69\) bar) leads to a larger pressure ratio during expansion. This causes the gas to perform more work and thus experience a much larger temperature drop, resulting in a lower final temperature.
+
+### Final Answer
+The final answer is formatted as follows:
+\[ \boxed{
+\begin{aligned}
+T_f(6^{\circ}C) &\approx 195.4 \text{ K} \\
+T_f(20^{\circ}C) &\approx 184.4 \text{ K} \\
+\text{True statements: } & 1 \text{ and } 4
+\end{aligned}
+} \]

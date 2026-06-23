@@ -1,0 +1,37 @@
+Here is the detailed solution for the specified sub-problem.
+
+### Part A - Introduction
+**Bohr model**
+We assume that the hydrogen atom consists of a non-relativistic electron, with mass \(m_{e}\) , orbiting a fixed proton. Throughout this part, we assume its motion is on a circular orbit.
+
+#### **A.1 Determine the electron's velocity \(v\) in a circular orbit of radius \(r\)**
+
+To determine the electron's velocity, we apply Newton's second law to its circular motion. The electron, with charge \(-e\), is attracted to the fixed proton, with charge \(+e\), by the electrostatic Coulomb force. This force provides the necessary centripetal force to keep the electron in a circular orbit of radius \(r\).
+
+1.  **Electrostatic Force (Coulomb Force):**
+    The magnitude of the electrostatic force \(F_e\) between the electron and the proton is given by Coulomb's law:
+    \[ F_e = \frac{1}{4\pi\varepsilon_0} \frac{|(-e)(+e)|}{r^2} = \frac{e^2}{4\pi\varepsilon_0 r^2} \]
+    where \(\varepsilon_0\) is the permittivity of free space. This force is directed radially inward, towards the proton.
+
+2.  **Centripetal Force:**
+    For an object of mass \(m_e\) moving at a constant speed \(v\) in a circular path of radius \(r\), the centripetal force \(F_c\) required to maintain this motion is:
+    \[ F_c = \frac{m_e v^2}{r} \]
+    This force is also directed radially inward.
+
+3.  **Equation of Motion:**
+    By equating the electrostatic force to the centripetal force, we can establish the condition for a stable circular orbit:
+    \[ F_e = F_c \]
+    \[ \frac{e^2}{4\pi\varepsilon_0 r^2} = \frac{m_e v^2}{r} \]
+
+4.  **Solving for Velocity \(v\):**
+    We can now solve this equation for the velocity \(v\). We start by simplifying the equation by multiplying both sides by \(r\):
+    \[ \frac{e^2}{4\pi\varepsilon_0 r} = m_e v^2 \]
+    Next, we isolate \(v^2\) by dividing by the electron's mass \(m_e\):
+    \[ v^2 = \frac{e^2}{4\pi\varepsilon_0 m_e r} \]
+    Finally, taking the square root of both sides gives the expression for the electron's speed \(v\):
+    \[ v = \sqrt{\frac{e^2}{4\pi\varepsilon_0 m_e r}} \]
+
+This expression relates the electron's orbital velocity to the radius of its orbit and fundamental physical constants.
+
+### Final Answer
+\[ \boxed{v = \sqrt{\frac{e^2}{4\pi\varepsilon_0 m_e r}}} \]

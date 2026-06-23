@@ -1,0 +1,89 @@
+### C.5 - Work of Atmospheric Pressure and Efficiency
+
+This sub-problem asks for the work done by the atmospheric pressure forces on the system, \(W_{pr}^{*}\), during one period \(\tau_1\) in the optimal situation, and for the ratio \(W^{*} / W_{pr}^{*}\), where \(W^{*}\) is the maximum energy dissipated by friction calculated in C.4. The problem suggests using a \((P, V)\) diagram.
+
+#### 1. Work Done by Atmospheric Pressure
+
+The system operates as a heat engine, converting work from the fluctuating atmospheric pressure into mechanical work, which is then dissipated by friction. The work done by an external pressure \(P_a\) on a system is given by \(W_{pr} = -\oint P_a dV\), where \(V\) is the volume of the system exposed to the atmosphere. A more convenient approach, suggested by the hint, is to consider the work as the area enclosed in a P-V diagram for a characteristic volume of the engine. In a barometric engine, the active volume is the vacuum space at the top of the barometer tube, let's call it \(V_{vac}\). The work done by the atmosphere is transmitted through the mercury and performs work on this vacuum volume. The work received by the system can be expressed as the area of the cycle in the \((P_a, V_{vac})\) diagram:
+\[ W_{pr} = \oint P_a dV_{vac} \]
+The sign convention is such that if the cycle is traversed clockwise, the work is positive (work done by the system). Here, we expect the atmosphere to do work on the system, so the net work should be positive, and we will verify the sign at the end. Let's first find the relationship between \(V_{vac}\), the pressure \(P_a\), and the mass position \(x\).
+
+The volume of the vacuum is \(V_{vac} = S_b (z_{top} - z_\ell)\), where \(z_{top}\) is the altitude of the top of the tube and \(z_\ell\) is the altitude of the mercury inside.
+The kinematics of the pulley system imply \(z_{top} = z_{top,0} - x\).
+So, \(dV_{vac} = S_b(dz_{top} - dz_\ell) = S_b(-dx - dz_\ell)\).
+
+To find \(dz_\ell\), we use the hydrostatic equilibrium and mass conservation equations:
+1.  Hydrostatic equilibrium: \(P_a = \rho g (z_\ell - z_{c,surf})\) \(\implies\) \(dP_a = \rho g (dz_\ell - dz_{c,surf})\).
+2.  Mercury volume conservation: \(V_{in} + V_{cistern} = \text{const}\).
+    -   \(V_{in} \approx S_b(z_\ell - (z_{tb,0}+H_t))\) (assuming level is in bulb and \(S_t \ll S_b\)).
+    -   \(V_{cistern} = S_c(z_{c,surf} - z_{c,0})\).
+    -   Kinematics: \(z_{tb,0}\) moves by \(-x\), \(z_{c,0}\) moves by \(+x\).
+    -   \(dV_{in} = S_b dz_\ell\). (This is incorrect, the base of the volume moves). Let's use the full derivation from the thought process.
+    From the scratchpad, we found:
+    \(dz_\ell = \frac{S_c - S_b}{S_b + S_c} dx + \frac{S_c}{\rho g(S_b + S_c)} dP_a\).
+
+Substituting this into the expression for \(dV_{vac}\):
+\(dV_{vac} = S_b(-dx - dz_\ell) = S_b \left[ -dx - \left( \frac{S_c - S_b}{S_b + S_c} dx + \frac{S_c}{\rho g(S_b + S_c)} dP_a \right) \right]\)
+\(dV_{vac} = S_b \left[ \frac{-(S_b+S_c) - (S_c-S_b)}{S_b+S_c} dx - \frac{S_c}{\rho g(S_b+S_c)} dP_a \right]\)
+\(dV_{vac} = -\frac{2S_b S_c}{S_b+S_c} dx - \frac{S_b S_c}{\rho g(S_b+S_c)} dP_a\).
+
+Now we can calculate the work \(W_{pr}^{*} = \oint P_a dV_{vac}\). Since \(P_a = P_0 + P_1\), and \(\oint dV_{vac} = 0\), this simplifies to \(W_{pr}^{*} = \oint P_1 dV_{vac}\).
+\[ W_{pr}^{*} = \oint P_1 \left( -\frac{2S_b S_c}{S_b+S_c} dx - \frac{S_b S_c}{\rho g(S_b+S_c)} dP_1 \right) \]
+The second term integrates to zero over a cycle (\(\oint P_1 dP_1 = [\frac{1}{2}P_1^2]_{start}^{end} = 0\)).
+\[ W_{pr}^{*} = -\frac{2S_b S_c}{S_b+S_c} \oint P_1 dx \]
+The integral \(\oint P_1 dx\) represents the area enclosed by the system's cycle in the \((x, P_1)\) plane.
+
+#### 2. Cycle Area in the Optimal Case
+
+In C.4, the optimal case was found to be on the boundary of Regime 2, with \(\xi=1\) and \(\lambda=1/2\). Let's trace the cycle in the \((P_1, x)\) plane for the established permanent regime.
+-   **Path 1:** \(P_1\) increases from \(-A\) to \(0\). The mass is stuck at \(x=-X^*\). The path is a vertical line from \((-A, -X^*)\) to \((0, -X^*)\). Here \(dx=0\).
+-   **Path 2:** \(P_1\) increases from \(0\) to \(A\). The mass moves to the right along the slip line \(x/X^* = 2(P_1/A - 1/2)\). The path is a line from \((0, -X^*)\) to \((A, X^*)\).
+-   **Path 3:** \(P_1\) decreases from \(A\) to \(0\). The mass is stuck at \(x=X^*\). The path is a vertical line from \((A, X^*)\) to \((0, X^*)\). Here \(dx=0\).
+-   **Path 4:** \(P_1\) decreases from \(0\) to \(-A\). The mass moves to the left along the slip line \(x/X^* = 2(P_1/A + 1/2)\). The path is a line from \((0, X^*)\) to \((-A, -X^*)\).
+
+The cycle is a parallelogram with vertices at \((A, X^*)\), \((0, X^*)\), \((-A, -X^*)\), and \((0, -X^*)\). The area of this parallelogram is base \(\times\) height. The height is the range of \(x\), which is \(2X^*\). The "base" is the horizontal separation between the two sloped sides, which is \(A\).
+Area = \(A \times (2X^*) = 2AX^*\).
+So, \(\oint P_1 dx = 2AX^*\). The cycle is traversed clockwise in the \((x, P_1)\) plane, so the area is positive.
+
+Substituting this area back into the work expression:
+\[ W_{pr}^{*} = -\frac{2S_b S_c}{S_b+S_c} (2AX^*) \]
+The negative sign indicates our initial choice of \(W_{pr} = \oint P_a dV_{vac}\) was for work done BY the system. The work done ON the system is \(W_{pr, on} = -W_{pr, by} = -(-\oint P_a dV_{vac})\). Let's use the standard thermodynamic definition where work done ON the system is \(-\oint P dV\).
+\[ W_{pr}^{*} = - \oint P_a dV_{vac} = - \left( -\frac{2S_b S_c}{S_b+S_c} (2AX^*) \right) = \frac{4AX^* S_b S_c}{S_b+S_c} \]
+Using the approximations from C.4 (\(S_b \approx S_c\)):
+\[ W_{pr}^{*} \approx \frac{4AX^* S_c^2}{2S_c} = 2AX^*S_c \]
+
+#### 3. Expression for \(W_{pr}^{*}\) and Ratio with \(W^{*}\)
+
+From C.4, the optimal values are \(X^* = \frac{A}{4\rho g}\) and \(F_s^* = \frac{AS_c}{2}\).
+Substituting \(X^*\) into the expression for \(W_{pr}^{*}\):
+\[ W_{pr}^{*} = 2AS_c \left( \frac{A}{4\rho g} \right) = \frac{A^2 S_c}{2\rho g} \]
+Now, let's recall the expression for the dissipated energy \(W^*\) from C.4:
+\[ W^* = 4F_s^* X^* = 4 \left( \frac{AS_c}{2} \right) \left( \frac{A}{4\rho g} \right) = \frac{A^2 S_c}{2\rho g} \]
+We see that the expression for the work done by the pressure forces is identical to the expression for the energy dissipated by friction.
+\[ W_{pr}^{*} = W^{*} = \frac{A^2 S_c}{2\rho g} \]
+This result is expected from the first law of thermodynamics for a cyclic process where the only energy conversion is from pressure-volume work to dissipated heat: \(\Delta U_{cycle} = W_{pr} + W_{friction} + Q = 0\). For an isothermal process where friction is the only source of irreversibility, the heat released to the environment is equal to the energy dissipated by friction, \(Q = -W^*\). Thus, \(W_{pr}^{*} - W^{*} - W^{*} = 0\), which gives \(W_{pr}^{*} = 2W^*\). Wait, the thermodynamic argument is more subtle.
+Let's trust the direct calculation. The work done by the atmosphere on the mercury, \(W_{atm \to Hg}\), is converted into potential energy and work done on the solid parts. Over a cycle, the net change in potential energy is zero, so the work done by the atmosphere is equal to the work done by the mercury on the solids, which in turn is dissipated by friction. Thus, \(W_{pr}^{*} = W^{*}\).
+
+The ratio is therefore:
+\[ \frac{W^{*}}{W_{pr}^{*}} = 1 \]
+
+### Final Answer
+The work done by the atmospheric pressure forces on the system, \(W_{pr}^{*}\), over one cycle in the optimal case is calculated by evaluating the integral \(W_{pr}^{*} = -\oint P_a dV_{vac}\), where \(V_{vac}\) is the volume of the vacuum at the top of the barometric tube. This integral represents the area of the cycle in the \((V_{vac}, P_a)\) plane.
+
+First, we express the differential volume change \(dV_{vac}\) as a function of the pressure change \(dP_a\) and the mass displacement \(dx\):
+\[ dV_{vac} = -\frac{2S_b S_c}{S_b+S_c} dx - \frac{S_b S_c}{\rho g(S_b+S_c)} dP_a \]
+The work done on the system is \(W_{pr}^{*} = -\oint P_a dV_{vac} = -\oint P_1 dV_{vac}\). Substituting the expression for \(dV_{vac}\) and noting that \(\oint P_1 dP_1 = 0\), we get:
+\[ W_{pr}^{*} = \frac{2S_b S_c}{S_b+S_c} \oint P_1 dx \]
+The integral \(\oint P_1 dx\) is the area of the cycle in the \((x, P_1)\) plane. For the optimal case, this cycle is a parallelogram with area \(2AX^*\).
+\[ W_{pr}^{*} = \frac{2S_b S_c}{S_b+S_c} (2AX^*) = \frac{4AX^* S_b S_c}{S_b+S_c} \]
+Using the approximations \(S_b \approx S_c \gg S_t\), this simplifies to:
+\[ W_{pr}^{*} \approx \frac{4AX^* S_c^2}{2S_c} = 2AX^*S_c \]
+From sub-problem C.4, we have the optimal displacement \(X^* = \frac{A}{4\rho g}\). Substituting this gives the expression for \(W_{pr}^{*}\):
+\[ W_{pr}^{*} = 2AS_c \left( \frac{A}{4\rho g} \right) = \frac{A^2 S_c}{2\rho g} \]
+The maximum energy dissipated by friction, \(W^*\), was found in C.4 to be:
+\[ W^* = 4F_s^*X^* = 4\left(\frac{AS_c}{2}\right)\left(\frac{A}{4\rho g}\right) = \frac{A^2 S_c}{2\rho g} \]
+Comparing the two expressions, we find that \(W_{pr}^{*} = W^{*}\).
+The ratio is therefore:
+\[ \frac{W^{*}}{W_{pr}^{*}} = 1 \]
+
+\[ \boxed{ W_{pr}^{*} = \frac{A^2 S_c}{2\rho g} \quad \text{and} \quad \frac{W^{*}}{W_{pr}^{*}} = 1 } \]

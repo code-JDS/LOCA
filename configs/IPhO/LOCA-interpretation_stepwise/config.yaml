@@ -1,0 +1,49 @@
+test_configs:
+  - name: "gemini-2.5-pro-sub-problem"
+    input_path: "problem_set/IPhO/2025/test_2_split.jsonl"
+    output_path: "test_results/IPhO/2025/sub_problem_image_explanation/gemini-2.5-pro/results-2.jsonl"
+    scheme: "loca"
+    temperature: 0.0
+    models:
+      generator: "gemini/gemini-2.5-pro"
+      reviewer: "gemini/gemini-2.5-pro"
+      vision: "gemini/gemini-2.5-pro"
+    loca_options:
+      refine_model: "gemini/gemini-2.5-pro"
+      max_error_times: 3
+      target_times: 2
+      n_interpretation: 0
+      stepwise_review: True
+      n_image_explanation: 1
+      sub_problem: True  # Enable sub-problem sequential solving
+
+  # Gemini
+  - name: "gemini-2.5-pro"
+    input_path: "problem_set/IPhO/2025/test.jsonl"
+    output_path: "test_results/IPhO/2025/LOCA/gemini-2.5-pro/results.jsonl"
+    scheme: "loca"
+    temperature: 0.0
+    models:
+      generator: "gemini/gemini-2.5-pro"
+      reviewer: "gemini/gemini-2.5-pro"
+      vision: "gemini/gemini-2.5-pro"
+    loca_options:
+      refine_model: "gemini/gemini-2.5-pro"
+      max_error_times: 5
+      target_times: 3
+      n_interpretation: 4
+      stepwise_review: True  # Enable stepwise review process
+
+  - name: "gemini-2.5-pro-origin"
+    input_path: "problem_set/IPhO/2025/test.jsonl"
+    output_path: "test_results/IPhO/2025/LOCA/gemini-2.5-pro/results_origin_ans.jsonl"
+    scheme: "single-llm"
+    temperature: 0.0
+    models:
+      generator: "gemini/gemini-2.5-pro"
+    tools: []
+
+
+global_settings:
+  concurrent_limit: 10
+  aux_dir_base: ".aux"

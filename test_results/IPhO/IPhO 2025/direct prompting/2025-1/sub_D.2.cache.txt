@@ -1,0 +1,34 @@
+### Part D - Tully-Fisher relation and MOND theory
+
+In the extremely low acceleration regime, of the order of \(a_{0}=10^{-10} ~m \cdot s^{-2}\) , the MOdified Newtonian Dynamics (MOND) theory suggests that one can modify Newton's second law using \(\vec{F}=m \mu(\frac{a}{a_{0}}) \vec{a}\) where \(a = |\vec{a}|\) is the modulus of the acceleration and the \(\mu\) function is defined by \(\mu(x)=\frac{x}{1+x}\)
+
+<div style="border: 1px solid #333; padding: 8px; border-radius: 4px;">
+  <b>D.2</b> Using data for NGC 6946 in Fig. 1, estimate, within Newton's theory, the modulus of the acceleration \(a_{m}\) of a mass in the outer regions of NGC 6946.  (0.2 pt)
+</div>
+
+### Solution
+To estimate the acceleration of a mass in the outer regions of the galaxy NGC 6946, we can model its motion as a circular orbit. Within Newton's theory, the acceleration of an object in a circular orbit of radius \(r\) with a constant speed \(v_c\) is the centripetal acceleration, whose modulus is given by:
+\[ a_m = \frac{v_c^2}{r} \]
+We need to extract the values for the circular velocity \(v_c\) and the radius \(r\) from the rotation curve of NGC 6946, shown in Fig. 1(B). The "outer regions" of the galaxy correspond to the part of the curve where the velocity becomes approximately constant (the flat part of the rotation curve).
+
+From the graph in Fig. 1(B), we can read the following approximate values for a point in the outer region:
+*   The radius \(r\) can be taken at the edge of the observed data, for instance, \(r \approx 9.0 \text{ kpc}\).
+*   At this radius, the circular velocity \(v_c\) has reached a constant value of approximately \(v_c \approx 160 \text{ km/s}\).
+
+Next, we convert these values to SI units to calculate the acceleration in \(\text{m/s}^2\).
+*   Given \(1 \text{ kpc} = 3.09 \times 10^{19} \text{ m}\):
+    \[ r = 9.0 \text{ kpc} \times (3.09 \times 10^{19} \text{ m/kpc}) = 2.781 \times 10^{20} \text{ m} \]
+*   Given \(1 \text{ km} = 1000 \text{ m}\):
+    \[ v_c = 160 \text{ km/s} \times (1000 \text{ m/km}) = 1.60 \times 10^5 \text{ m/s} \]
+
+Now, we can substitute these values into the formula for centripetal acceleration:
+\[ a_m = \frac{(1.60 \times 10^5 \text{ m/s})^2}{2.781 \times 10^{20} \text{ m}} \]
+\[ a_m = \frac{2.56 \times 10^{10} \text{ m}^2/\text{s}^2}{2.781 \times 10^{20} \text{ m}} \]
+\[ a_m \approx 0.9205 \times 10^{-10} \text{ m/s}^2 \]
+
+Rounding to two significant figures, consistent with the precision of reading the graph:
+\[ a_m \approx 9.2 \times 10^{-11} \text{ m/s}^2 \]
+This value is indeed of the order of \(a_0 = 10^{-10} \text{ m/s}^2\), which is the characteristic acceleration scale for MOND theory.
+
+### Final Answer
+\[ \boxed{a_m \approx 9.2 \times 10^{-11} \text{ m} \cdot \text{s}^{-2}} \]

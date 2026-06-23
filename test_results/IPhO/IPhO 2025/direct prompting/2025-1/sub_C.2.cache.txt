@@ -1,0 +1,55 @@
+### Part C - Mass distribution in our galaxy
+From here on, we set \(z=0\)
+
+<div style="border: 1px solid #333; padding: 8px; border-radius: 4px;">
+  <b>C.2</b> Identify the regime, either \(r \gg r_{m}\) or \(r \ll r_{m}\) , in which the model of Eq. 1 recovers a potential of the form \(\varphi_{G}(r, 0)\) with a suitable definition of \(\varphi_{0}\). Under this condition \(v_{c}(r)\) no longer depends on \(r\). Express it in terms of \(\varphi_{0}\)  (0.6 pt)
+</div>
+
+### Step-by-step Derivations
+
+**1. Analyze the potential \(\varphi_G(r, 0)\) from Part C**
+
+The potential given in Part C, evaluated at the galactic plane \(z=0\), is:
+\[ \varphi_G(r, 0) = \varphi_0 \ln\left(\frac{r}{r_0}\right) \]
+To find the circular velocity associated with this potential, we first need the gravitational force per unit mass, which is given by the gradient of the potential. Since the potential is spherically symmetric in the plane, the force is purely radial:
+\[ F_r/m = -\frac{\partial \varphi_G}{\partial r} = -\frac{\varphi_0}{r} \]
+The magnitude of the gravitational force per unit mass is \(|\vec{g}| = \frac{d\varphi_G}{dr}\) (since for an attractive potential, \(\varphi\) increases with \(r\)).
+\[ \frac{d\varphi_G}{dr} = \frac{d}{dr} \left[ \varphi_0 (\ln r - \ln r_0) \right] = \frac{\varphi_0}{r} \]
+
+**2. Analyze the potential from the mass model in Part B**
+
+In Part B, we considered the mass density \(\rho_m(r) = \frac{C_m}{r_m^2 + r^2}\). From this, we found the enclosed mass \(M_m(r)\) in sub-problem B.3:
+\[ M_m(r) = 4\pi C_m \left[ r - r_m \arctan\left(\frac{r}{r_m}\right) \right] \]
+The gravitational force per unit mass at a distance \(r\) is given by Newton's law of gravitation for a spherically symmetric mass distribution:
+\[ |\vec{g}(r)| = \frac{G M_m(r)}{r^2} \]
+The potential \(\varphi_m(r)\) is related to this force by \(|\vec{g}(r)| = \frac{d\varphi_m}{dr}\). Therefore:
+\[ \frac{d\varphi_m}{dr} = \frac{G}{r^2} \left( 4\pi C_m \left[ r - r_m \arctan\left(\frac{r}{r_m}\right) \right] \right) = 4\pi G C_m \left[ \frac{1}{r} - \frac{r_m}{r^2} \arctan\left(\frac{r}{r_m}\right) \right] \]
+
+**3. Identify the correct regime by comparing the two models**
+
+We need to find the regime where \(\frac{d\varphi_m}{dr}\) has the same functional form as \(\frac{d\varphi_G}{dr} = \frac{\varphi_0}{r}\). Let's examine the two limits for \(\frac{d\varphi_m}{dr}\):
+
+*   **Regime \(r \ll r_m\):**
+    Using the Taylor expansion \(\arctan(x) \approx x - x^3/3\) for \(x \ll 1\):
+    \[ \frac{d\varphi_m}{dr} \approx 4\pi G C_m \left[ \frac{1}{r} - \frac{r_m}{r^2} \left( \frac{r}{r_m} - \frac{1}{3}\left(\frac{r}{r_m}\right)^3 \right) \right] = 4\pi G C_m \left[ \frac{1}{r} - \frac{1}{r} + \frac{r}{3r_m^2} \right] = \frac{4\pi G C_m}{3r_m^2} r \]
+    This is proportional to \(r\), which does not match the \(1/r\) dependence of \(\frac{d\varphi_G}{dr}\).
+
+*   **Regime \(r \gg r_m\):**
+    In this limit, \(\frac{r}{r_m} \to \infty\), so \(\arctan\left(\frac{r}{r_m}\right) \to \frac{\pi}{2}\). The expression for \(\frac{d\varphi_m}{dr}\) becomes:
+    \[ \frac{d\varphi_m}{dr} = 4\pi G C_m \left[ \frac{1}{r} - \frac{r_m}{r^2} \frac{\pi}{2} \right] \]
+    As \(r \to \infty\), the term \(\frac{r_m}{r^2}\frac{\pi}{2}\) decreases much faster than the term \(\frac{1}{r}\). Therefore, for large \(r\), we can approximate:
+    \[ \frac{d\varphi_m}{dr} \approx \frac{4\pi G C_m}{r} \]
+    This expression has the desired \(1/r\) dependence. Thus, the correct regime is \(r \gg r_m\).
+
+**4. Relate \(\varphi_0\) and calculate the circular velocity \(v_c\)**
+
+By comparing the two expressions for the potential gradient in the regime \(r \gg r_m\):
+\[ \frac{d\varphi_G}{dr} = \frac{\varphi_0}{r} \quad \text{and} \quad \frac{d\varphi_m}{dr} \approx \frac{4\pi G C_m}{r} \]
+We can identify the constant \(\varphi_0\) as:
+\[ \varphi_0 = 4\pi G C_m \]
+Now, we can find the circular velocity \(v_c(r)\) using the formula from B.1, \(v_c = \sqrt{r \frac{d\varphi}{dr}}\), with the potential \(\varphi_G(r,0)\):
+\[ v_c(r) = \sqrt{r \cdot \frac{d\varphi_G}{dr}} = \sqrt{r \cdot \frac{\varphi_0}{r}} = \sqrt{\varphi_0} \]
+This result shows that under this condition (\(r \gg r_m\)), the circular velocity \(v_c\) is constant and does not depend on the radius \(r\). This is consistent with the flat rotation curves observed for galaxies outside the central bulge, and also with the result from B.3 where we found \(v_{c,m}(r \gg r_m) \approx \sqrt{4\pi G C_m}\).
+
+### Final Answer
+The final answer is $\boxed{\text{The regime is } r \gg r_m. \text{ The circular velocity is } v_c = \sqrt{\varphi_0}.}$.

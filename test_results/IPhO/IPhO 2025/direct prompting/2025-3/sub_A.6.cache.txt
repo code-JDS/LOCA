@@ -1,0 +1,60 @@
+### Part A.6: Derivation of the differential equation for \(c_{\ell}(t)\) and the characteristic decay time \(\tau\)
+
+This problem asks for the differential equation governing the time evolution of the concentration of dissolved CO₂, \(c_{\ell}(t)\), in a glass of champagne, and the characteristic time for this concentration to decay. The decay is caused by CO₂ leaving the liquid phase to form bubbles, which then rise and escape from the surface.
+
+**1. Conservation of Dissolved CO₂**
+
+The total number of moles of dissolved CO₂ in the liquid volume \(V_{\ell}\) is given by \(n_{\ell}(t) = c_{\ell}(t) V_{\ell}\). The rate of change of this quantity is:
+\[ \frac{dn_{\ell}}{dt} = V_{\ell} \frac{dc_{\ell}}{dt} \]
+This rate of change is equal to the negative of the rate at which CO₂ moles are removed from the liquid. The problem states that we neglect diffusion at the free surface, so the only loss mechanism is the formation and escape of bubbles.
+
+**2. Rate of CO₂ Removal by Bubbles**
+
+Bubbles are nucleated at \(N_b\) sites, each producing bubbles at a frequency \(f_b\). Therefore, the total number of bubbles created and escaping from the surface per unit time is \(N_b f_b\).
+
+Each bubble that reaches the surface has a radius \(a_{H_{\ell}}\) and contains a certain number of moles of CO₂, \(n_c(a_{H_{\ell}})\). Using the ideal gas law and the approximation that the pressure inside the bubble is the atmospheric pressure \(P_0\) (as established in A.3 for large bubbles), we have:
+\[ n_c(a_{H_{\ell}}) = \frac{P_0 V_b}{RT_0} = \frac{P_0}{RT_0} \left(\frac{4}{3}\pi a_{H_{\ell}}^3\right) \]
+The total rate of mole removal is the product of the number of bubbles escaping per second and the number of moles per bubble:
+\[ \dot{n}_{\text{removed}} = (N_b f_b) \cdot n_c(a_{H_{\ell}}) = N_b f_b \frac{4\pi P_0}{3RT_0} a_{H_{\ell}}^3 \]
+
+**3. Relating Bubble Size to Concentration**
+
+The final radius of the bubble, \(a_{H_{\ell}}\), depends on how fast it grows while rising. The growth rate, \(q_a = da/dt\), in turn depends on the concentration of dissolved CO₂, \(c_{\ell}(t)\).
+
+From sub-problem A.5, we have the relation between the final radius and the growth rate for a bubble traveling a height \(H_{\ell}\) (assuming \(a_0 \ll a_{H_{\ell}}\)):
+\[ a_{H_{\ell}}^3 = \frac{27 q_a H_{\ell} \eta}{2 g_0 \rho_{\ell}} \]
+From sub-problem A.3, we determined that the bubble growth follows Model (2), where the growth rate is given by:
+\[ q_a = \frac{da}{dt} = \frac{K R T_0 (c_{\ell} - c_b)}{P_0} \]
+Since the bubbles are large, we can approximate the pressure inside as \(P_b \approx P_0\). By Henry's law, the concentration at the bubble surface is \(c_b = k_H P_b \approx k_H P_0 = c_0\). Therefore, the growth rate \(q_a\) is a function of the time-dependent bulk concentration \(c_{\ell}(t)\):
+\[ q_a(t) = \frac{K R T_0}{P_0} (c_{\ell}(t) - c_0) \]
+Substituting this expression for \(q_a(t)\) into the equation for \(a_{H_{\ell}}^3\):
+\[ a_{H_{\ell}}^3(t) = \frac{27 H_{\ell} \eta}{2 g_0 \rho_{\ell}} \left[ \frac{K R T_0}{P_0} (c_{\ell}(t) - c_0) \right] \]
+
+**4. The Differential Equation for \(c_{\ell}(t)\)**
+
+Now we can write the full expression for the rate of mole removal by substituting \(a_{H_{\ell}}^3(t)\) into the equation for \(\dot{n}_{\text{removed}}\):
+\[ \dot{n}_{\text{removed}}(t) = N_b f_b \frac{4\pi P_0}{3RT_0} \left\{ \frac{27 H_{\ell} \eta}{2 g_0 \rho_{\ell}} \left[ \frac{K R T_0}{P_0} (c_{\ell}(t) - c_0) \right] \right\} \]
+Let's simplify this expression by canceling terms (\(P_0, R, T_0\)) and combining numerical factors (\(\frac{4\pi}{3} \cdot \frac{27}{2} = 18\pi\)):
+\[ \dot{n}_{\text{removed}}(t) = N_b f_b \frac{18 \pi H_{\ell} \eta K}{g_0 \rho_{\ell}} (c_{\ell}(t) - c_0) \]
+Finally, we equate the rate of change of dissolved moles to the negative of the removal rate:
+\[ \frac{dn_{\ell}}{dt} = - \dot{n}_{\text{removed}}(t) \]
+\[ V_{\ell} \frac{dc_{\ell}}{dt} = - \frac{18 \pi N_b f_b H_{\ell} \eta K}{g_0 \rho_{\ell}} (c_{\ell}(t) - c_0) \]
+Rearranging gives the differential equation for \(c_{\ell}(t)\):
+\[ \frac{dc_{\ell}}{dt} = - \left( \frac{18 \pi N_b f_b H_{\ell} \eta K}{V_{\ell} g_0 \rho_{\ell}} \right) (c_{\ell}(t) - c_0) \]
+
+**5. The Characteristic Time \(\tau\)**
+
+The derived differential equation is a first-order linear ordinary differential equation. It describes an exponential decay of the concentration difference \((c_{\ell}(t) - c_0)\) towards zero. The general form is:
+\[ \frac{dy}{dt} = -\frac{1}{\tau}(y - y_{eq}) \]
+where \(\tau\) is the characteristic time of the process.
+
+By comparing our differential equation for \(c_{\ell}(t)\) with this general form, we can identify the characteristic time \(\tau\). The term multiplying \((c_{\ell}(t) - c_0)\) is \(1/\tau\):
+\[ \frac{1}{\tau} = \frac{18 \pi N_b f_b H_{\ell} \eta K}{V_{\ell} g_0 \rho_{\ell}} \]
+Therefore, the characteristic time \(\tau\) for the decay of the dissolved CO₂ concentration is:
+\[ \tau = \frac{V_{\ell} g_0 \rho_{\ell}}{18 \pi N_b f_b H_{\ell} \eta K} \]
+
+### Final Answer
+The differential equation for the concentration of dissolved CO₂, \(c_{\ell}(t)\), is:
+\[ \frac{dc_{\ell}}{dt} = - \left( \frac{18 \pi N_b f_b H_{\ell} \eta K}{V_{\ell} g_0 \rho_{\ell}} \right) (c_{\ell}(t) - c_0) \]
+The characteristic time \(\tau\) for the decay of the concentration is the inverse of the constant factor in the differential equation:
+\[ \boxed{ \tau = \frac{V_{\ell} g_0 \rho_{\ell}}{18 \pi N_b f_b H_{\ell} \eta K} } \]

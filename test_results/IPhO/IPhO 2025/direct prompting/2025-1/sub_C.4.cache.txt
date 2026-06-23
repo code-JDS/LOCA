@@ -1,0 +1,63 @@
+This problem requires us to determine the relative radial velocities and the distances from the galactic center for three hydrogen sources observed along a specific line of sight. We will use the data from the provided spectrum in Fig. 3 and the formulas derived in previous parts of the problem.
+
+### 1. Calculation of Relative Radial Velocities
+
+The relationship between the observed frequency shift \(\Delta f = f - f_0\) and the relative radial velocity of the emitter with respect to the Sun, \(v_{r E/S}\), is given by the non-relativistic Doppler effect formula:
+\[ \frac{\Delta f}{f_0} = -\frac{v_{r E/S}}{c} \]
+where \(f_0 = 1.42 \text{ GHz}\) is the rest frequency of the 21cm line and \(c \approx 3.00 \times 10^5 \text{ km/s}\) is the speed of light. Rearranging for the velocity, we get:
+\[ v_{r E/S} = -c \frac{\Delta f}{f_0} \]
+From Fig. 3, we identify the frequency shifts for the three peaks:
+*   Source 1: \(\Delta f_1 = 0.03 \text{ MHz}\)
+*   Source 2: \(\Delta f_2 = 0.15 \text{ MHz}\)
+*   Source 3: \(\Delta f_3 = 0.26 \text{ MHz}\)
+
+The rest frequency is \(f_0 = 1.42 \text{ GHz} = 1420 \text{ MHz}\). Now we can calculate the velocity for each source.
+
+**Source 1:**
+\[ v_{r E/S, 1} = -(3.00 \times 10^5 \text{ km/s}) \times \frac{0.03 \text{ MHz}}{1420 \text{ MHz}} \approx -6.338 \text{ km/s} \]
+Rounding to 3 significant digits, we get \(v_{r E/S, 1} = -6.34 \text{ km/s}\).
+
+**Source 2:**
+\[ v_{r E/S, 2} = -(3.00 \times 10^5 \text{ km/s}) \times \frac{0.15 \text{ MHz}}{1420 \text{ MHz}} \approx -31.69 \text{ km/s} \]
+Rounding to 3 significant digits, we get \(v_{r E/S, 2} = -31.7 \text{ km/s}\).
+
+**Source 3:**
+\[ v_{r E/S, 3} = -(3.00 \times 10^5 \text{ km/s}) \times \frac{0.26 \text{ MHz}}{1420 \text{ MHz}} \approx -54.93 \text{ km/s} \]
+Rounding to 3 significant digits, we get \(v_{r E/S, 3} = -54.9 \text{ km/s}\).
+
+The positive frequency shifts (blueshifts) correctly correspond to negative radial velocities, indicating that the sources are moving towards the Sun along the line of sight.
+
+### 2. Calculation of Distances from the Galactic Center
+
+From sub-problem C.3, we have the expression for the distance \(R\) of a source from the galactic center:
+\[ R = R_{\odot} \frac{v_{\odot} \sin\ell}{v_{\odot} \sin\ell - v_{r E / S}} \]
+We are given the following values:
+*   Sun's velocity: \(v_{\odot} = 220 \text{ km/s}\)
+*   Galactic longitude: \(\ell = 30^{\circ}\)
+
+First, let's compute the constant term in the numerator:
+\[ v_{\odot} \sin\ell = (220 \text{ km/s}) \times \sin(30^{\circ}) = 220 \times 0.5 = 110 \text{ km/s} \]
+Now we can calculate the distance \(R\) for each source in terms of \(R_{\odot}\).
+
+**Source 1:**
+\[ R_1 = R_{\odot} \frac{110 \text{ km/s}}{110 \text{ km/s} - (-6.34 \text{ km/s})} = R_{\odot} \frac{110}{116.34} \approx 0.9455 R_{\odot} \]
+Rounding to 2 significant digits, we get \(R_1 = 0.95 R_{\odot}\).
+
+**Source 2:**
+\[ R_2 = R_{\odot} \frac{110 \text{ km/s}}{110 \text{ km/s} - (-31.7 \text{ km/s})} = R_{\odot} \frac{110}{141.7} \approx 0.7763 R_{\odot} \]
+Rounding to 2 significant digits, we get \(R_2 = 0.78 R_{\odot}\).
+
+**Source 3:**
+\[ R_3 = R_{\odot} \frac{110 \text{ km/s}}{110 \text{ km/s} - (-54.9 \text{ km/s})} = R_{\odot} \frac{110}{164.9} \approx 0.6671 R_{\odot} \]
+Rounding to 2 significant digits, we get \(R_3 = 0.67 R_{\odot}\).
+
+### Summary of Results
+
+| Source | Relative Radial Velocity \(v_{r E/S}\) | Distance from Galactic Center \(R\) |
+|:------:|:--------------------------------------:|:-----------------------------------:|
+| 1      | \( -6.34 \text{ km/s} \)               | \( 0.95 R_{\odot} \)                |
+| 2      | \( -31.7 \text{ km/s} \)               | \( 0.78 R_{\odot} \)                |
+| 3      | \( -54.9 \text{ km/s} \)               | \( 0.67 R_{\odot} \)                |
+
+### Final Answer
+\[ \boxed{ \begin{aligned} \text{Source 1: } & v_{r E/S, 1} = -6.34 \text{ km/s}, & R_1 = 0.95 R_{\odot} \\ \text{Source 2: } & v_{r E/S, 2} = -31.7 \text{ km/s}, & R_2 = 0.78 R_{\odot} \\ \text{Source 3: } & v_{r E/S, 3} = -54.9 \text{ km/s}, & R_3 = 0.67 R_{\odot} \end{aligned} } \]

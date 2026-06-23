@@ -1,0 +1,59 @@
+### Part D - Tully-Fisher relation and MOND theory
+
+The flat external velocity curve of NGC 6946 in Fig. 1 is a common property of spiral galaxies, as can be seen in Fig. 4 (left).Plotting the external constant velocity value \(v_{c, \infty}\) as a function of the measured total mass \(M_{tot }\) of each galaxy gives an interesting correlation called the Tully-Fischer relation, see Fig.4 (right).
+
+
+<br>
+<center>
+Fig. 4. Left: Rotation curves for typical spiral galaxies - Right: \(log _{10}(M_{tot})\) as a function of \(log _{10}(v_{c, \infty})\) on linear scales. Colored dots correspond to different galaxies and different surveys. The green line is the Tully-Fischer relation which is in very good agreement with the best fit line of the data (in black).
+</center>
+<br>
+
+<div style="border: 1px solid #333; padding: 8px; border-radius: 4px;">
+  <b>D.1</b> Assuming that the radius \(R\) of a galaxy doesn't depend on its mass, show that the model of Eq. 1 (part B) gives a relation of the form \(M_{tot}=\eta v_{c, \infty}^{\gamma}\) where \(\gamma\) and \(\eta\) should be specified. Compare this expression to the Tully-Fischer relation by computing \(\gamma_{T F}\).  (0.4 pt)
+</div>
+
+### Derivation of the theoretical relation
+
+From sub-problem B.3, the mass density model \(\rho_{m}(r)=\frac{C_{m}}{r_{m}^{2}+r^{2}}\) leads to two key results:
+1.  The mass enclosed within a radius \(r\) is given by:
+    \[M_m(r) = 4\pi C_m \left[ r - r_m \arctan\left(\frac{r}{r_m}\right) \right]\]
+2.  The asymptotic circular velocity for large \(r\) (\(r \gg r_m\)) is constant and given by:
+    \[v_{c, \infty} = \sqrt{4\pi G C_m}\]
+
+The total mass of a galaxy, \(M_{tot}\), is the mass enclosed within its total radius, \(R\). Thus, we have:
+\[M_{tot} = M_m(R) = 4\pi C_m \left[ R - r_m \arctan\left(\frac{R}{r_m}\right) \right]\]
+
+From the expression for the asymptotic velocity, we can express the term \(4\pi C_m\) as a function of \(v_{c, \infty}\):
+\[4\pi C_m = \frac{v_{c, \infty}^2}{G}\]
+
+Substituting this into the equation for the total mass, we get:
+\[M_{tot} = \frac{v_{c, \infty}^2}{G} \left[ R - r_m \arctan\left(\frac{R}{r_m}\right) \right]\]
+
+This expression is of the form \(M_{tot} = \eta v_{c, \infty}^{\gamma}\). By direct comparison, we can identify the exponent \(\gamma\) and the proportionality factor \(\eta\):
+\[\gamma = 2\]
+\[\eta = \frac{1}{G} \left[ R - r_m \arctan\left(\frac{R}{r_m}\right) \right]\]
+The problem assumes that the radius \(R\) of a galaxy does not depend on its mass. If we also assume that the characteristic length \(r_m\) is similar for all spiral galaxies, then \(\eta\) can be considered a constant.
+
+### Calculation of the empirical Tully-Fisher exponent \(\gamma_{TF}\)
+
+The Tully-Fisher relation is an empirical law that can be written as \(M_{tot} = \eta_{TF} v_{c, \infty}^{\gamma_{TF}}\). The graph in Fig. 4 (right) plots \(\log_{10}(M_{tot})\) versus \(\log_{10}(v_{c, \infty})\). Taking the base-10 logarithm of the Tully-Fisher relation gives a linear equation:
+\[\log_{10}(M_{tot}) = \log_{10}(\eta_{TF}) + \gamma_{TF} \log_{10}(v_{c, \infty})\]
+This shows that the exponent \(\gamma_{TF}\) is the slope of the line in the log-log plot.
+
+We can calculate this slope by picking two points from the best-fit line (black line) on the graph.
+*   Let's choose Point 1 at \(x_1 = \log_{10}(v_{c, \infty}) = 2.0\). From the graph, the corresponding y-value is \(y_1 = \log_{10}(M_{tot}) \approx 9.8\).
+*   Let's choose Point 2 at \(x_2 = \log_{10}(v_{c, \infty}) = 2.4\). From the graph, the corresponding y-value is \(y_2 = \log_{10}(M_{tot}) \approx 11.3\).
+
+The slope \(\gamma_{TF}\) is then calculated as:
+\[\gamma_{TF} = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} = \frac{11.3 - 9.8}{2.4 - 2.0} = \frac{1.5}{0.4} = 3.75\]
+
+### Comparison
+
+The model based on the dark matter density profile of Eq. 1 predicts an exponent of \(\gamma = 2\).
+The empirical data from observations of many spiral galaxies, which constitutes the Tully-Fisher relation, yields an exponent of \(\gamma_{TF} = 3.75\).
+
+The theoretical prediction (\(\gamma=2\)) does not match the observed value (\(\gamma_{TF}=3.75\)). This discrepancy indicates that while the assumed dark matter model can explain the flatness of individual rotation curves, it fails to correctly predict the observed scaling relationship between the total mass and the rotation velocity of galaxies.
+
+### Final Answer
+\[ \boxed{ \begin{aligned} \text{From the model (Eq. 1): } & M_{tot} = \eta v_{c, \infty}^{\gamma} \text{ with } \gamma = 2 \text{ and } \eta = \frac{1}{G} \left[ R - r_m \arctan\left(\frac{R}{r_m}\right) \right]. \\ \text{From the Tully-Fisher relation (Fig. 4): } & \gamma_{TF} = 3.75. \\ \text{Comparison: } & \text{The model's prediction } \gamma=2 \text{ does not agree with the observed value } \gamma_{TF}=3.75. \end{aligned} } \]

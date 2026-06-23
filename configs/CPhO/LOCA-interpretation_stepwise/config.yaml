@@ -1,0 +1,85 @@
+test_configs:
+  # Gemini
+
+  - name: "gemini-2.5-pro-42"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/LOCA/gemini-2.5-pro/results_42.jsonl"
+    scheme: "loca"
+    temperature: 0.0
+    models:
+      generator: "gemini/gemini-2.5-pro"
+      reviewer: "gemini/gemini-2.5-pro"
+    loca_options:
+      refine_model: "gemini/gemini-2.5-pro"
+      max_error_times: 5
+      target_times: 3
+      n_interpretation: 4
+      stepwise_review: True  # Enable stepwise review process
+
+  - name: "gemini-2.5-flash"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/LOCA/gemini-2.5-flash/results_42.jsonl"
+    scheme: "loca"
+    temperature: 0.0
+    models:
+      generator: "gemini/gemini-2.5-flash"
+      reviewer: "gemini/gemini-2.5-flash"
+    loca_options:
+      refine_model: "gemini/gemini-2.5-flash"
+      max_error_times: 5
+      target_times: 3
+      n_interpretation: 4
+      stepwise_review: True  # Enable stepwise review process
+
+  # GPT-5
+  - name: "gpt-5"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/LOCA/gpt-5/results_42.jsonl"
+    scheme: "loca"
+    temperature: 0.0
+    models:
+      generator: "openai/gpt-5"
+      reviewer: "openai/gpt-5"
+    loca_options:
+      refine_model: "openai/gpt-5"
+      max_error_times: 5
+      target_times: 3
+      n_interpretation: 4
+      stepwise_review: True  # Enable stepwise review process
+
+  # o3
+  - name: "o3-2025-04-16-42"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/LOCA/o3-2025-04-16/results_42.jsonl"
+    scheme: "loca"
+    temperature: 0.0
+    models:
+      generator: "openai/o3-2025-04-16"
+      reviewer: "openai/o3-2025-04-16"
+    loca_options:
+      refine_model: "openai/o3-2025-04-16"
+      max_error_times: 5
+      target_times: 3
+      n_interpretation: 4
+      stepwise_review: True
+
+  # Doubao
+  - name: "doubao-seed-1-6-42"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/LOCA/doubao-seed-1-6/results_42.jsonl"
+    scheme: "loca"
+    temperature: 0.0
+    models:
+      generator: "openai/doubao-seed-1-6"
+      reviewer: "openai/doubao-seed-1-6"
+    loca_options:
+      refine_model: "openai/doubao-seed-1-6"
+      max_error_times: 5
+      target_times: 3
+      n_interpretation: 4
+      stepwise_review: True
+
+
+global_settings:
+  concurrent_limit: 10
+  aux_dir_base: ".aux"

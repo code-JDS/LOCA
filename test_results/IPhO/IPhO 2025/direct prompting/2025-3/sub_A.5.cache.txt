@@ -1,0 +1,62 @@
+Here is a detailed solution to sub-problem A.5.
+
+### A.5. Bubble radius upon reaching the surface
+
+The goal is to determine the radius \(a_{H_{\ell}}\) of a bubble when it reaches the free surface of the champagne, after rising a height \(H_{\ell}\). The bubble grows as it rises.
+
+**1. Formulation of the physical model**
+
+We need to relate the bubble's vertical motion to its growth.
+Let \(z(t)\) be the vertical position of the bubble, measured upwards from the bottom of the glass. The bubble's velocity is \(v = \frac{dz}{dt}\).
+The problem states that the bubble is always at its terminal velocity. From the solution to sub-problem A.4, the terminal velocity \(v\) of a bubble of radius \(a\) is given by:
+\[ v(a) = \frac{2 a^2 g_0 (\rho_{\ell} - \rho_{gas})}{9 \eta} \]
+Since the density of the gas (\(\rho_{gas} \approx 1.8 \, \text{kg} \cdot \text{m}^{-3}\)) is much smaller than the density of the liquid (\(\rho_{\ell} = 1.0 \times 10^3 \, \text{kg} \cdot \text{m}^{-3}\)), we can approximate this as:
+\[ v(a) \approx \frac{2 g_0 \rho_{\ell}}{9 \eta} a^2 = C a^2 \]
+where \(C = \frac{2 g_0 \rho_{\ell}}{9 \eta}\) is a constant.
+
+The bubble also grows while rising. The problem states that the growth rate \(q_a = \frac{da}{dt}\) is constant. This gives a relationship between time \(t\) and radius \(a\):
+\[ \frac{da}{dt} = q_a \implies dt = \frac{da}{q_a} \]
+
+**2. Derivation of the final radius**
+
+We can express the total height travelled, \(H_{\ell}\), by integrating the velocity over the time it takes to rise, \(t_{rise}\):
+\[ H_{\ell} = \int_0^{H_{\ell}} dz = \int_0^{t_{rise}} v(t) dt \]
+To solve this integral, we change the integration variable from time \(t\) to radius \(a\). The radius changes from its initial value \(a_0\) at \(t=0\) to its final value \(a_{H_{\ell}}\) at \(t=t_{rise}\).
+Using \(dt = \frac{da}{q_a}\) and \(v(t) = v(a(t)) = C a^2\), the integral becomes:
+\[ H_{\ell} = \int_{a_0}^{a_{H_{\ell}}} v(a) \frac{dt}{da} da = \int_{a_0}^{a_{H_{\ell}}} (C a^2) \frac{1}{q_a} da \]
+\[ H_{\ell} = \frac{C}{q_a} \int_{a_0}^{a_{H_{\ell}}} a^2 da \]
+Evaluating the integral gives:
+\[ H_{\ell} = \frac{C}{q_a} \left[ \frac{a^3}{3} \right]_{a_0}^{a_{H_{\ell}}} = \frac{C}{3q_a} (a_{H_{\ell}}^3 - a_0^3) \]
+The problem states we can assume \(a_{H_{\ell}} \gg a_0\). This implies \(a_{H_{\ell}}^3 \gg a_0^3\), so we can neglect the \(a_0^3\) term:
+\[ H_{\ell} \approx \frac{C}{3q_a} a_{H_{\ell}}^3 \]
+Now, we can solve for the final radius \(a_{H_{\ell}}\):
+\[ a_{H_{\ell}}^3 \approx \frac{3 q_a H_{\ell}}{C} \]
+Substituting the expression for the constant \(C = \frac{2 g_0 \rho_{\ell}}{9 \eta}\):
+\[ a_{H_{\ell}}^3 \approx \frac{3 q_a H_{\ell}}{\frac{2 g_0 \rho_{\ell}}{9 \eta}} = \frac{27 q_a H_{\ell} \eta}{2 g_0 \rho_{\ell}} \]
+Taking the cube root gives the final symbolic expression for the radius:
+\[ a_{H_{\ell}} = \left( \frac{27 q_a H_{\ell} \eta}{2 g_0 \rho_{\ell}} \right)^{1/3} \]
+
+**3. Numerical Calculation**
+
+We are asked to calculate the numerical value of \(a_{H_{\ell}}\) (denoted as \(a_{H_t}\) in the problem, which is likely a typo) for a height \(H_{\ell} = 10 \text{ cm}\) and with the growth rate \(q_a\) from Fig. 2.
+
+The required values are:
+- Growth rate from Fig. 2 (and A.3): \(q_a = 0.23 \, \text{mm/s} = 2.3 \times 10^{-4} \, \text{m/s}\)
+- Height of liquid: \(H_{\ell} = 10 \, \text{cm} = 0.1 \, \text{m}\)
+- Dynamic viscosity (from A.4): \(\eta \approx 1.7 \times 10^{-3} \, \text{Pa} \cdot \text{s}\)
+- Density of liquid: \(\rho_{\ell} = 1.0 \times 10^3 \, \text{kg} \cdot \text{m}^{-3}\)
+- Acceleration due to gravity (standard value): \(g_0 \approx 9.8 \, \text{m} \cdot \text{s}^{-2}\)
+
+Substituting these values into our expression for \(a_{H_{\ell}}\):
+\[ a_{H_{\ell}} = \left( \frac{27 \times (2.3 \times 10^{-4} \, \text{m/s}) \times (0.1 \, \text{m}) \times (1.7 \times 10^{-3} \, \text{Pa} \cdot \text{s})}{2 \times (9.8 \, \text{m/s}^2) \times (1.0 \times 10^3 \, \text{kg/m}^3)} \right)^{1/3} \]
+\[ a_{H_{\ell}} = \left( \frac{1.0539 \times 10^{-6}}{1.96 \times 10^4} \right)^{1/3} \, \text{m} \]
+\[ a_{H_{\ell}} = (5.377 \times 10^{-11})^{1/3} \, \text{m} \]
+To compute the cube root, we can write this as:
+\[ a_{H_{\ell}} = (53.77 \times 10^{-12})^{1/3} \, \text{m} = (53.77)^{1/3} \times 10^{-4} \, \text{m} \]
+Since \(3^3 = 27\) and \(4^3 = 64\), the cube root of 53.77 is between 3 and 4. A more precise calculation gives \((53.77)^{1/3} \approx 3.775\).
+\[ a_{H_{\ell}} \approx 3.775 \times 10^{-4} \, \text{m} \]
+Rounding to two significant figures, consistent with the input data:
+\[ a_{H_{\ell}} \approx 3.8 \times 10^{-4} \, \text{m} = 0.38 \, \text{mm} \]
+
+### Final Answer
+\[ \boxed{ a_{H_{\ell}} = \left( \frac{27 q_a H_{\ell} \eta}{2 g_0 \rho_{\ell}} \right)^{1/3}, \quad a_{H_{\ell}} \approx 3.8 \times 10^{-4} \, \text{m} } \]

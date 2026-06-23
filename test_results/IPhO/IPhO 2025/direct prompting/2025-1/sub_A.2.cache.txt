@@ -1,0 +1,69 @@
+Here is the detailed solution for sub-problem A.2.
+
+### Derivation of Quantized Radii
+
+We start with two fundamental principles of the Bohr model for the hydrogen atom:
+1.  The electrostatic Coulomb force provides the centripetal force for the electron's circular orbit. From sub-problem A.1, this gives the relation:
+    \[\frac{m_e v^2}{r} = \frac{e^2}{4\pi\varepsilon_0 r^2} \quad (*).\]
+2.  The magnitude of the electron's angular momentum \(L\) is quantized and given by:
+    \[L = m_e v r = n \hbar,\]
+    where \(n\) is a positive integer (the principal quantum number).
+
+From the angular momentum quantization, we can express the velocity \(v_n\) for the \(n\)-th orbit as:
+\[v_n = \frac{n \hbar}{m_e r_n}.\]
+Substituting this expression for \(v_n\) into the force balance equation \((*)\) for the \(n\)-th orbit (with radius \(r_n\)):
+\[\frac{m_e}{r_n} \left( \frac{n \hbar}{m_e r_n} \right)^2 = \frac{e^2}{4\pi\varepsilon_0 r_n^2}.\]
+Let's simplify this equation:
+\[\frac{m_e n^2 \hbar^2}{m_e^2 r_n^3} = \frac{e^2}{4\pi\varepsilon_0 r_n^2}.\]
+Multiplying both sides by \(r_n^2\) and simplifying the left side gives:
+\[\frac{n^2 \hbar^2}{m_e r_n} = \frac{e^2}{4\pi\varepsilon_0}.\]
+Now, we can solve for the radius \(r_n\):
+\[r_n = n^2 \left( \frac{4\pi\varepsilon_0 \hbar^2}{m_e e^2} \right).\]
+This result shows that the radius of the allowed orbits is proportional to \(n^2\). We can write this in the form \(r_n = n^2 r_1\), where \(r_1\) is the radius of the first orbit (\(n=1\)), known as the Bohr radius:
+\[r_1 = \frac{4\pi\varepsilon_0 \hbar^2}{m_e e^2}.\]
+
+### Expression for \(r_1\) and its Numerical Value
+
+We are asked to express \(r_1\) in terms of the fine-structure constant \(\alpha\), \(m_e\), \(c\), and \(\hbar\). The fine-structure constant is defined as:
+\[\alpha = \frac{e^2}{4\pi\varepsilon_0 \hbar c}.\]
+From this definition, we can express the term \(\frac{e^2}{4\pi\varepsilon_0}\) as:
+\[\frac{e^2}{4\pi\varepsilon_0} = \alpha \hbar c.\]
+Substituting this into our expression for \(r_1\):
+\[r_1 = \frac{\hbar^2}{m_e \left( \frac{e^2}{4\pi\varepsilon_0} \right)} = \frac{\hbar^2}{m_e (\alpha \hbar c)}.\]
+Simplifying by canceling one factor of \(\hbar\), we get the desired expression for the Bohr radius:
+\[r_1 = \frac{\hbar}{m_e c \alpha}.\]
+To calculate its numerical value, we use the provided and standard constants:
+*   \(\hbar = 1.05457 \times 10^{-34} \text{ J}\cdot\text{s}\)
+*   \(m_e = 9.10938 \times 10^{-31} \text{ kg}\)
+*   \(c = 2.99792 \times 10^8 \text{ m/s}\)
+*   \(\alpha \approx 7.27 \times 10^{-3}\) (as given in the problem)
+
+Plugging these values into the formula for \(r_1\):
+\[r_1 = \frac{1.05457 \times 10^{-34} \text{ J}\cdot\text{s}}{(9.10938 \times 10^{-31} \text{ kg}) \times (2.99792 \times 10^8 \text{ m/s}) \times (7.27 \times 10^{-3})}.\]
+\[r_1 = \frac{1.05457 \times 10^{-34}}{1.98453 \times 10^{-24}} \text{ m} \approx 0.53139 \times 10^{-10} \text{ m}.\]
+Rounding to 3 significant digits, the numerical value of the Bohr radius is:
+\[r_1 \approx 5.31 \times 10^{-11} \text{ m}.\]
+
+### Expression for \(v_1\)
+
+Finally, we need to find the velocity \(v_1\) of the electron on the first Bohr orbit (\(n=1\)). Using the angular momentum quantization for \(n=1\):
+\[m_e v_1 r_1 = \hbar.\]
+Solving for \(v_1\):
+\[v_1 = \frac{\hbar}{m_e r_1}.\]
+Now, we substitute the expression we found for \(r_1 = \frac{\hbar}{m_e c \alpha}\):
+\[v_1 = \frac{\hbar}{m_e \left( \frac{\hbar}{m_e c \alpha} \right)}.\]
+Simplifying this expression gives:
+\[v_1 = \frac{\hbar \cdot m_e c \alpha}{m_e \hbar} = \alpha c.\]
+Thus, the velocity of the electron in the ground state of the hydrogen atom is \(\alpha\) times the speed of light.
+
+### Final Answer
+The final results for this sub-problem are summarized below.
+
+The radius of the \(n\)-th orbit is given by \(r_n = n^2 r_1\), where the Bohr radius \(r_1\) is expressed in terms of \(\alpha\), \(m_e\), \(c\), and \(\hbar\) as:
+\[r_1 = \frac{\hbar}{m_e c \alpha}.\]
+Its numerical value, calculated with 3 significant digits, is:
+\[r_1 \approx 5.31 \times 10^{-11} \text{ m}.\]
+The velocity \(v_1\) on the orbit of radius \(r_1\) is expressed in terms of \(\alpha\) and \(c\) as:
+\[v_1 = \alpha c.\]
+
+\[ \boxed{ \begin{aligned} &r_n = n^2 r_1 \quad \text{with} \quad r_1 = \frac{\hbar}{m_e c \alpha} \\ &r_1 \approx 5.31 \times 10^{-11} \text{ m} \\ &v_1 = \alpha c \end{aligned} } \]

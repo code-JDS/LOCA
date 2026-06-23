@@ -1,0 +1,79 @@
+This problem requires us to analyze a proposed mass density model for a spiral galaxy, derive the corresponding rotation curve, examine its behavior in different regimes, and use it to estimate the mass of the galaxy NGC 6946.
+
+### Part 1: Derivation of the velocity profile \(v_{c, m}(r)\)
+
+The circular velocity \(v_{c,m}(r)\) of an object in a spherically symmetric mass distribution is determined by the mass \(M_m(r)\) enclosed within the radius \(r\) of its orbit. The relationship is given by equating the gravitational force to the centripetal force:
+\[ \frac{m v_{c,m}(r)^2}{r} = \frac{G M_m(r) m}{r^2} \implies v_{c,m}(r) = \sqrt{\frac{G M_m(r)}{r}} \]
+First, we must calculate the enclosed mass \(M_m(r)\) by integrating the given mass density \(\rho_{m}(r)=\frac{C_{m}}{r_{m}^{2}+r^{2}}\) over the volume of a sphere of radius \(r\):
+\[ M_m(r) = \int_0^r \rho_m(x) \cdot 4\pi x^2 dx = \int_0^r \frac{C_m}{r_m^2 + x^2} \cdot 4\pi x^2 dx \]
+\[ M_m(r) = 4\pi C_m \int_0^r \frac{x^2}{r_m^2 + x^2} dx \]
+Using the provided hint, \(\int_{0}^{r} \frac{x^{2}}{a^{2}+x^{2}} d x=r-a \arctan(r / a)\), with \(a = r_m\), we find the enclosed mass:
+\[ M_m(r) = 4\pi C_m \left[ r - r_m \arctan\left(\frac{r}{r_m}\right) \right] \]
+Now, we substitute this expression for \(M_m(r)\) into the equation for the circular velocity:
+\[ v_{c,m}(r) = \sqrt{\frac{G}{r} \left( 4\pi C_m \left[ r - r_m \arctan\left(\frac{r}{r_m}\right) \right] \right)} \]
+Simplifying the expression inside the square root:
+\[ v_{c,m}(r) = \sqrt{4\pi G C_m \left( 1 - \frac{r_m}{r} \arctan\left(\frac{r}{r_m}\right) \right)} \]
+\[ v_{c,m}(r) = \sqrt{4\pi G C_m - \frac{4\pi G C_m r_m}{r} \arctan\left(\frac{r}{r_m}\right)} \]
+This expression matches the requested form \(v_{c, m}(r)=\sqrt{k_1 - \frac{k_2 \cdot \text{arctan}(r/{r_m})}{r}}\). By comparing the two forms, we can identify the constants \(k_1\) and \(k_2\):
+\[ k_1 = 4\pi G C_m \]
+\[ k_2 = 4\pi G C_m r_m \]
+
+### Part 2: Simplification of \(v_{c, m}(r)\) in limiting cases
+
+**Case 1: \(r \ll r_m\)** (Inner region of the galaxy)
+In this limit, the ratio \(x = r/r_m \ll 1\). We can use the Taylor series expansion for the arctangent function: \(\arctan(x) \approx x - \frac{x^3}{3}\).
+Substituting this into the expression for \(v_{c,m}(r)^2\):
+\[ v_{c,m}(r)^2 = 4\pi G C_m \left[ 1 - \frac{r_m}{r} \left( \frac{r}{r_m} - \frac{1}{3}\left(\frac{r}{r_m}\right)^3 + \dots \right) \right] \]
+\[ v_{c,m}(r)^2 = 4\pi G C_m \left[ 1 - \left( 1 - \frac{1}{3}\frac{r^2}{r_m^2} + \dots \right) \right] \approx 4\pi G C_m \left( \frac{r^2}{3r_m^2} \right) \]
+Taking the square root, we get the velocity profile for small \(r\):
+\[ v_{c,m}(r) \approx \sqrt{\frac{4\pi G C_m}{3r_m^2}} \cdot r \]
+The velocity increases linearly with the distance from the center, which is characteristic of a solid-body rotation and consistent with the observed rotation curve in the bulge region.
+
+**Case 2: \(r \gg r_m\)** (Outer region of the galaxy)
+In this limit, \(r/r_m \to \infty\), and the arctangent function approaches its limit: \(\arctan(r/r_m) \to \frac{\pi}{2}\).
+The term \(\frac{k_2 \cdot \arctan(r/r_m)}{r}\) in the velocity expression becomes \(\frac{k_2 \cdot (\pi/2)}{r}\), which approaches 0 as \(r \to \infty\).
+Therefore, the velocity approaches a constant value:
+\[ v_{c,m}(r) \to \sqrt{k_1} = \sqrt{4\pi G C_m} \]
+This constant asymptotic velocity, \(v_{c, \infty}\), is consistent with the flat rotation curves observed for many spiral galaxies, including NGC 6946 as shown in Fig. 1(B).
+
+### Part 3: Mass \(M_m(r)\) for \(r \gg r_m\)
+
+The expression for the enclosed mass is \(M_m(r) = 4\pi C_m \left[ r - r_m \arctan\left(\frac{r}{r_m}\right) \right]\).
+For \(r \gg r_m\), we again use \(\arctan(r/r_m) \approx \frac{\pi}{2}\). The mass becomes:
+\[ M_m(r) \approx 4\pi C_m \left( r - r_m \frac{\pi}{2} \right) \]
+Since \(r\) is much larger than \(r_m\), the term \(r_m \frac{\pi}{2}\) is negligible compared to \(r\). Thus, the mass simplifies to:
+\[ M_m(r) \approx 4\pi C_m r \]
+This shows that for large distances, the enclosed mass grows linearly with the radius, depending only on the constant \(C_m\) and \(r\).
+
+### Part 4: Estimate the mass of NGC 6946
+
+We are asked to estimate the mass of the galaxy within the visible region shown in the picture. The image description indicates a diameter of 18 kpc, so the visible radius is \(R_{vis} = 9\) kpc.
+
+From the experimental data in Fig. 1(B), the rotation curve of NGC 6946 flattens at a constant velocity \(v_{c, \infty} \approx 160\) km/s for large \(r\). This corresponds to the \(r \gg r_m\) regime of our model.
+We have the relation \(v_{c, \infty} = \sqrt{4\pi G C_m}\), which implies \(4\pi C_m = \frac{v_{c, \infty}^2}{G}\).
+
+Since \(R_{vis} = 9\) kpc is in the flat region of the curve, we can use the simplified mass formula for \(r \gg r_m\):
+\[ M_m(R_{vis}) \approx 4\pi C_m R_{vis} = \frac{v_{c, \infty}^2 R_{vis}}{G} \]
+Now, we substitute the numerical values:
+*   \(v_{c, \infty} = 160 \text{ km/s} = 1.60 \times 10^5 \text{ m/s}\)
+*   \(R_{vis} = 9 \text{ kpc} = 9 \times 3.09 \times 10^{19} \text{ m} = 2.781 \times 10^{20} \text{ m}\)
+*   \(G = 6.674 \times 10^{-11} \text{ N m}^2/\text{kg}^2\)
+
+Calculating the mass in kilograms:
+\[ M_m(R_{vis}) \approx \frac{(1.60 \times 10^5 \text{ m/s})^2 \cdot (2.781 \times 10^{20} \text{ m})}{6.674 \times 10^{-11} \text{ N m}^2/\text{kg}^2} \]
+\[ M_m(R_{vis}) \approx \frac{(2.56 \times 10^{10}) \cdot (2.781 \times 10^{20})}{6.674 \times 10^{-11}} \text{ kg} \approx 1.07 \times 10^{41} \text{ kg} \]
+To express this in solar masses (\(1 M_{\odot} = 1.99 \times 10^{30} \text{ kg}\)):
+\[ M_m(R_{vis}) \approx \frac{1.07 \times 10^{41} \text{ kg}}{1.99 \times 10^{30} \text{ kg}/M_{\odot}} \approx 5.38 \times 10^{10} M_{\odot} \]
+Rounding to two significant figures, consistent with the input data from the graph:
+\[ M_m(R_{vis}) \approx 5.4 \times 10^{10} M_{\odot} \]
+
+### Final Answer
+The velocity profile is \(v_{c, m}(r)=\sqrt{k_1 - \frac{k_2 \cdot \text{arctan}(r/{r_m})}{r}}\) with \(k_1 = 4\pi G C_m\) and \(k_2 = 4\pi G C_m r_m\).
+
+For \(r \ll r_m\), the velocity simplifies to \(v_{c,m}(r) \approx \sqrt{\frac{4\pi G C_m}{3r_m^2}} \cdot r\).
+For \(r \gg r_m\), the velocity approaches a constant value \(v_{c,m}(r) \to \sqrt{4\pi G C_m}\).
+
+For \(r \gg r_m\), the enclosed mass simplifies to \(M_m(r) \approx 4\pi C_m r\), which depends only on \(C_m\) and \(r\).
+
+The estimated mass of NGC 6946 within the visible radius of 9 kpc is:
+\[ \boxed{M_{NGC6946}(R=9 \text{ kpc}) \approx 5.4 \times 10^{10} M_{\odot}} \]

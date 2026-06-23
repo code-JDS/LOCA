@@ -1,0 +1,67 @@
+Here is a detailed solution to the problem.
+
+### C.3 Determine \(v_{r E / S}\) in terms of \(\ell\) , \(R\), \(R_{\odot}\) and \(v_{\odot}\) . Then, express \(R\) in terms of \(R_{\odot}\) , \(v_{\odot}\), \(\ell\) and \(v_{r E / S}\) .
+
+This problem asks for two expressions: first, the relative radial velocity \(v_{r E / S}\) of a galactic object E with respect to the Sun S, and second, the orbital radius \(R\) of the object E as a function of the measured radial velocity and other known quantities.
+
+**1. Derivation of the relative radial velocity \(v_{r E / S}\)**
+
+The relative radial velocity \(v_{r E / S}\) is defined as the projection of the relative velocity vector \(\vec{v}_{rel} = \vec{v}_E - \vec{v}_{\odot}\) onto the line of sight, which is represented by the unit vector \(\hat{u}_v\) pointing from S to E.
+\[v_{r E / S} = (\vec{v}_E - \vec{v}_{\odot}) \cdot \hat{u}_v = \vec{v}_E \cdot \hat{u}_v - \vec{v}_{\odot} \cdot \hat{u}_v\]
+
+We will determine the two dot products using the geometry shown in Fig. 2. Let's analyze the triangle formed by the galactic center C, the Sun S, and the object E.
+*   The sides are \(CS = R_{\odot}\) and \(CE = R\).
+*   The angle at the Sun is \(\angle CSE = \ell\).
+*   Let the angle at the object E be \(\angle SEC = \phi\).
+
+The velocities \(\vec{v}_{\odot}\) and \(\vec{v}_E\) are tangential to their respective circular orbits. The problem states that outside the bulge, the orbital velocity \(v_c\) is constant. Therefore, we can assume a flat rotation curve, which means the magnitude of the velocity of object E is the same as the Sun's: \(|\vec{v}_E| = |\vec{v}_{\odot}| = v_{\odot}\).
+
+The direction of rotation in Fig. 2 is clockwise. We will perform the derivation consistent with this diagram.
+
+**Projection of \(\vec{v}_{\odot}\):**
+The velocity vector \(\vec{v}_{\odot}\) is perpendicular to the radius vector \(\vec{CS}\). The angle between the line of sight \(\vec{SE}\) and the line \(\vec{SC}\) is \(\ell\). As seen in the diagram for clockwise rotation, the angle between the velocity vector \(\vec{v}_{\odot}\) and the line of sight vector \(\vec{SE}\) is \(90^\circ + \ell\).
+The projection of \(\vec{v}_{\odot}\) onto the line of sight is:
+\[\vec{v}_{\odot} \cdot \hat{u}_v = |\vec{v}_{\odot}| \cos(90^\circ + \ell) = v_{\odot} (-\sin\ell) = -v_{\odot} \sin\ell\]
+
+**Projection of \(\vec{v}_E\):**
+The velocity vector \(\vec{v}_E\) is perpendicular to its radius vector \(\vec{CE}\). We need the angle between \(\vec{v}_E\) and the line of sight \(\vec{SE}\). In triangle CSE, the angle at E is \(\phi\). For clockwise rotation, the angle between the velocity vector \(\vec{v}_E\) and the line of sight vector \(\vec{SE}\) is \(90^\circ + \phi\).
+The projection of \(\vec{v}_E\) onto the line of sight is:
+\[\vec{v}_E \cdot \hat{u}_v = |\vec{v}_E| \cos(90^\circ + \phi) = v_E (-\sin\phi) = -v_{\odot} \sin\phi\]
+
+**Combining the projections:**
+The relative radial velocity is:
+\[v_{r E / S} = (-v_{\odot} \sin\phi) - (-v_{\odot} \sin\ell) = v_{\odot} (\sin\ell - \sin\phi)\]
+
+Now, we need to express \(\sin\phi\) in terms of the given variables. We use the Law of Sines on the triangle CSE:
+\[\frac{R}{\sin\ell} = \frac{R_{\odot}}{\sin\phi} \implies \sin\phi = \frac{R_{\odot}}{R} \sin\ell\]
+
+Substituting this into the expression for \(v_{r E / S}\):
+\[v_{r E / S} = v_{\odot} \left(\sin\ell - \frac{R_{\odot}}{R} \sin\ell\right)\]
+\[v_{r E / S} = v_{\odot} \left(1 - \frac{R_{\odot}}{R}\right) \sin\ell\]
+
+This is the first required expression.
+
+**2. Derivation of the orbital radius \(R\)**
+
+Now we need to invert the relationship to solve for \(R\). Starting from the expression for \(v_{r E / S}\):
+\[v_{r E / S} = v_{\odot} \left(1 - \frac{R_{\odot}}{R}\right) \sin\ell\]
+
+Assuming \(\sin\ell \neq 0\) (i.e., we are not looking directly towards or away from the galactic center), we can divide by \(v_{\odot} \sin\ell\):
+\[\frac{v_{r E / S}}{v_{\odot} \sin\ell} = 1 - \frac{R_{\odot}}{R}\]
+
+Rearrange the terms to solve for \(\frac{R_{\odot}}{R}\):
+\[\frac{R_{\odot}}{R} = 1 - \frac{v_{r E / S}}{v_{\odot} \sin\ell}\]
+\[\frac{R_{\odot}}{R} = \frac{v_{\odot} \sin\ell - v_{r E / S}}{v_{\odot} \sin\ell}\]
+
+Finally, invert the expression to find \(R\):
+\[R = R_{\odot} \frac{v_{\odot} \sin\ell}{v_{\odot} \sin\ell - v_{r E / S}}\]
+
+This is the second required expression. It allows astronomers to determine the distance of an object from the galactic center by measuring its relative radial velocity.
+
+### Final Answer
+The relative radial velocity \(v_{r E / S}\) is given by:
+\[v_{r E / S} = v_{\odot} \left(1 - \frac{R_{\odot}}{R}\right) \sin\ell\]
+By rearranging this equation, the distance \(R\) of the object from the galactic center can be expressed as:
+\[R = R_{\odot} \frac{v_{\odot} \sin\ell}{v_{\odot} \sin\ell - v_{r E / S}}\]
+
+\[ \boxed{ \begin{aligned} v_{r E / S} &= v_{\odot} \left(1 - \frac{R_{\odot}}{R}\right) \sin\ell \\ R &= R_{\odot} \frac{v_{\odot} \sin\ell}{v_{\odot} \sin\ell - v_{r E / S}} \end{aligned} } \]

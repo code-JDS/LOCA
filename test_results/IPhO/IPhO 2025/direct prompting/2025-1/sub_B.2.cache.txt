@@ -1,0 +1,52 @@
+### Part B - Rotation curves of galaxies
+
+**B.2 Deduce the mass \(M_{b}\) of the bulge of NGC 6946 from the red rotation curve in Fig. 1(B), in solar mass units. (0.5 pt)**
+
+The problem asks us to determine the mass of the bulge, \(M_b\), of the galaxy NGC 6946 using the provided red rotation curve. The problem states that this curve models the galaxy with a Keplerian potential outside the bulge, which means the entire mass of the bulge is considered to be concentrated at the galactic center for any point outside the bulge.
+
+**1. Theoretical Model**
+
+For a test mass \(m\) in a circular orbit of radius \(r\) outside the bulge, the gravitational force is provided by the central mass \(M_b\). This force must equal the centripetal force required for circular motion:
+\[ F_g = F_c \]
+\[ \frac{G M_b m}{r^2} = \frac{m v_c^2}{r} \]
+where \(G\) is the gravitational constant and \(v_c\) is the circular velocity.
+
+This is consistent with the result from B.1. For a Keplerian potential \(\varphi(r) = -GM_b/r\), we have \(\frac{d\varphi}{dr} = GM_b/r^2\). The circular velocity is then \(v_c = \sqrt{r \frac{d\varphi}{dr}} = \sqrt{r \frac{GM_b}{r^2}} = \sqrt{\frac{GM_b}{r}}\).
+
+From this relation, we can express the mass of the bulge \(M_b\) as:
+\[ M_b = \frac{v_c^2 r}{G} \]
+
+**2. Data Extraction from the Graph**
+
+We need to read a pair of values \((r, v_c)\) from the red curve in Fig. 1(B) for a point outside the bulge (i.e., \(r \ge 1\) kpc). Let's choose a point that is easy to read accurately. The peak of the red curve occurs at the edge of the bulge, which is a well-defined point.
+From the graph, at \(r = 1.0\) kpc, the velocity is \(v_c = 70\) km/s.
+
+Let's verify this with another point to ensure consistency. At \(r = 4.0\) kpc, the velocity is \(v_c = 35\) km/s. For a Keplerian orbit, \(v_c \propto 1/\sqrt{r}\), so \(v_c\sqrt{r}\) should be constant.
+- For the first point: \(70 \text{ km/s} \times \sqrt{1.0 \text{ kpc}} = 70 \text{ km/s} \cdot \sqrt{\text{kpc}}\).
+- For the second point: \(35 \text{ km/s} \times \sqrt{4.0 \text{ kpc}} = 35 \times 2 = 70 \text{ km/s} \cdot \sqrt{\text{kpc}}\).
+The points are consistent with a Keplerian model. We will use the point \((r, v_c) = (1.0 \text{ kpc}, 70 \text{ km/s})\) for our calculation.
+
+**3. Calculation of the Bulge Mass**
+
+First, we convert the values of \(r\) and \(v_c\) to SI units.
+- Radius: \(r = 1.0 \text{ kpc} = 1.0 \times 3.09 \times 10^{19} \text{ m} = 3.09 \times 10^{19} \text{ m}\)
+- Velocity: \(v_c = 70 \text{ km/s} = 70 \times 10^3 \text{ m/s} = 7.0 \times 10^4 \text{ m/s}\)
+
+We use the value of the gravitational constant \(G \approx 6.674 \times 10^{-11} \text{ N}\cdot\text{m}^2/\text{kg}^2\).
+
+Now, we calculate \(M_b\) in kilograms:
+\[ M_b = \frac{(7.0 \times 10^4 \text{ m/s})^2 \times (3.09 \times 10^{19} \text{ m})}{6.674 \times 10^{-11} \text{ N}\cdot\text{m}^2/\text{kg}^2} \]
+\[ M_b = \frac{(49 \times 10^8 \text{ m}^2/\text{s}^2) \times (3.09 \times 10^{19} \text{ m})}{6.674 \times 10^{-11} \text{ m}^3\cdot\text{kg}^{-1}\cdot\text{s}^{-2}} \]
+\[ M_b = \frac{151.41 \times 10^{27}}{6.674 \times 10^{-11}} \text{ kg} \]
+\[ M_b = 22.687 \times 10^{38} \text{ kg} \approx 2.27 \times 10^{39} \text{ kg} \]
+
+**4. Conversion to Solar Mass Units**
+
+Finally, we convert the mass from kilograms to solar mass units (\(M_{\odot}\)), using \(1 M_{\odot} = 1.99 \times 10^{30} \text{ kg}\).
+\[ M_b = \frac{2.27 \times 10^{39} \text{ kg}}{1.99 \times 10^{30} \text{ kg}/M_{\odot}} \]
+\[ M_b \approx 1.14 \times 10^9 M_{\odot} \]
+
+The mass of the bulge of NGC 6946, as deduced from the Keplerian model represented by the red curve, is approximately \(1.14 \times 10^9\) solar masses.
+
+### Final Answer
+\[ \boxed{M_b = 1.14 \times 10^9 M_{\odot}} \]

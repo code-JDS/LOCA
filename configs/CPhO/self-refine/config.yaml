@@ -1,0 +1,21 @@
+test_configs:
+  # Gemini
+  - name: "gemini-2.5-pro"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/self-refine/gemini-2.5-pro/results_42.jsonl"
+    scheme: "loca"
+    temperature: 0.0
+    models:
+      generator: "gemini/gemini-2.5-pro"
+      reviewer: "gemini/gemini-2.5-pro"
+    loca_options:
+      refine_model: "gemini/gemini-2.5-pro"
+      max_error_times: 5
+      target_times: 1
+      n_interpretation: 0
+      stepwise_review: False
+      ablation: true
+
+global_settings:
+  concurrent_limit: 10
+  aux_dir_base: ".aux"

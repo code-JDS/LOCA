@@ -1,0 +1,48 @@
+test_configs:
+  - name: "gemini-2.5-pro"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/single-llm/Gemini-2.5-pro/results_42.jsonl"
+    scheme: "single-llm"
+    temperature: 0.0
+    models:
+      generator: "gemini/gemini-2.5-pro"
+    single_llm_options:
+      structured_output: true
+    tools: []
+
+  - name: "gemini-2.5-flash"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/single-llm/Gemini-2.5-flash/results_42.jsonl"
+    scheme: "single-llm"
+    temperature: 0.0
+    models:
+      generator: "gemini/gemini-2.5-flash"
+    single_llm_options:
+      structured_output: true
+    tools: []
+
+  - name: "o3-2025-04-16"
+    input_path: "problem_set/CPhO/test_41.jsonl"
+    output_path: "test_results/CPhO/single-llm/o3-2025-04-16/results_41.jsonl"
+    scheme: "single-llm"
+    temperature: 0.0
+    models:
+      generator: "openai/o3-2025-04-16"
+    single_llm_options:
+      structured_output: true
+    tools: []
+
+  - name: "gpt-5"
+    input_path: "problem_set/CPhO/test_42.jsonl"
+    output_path: "test_results/CPhO/single-llm/GPT-5/results_42.jsonl"
+    scheme: "single-llm"
+    temperature: 0.0
+    models:
+      generator: "openai/gpt-5"
+    single_llm_options:
+      structured_output: true
+    tools: []
+
+global_settings:
+  concurrent_limit: 10
+  aux_dir_base: ".aux"

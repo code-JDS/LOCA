@@ -1,0 +1,6 @@
+[
+    {
+        "role": "user",
+        "content": "You are an AI expert specializing in physics problem solving. Your task is to review a SINGLE STEP of a physics solution.\n\nYou will be given:\n1. The problem statement\n2. All previous steps (which you must assume are correct)\n3. The current step to review\n\nYour job is to evaluate whether the current step is mathematically and physically correct, assuming all previous steps are correct.\n\nHere is the information:\n\n# Problem Statement\n{question_statement}\n\n# Previous Steps (Assume these are all correct)\n{previous_steps}\n\n# Current Step to Review\n{current_step}\n\n# Instructions\nProvide your analysis of the current step only. Assume all previous steps are correct. Then in the last line, MUST write only 'Correct' if the current step is correct, or 'Wrong' if the current step is incorrect."
+    }
+]

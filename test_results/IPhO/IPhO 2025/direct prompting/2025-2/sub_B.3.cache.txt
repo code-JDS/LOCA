@@ -1,0 +1,70 @@
+Here is a detailed solution to the sub-problem B.3.
+
+### Analysis of the System
+
+The problem asks for the amplitude of the variation of the additional mass, `Δm_add`, due to fluctuations in atmospheric pressure. The two-part barometric tube is held at a fixed position `h_t` such that the mercury surface is initially in the middle of the bulb. The atmospheric pressure is given by `P_a(t) = P_0 + P_1(t)`, where `P_1(t)` is a periodic triangular function with amplitude `A`.
+
+First, we need an expression for `m_add` as a function of the system's state variables. From the definition `\vec{F} = (m_{tb} + m_{add})g \vec{u}_z` and the force balance on the empty tube, we can derive the expression for `m_{add}`.
+
+### Derivation of `m_add`
+
+Let's establish the expression for the force `F` required to hold the tube in equilibrium. We consider the empty tube as our system and sum the vertical forces acting on it. The tube is in contact with the internal mercury column, the external atmosphere, and the external mercury bath.
+The total force `F` is the sum of the tube's weight and the net force from the surrounding fluids. A detailed derivation by integrating the pressure over the tube's surface (as performed in the thought process for sub-problem B.2) yields:
+`F = m_{tb}g + P_a S_t + \rho g (z_l - h_t) (S_b - S_t)`
+where `z_l` is the altitude of the mercury surface inside the tube.
+
+By comparing this with the given equation `F = (m_{tb} + m_{add})g`, we can identify `m_{add}`:
+`m_{add}g = P_a S_t + \rho g (z_l - h_t) (S_b - S_t)`
+`m_{add} = \frac{P_a S_t}{g} + \rho (z_l - h_t) (S_b - S_t)`
+
+### Relating `z_l` to `P_a`
+
+The problem states that the mercury surface always stays within the bulb. The bulb's top is at altitude `h_t + H_b`. Since the mercury column does not fill the tube, a Torricellian vacuum forms above it. The pressure at the top of the mercury column (at altitude `z_l`) is therefore `P_{top} \approx P_{sat} \approx 0`.
+
+The height of the mercury column is determined by the balance between its weight and the external atmospheric pressure. Applying the fundamental principle of hydrostatics between the external mercury surface (at `z=0`, pressure `P_a`) and the internal mercury surface (at `z=z_l`, pressure `P_{top}=0`), we get:
+`P_a = P_{top} + \rho g (z_l - 0)`
+`P_a = \rho g z_l`
+This gives us a direct relationship between the mercury level `z_l` and the atmospheric pressure `P_a`:
+`z_l = \frac{P_a}{\rho g}`
+
+### `m_add` as a Function of `P_a`
+
+Now we can substitute the expression for `z_l` into our equation for `m_{add}`. This will give `m_{add}` as a function of `P_a` and the fixed geometric parameters.
+`m_{add}(P_a) = \frac{P_a S_t}{g} + \rho \left( \frac{P_a}{\rho g} - h_t \right) (S_b - S_t)`
+
+Let's simplify this expression:
+`m_{add}(P_a) = \frac{P_a S_t}{g} + \frac{P_a}{g}(S_b - S_t) - \rho h_t (S_b - S_t)`
+`m_{add}(P_a) = \frac{P_a}{g} (S_t + S_b - S_t) - \rho h_t (S_b - S_t)`
+`m_{add}(P_a) = \frac{P_a S_b}{g} - \rho h_t (S_b - S_t)`
+
+This equation shows that `m_{add}` is a linear function of the atmospheric pressure `P_a`. The term `- \rho h_t (S_b - S_t)` is constant because the tube's position `h_t` is fixed.
+
+### Calculating the Amplitude of Variation `Δm_add`
+
+The atmospheric pressure varies with time as `P_a(t) = P_0 + P_1(t)`. Substituting this into our expression for `m_{add}`:
+`m_{add}(t) = \frac{(P_0 + P_1(t)) S_b}{g} - \rho h_t (S_b - S_t)`
+`m_{add}(t) = \underbrace{\left( \frac{P_0 S_b}{g} - \rho h_t (S_b - S_t) \right)}_{\text{Constant part}} + \underbrace{\frac{P_1(t) S_b}{g}}_{\text{Time-varying part}}`
+
+The variation of `m_{add}` is entirely contained in the second term. The amplitude of the pressure perturbation `P_1(t)` is given as `A`. The amplitude of the variation of `m_{add}`, which we denote `Δm_{add}`, is the amplitude of the time-varying part:
+`Δm_{add} = \text{Amplitude of} \left( \frac{P_1(t) S_b}{g} \right) = \frac{S_b}{g} \times \text{Amplitude of} (P_1(t))`
+`Δm_{add} = \frac{A S_b}{g}`
+
+This is the symbolic expression for the amplitude of the variations of the mass `m_{add}`.
+
+### Numerical Value
+
+We are given the following numerical values:
+-   Amplitude of pressure variation, `A = 5 \times 10^2 \text{ Pa}`
+-   Cross-sectional area of the bulb, `S_b = 200 \text{ cm}^2 = 200 \times 10^{-4} \text{ m}^2 = 0.02 \text{ m}^2`
+-   Gravitational acceleration, `g = 9.8 \text{ m} \cdot \text{s}^{-2}`
+
+Now, we can calculate the numerical value of `Δm_{add}`:
+`Δm_{add} = \frac{(5 \times 10^2 \text{ Pa}) \times (0.02 \text{ m}^2)}{9.8 \text{ m} \cdot \text{s}^{-2}}`
+`Δm_{add} = \frac{10 \text{ N}}{9.8 \text{ m} \cdot \text{s}^{-2}}`
+`Δm_{add} \approx 1.0204 \text{ kg}`
+
+Rounding to three significant figures, consistent with the given data:
+`Δm_{add} \approx 1.02 \text{ kg}`
+
+### Final Answer
+The final answer is $\boxed{\Delta m_{add} = \frac{A S_b}{g} \approx 1.02 \text{ kg}}$.

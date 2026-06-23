@@ -1,0 +1,61 @@
+Here is a detailed solution for the sub-problem B.1.
+
+### Part B. Acoustic emission of a bursting bubble
+
+Small bubbles are nearly spherical as they reach the free surface. Once the liquid film separating the bubble from the air thins out sufficiently, a circular hole of radius \(r\) forms in the film and, driven by surface tension, opens very quickly (Fig. 4. left). The hole opens at constant speed \(v_{f}\) (Fig. 4. right). The film outside the rim remains still, with constant thickness \(h\).
+
+Due to dissipative processes, only half of the difference of the surface energy between \(t\) and \(t+d t\) of the rim and the accumulated liquid is transformed into kinetic energy. We further assume that the variation of the surface of the rim is negligible compared to that of the film.
+
+### B.1 Express \(v_{f}\) in terms of \(\rho_{\ell}\) , \(\sigma\) and \(h\)
+
+To solve this problem, we will apply the principle of energy conservation as stated in the problem. The principle dictates that the rate of increase in kinetic energy, \(\frac{dE_k}{dt}\), is equal to half the rate at which surface energy is released, \(-\frac{1}{2}\frac{dE_s}{dt}\).
+
+**1. Rate of Surface Energy Release (\(-\frac{dE_s}{dt}\))**
+
+As the circular hole in the film expands, its radius \(r\) increases with time. The film has two surfaces (one in contact with the air, one with the CO₂ in the bubble). The retraction of the film leads to a decrease in the total surface area, and thus a release of surface energy.
+
+*   At time \(t\), the area of the hole is \(A_{hole}(t) = \pi r(t)^2\).
+*   The total surface area of the film that has disappeared is \(A_{disappeared}(t) = 2 \times A_{hole}(t) = 2\pi r(t)^2\).
+*   The surface energy of the system, relative to the initial state with no hole, is \(E_s(t) = -\sigma A_{disappeared}(t) = -2\pi\sigma r(t)^2\).
+
+The rate of change of surface energy is found by differentiating \(E_s(t)\) with respect to time:
+\[ \frac{dE_s}{dt} = \frac{d}{dt}(-2\pi\sigma r^2) = -2\pi\sigma \frac{d(r^2)}{dt} = -2\pi\sigma \left(2r \frac{dr}{dt}\right) \]
+We are given that the hole opens at a constant speed \(v_f\), so \(\frac{dr}{dt} = v_f\).
+\[ \frac{dE_s}{dt} = -4\pi\sigma r v_f \]
+The rate at which surface energy is released is the negative of this value:
+\[ -\frac{dE_s}{dt} = 4\pi\sigma r v_f \]
+
+**2. Rate of Kinetic Energy Increase (\(\frac{dE_k}{dt}\))**
+
+The released surface energy is converted into the kinetic energy of the moving rim. The rim is formed by the liquid that constituted the retracted part of the film.
+
+*   The volume of the film that has been retracted to form the rim at time \(t\) is \(V_{rim}(t) = A_{hole}(t) \times h = \pi r(t)^2 h\).
+*   The mass of the rim at time \(t\) is \(m(t) = \rho_{\ell} V_{rim}(t) = \rho_{\ell} \pi r(t)^2 h\).
+*   The rim moves at a constant speed \(v_f\). The kinetic energy of the rim at time \(t\) is \(E_k(t) = \frac{1}{2}m(t)v_f^2\).
+    \[ E_k(t) = \frac{1}{2}(\rho_{\ell} \pi r^2 h)v_f^2 \]
+
+The rate of increase of kinetic energy is the time derivative of \(E_k(t)\). Note that \(\rho_{\ell}\), \(h\), and \(v_f\) are constants.
+\[ \frac{dE_k}{dt} = \frac{d}{dt}\left(\frac{1}{2}\rho_{\ell} \pi h v_f^2 r^2\right) = \frac{1}{2}\rho_{\ell} \pi h v_f^2 \frac{d(r^2)}{dt} = \frac{1}{2}\rho_{\ell} \pi h v_f^2 \left(2r \frac{dr}{dt}\right) \]
+Substituting \(\frac{dr}{dt} = v_f\):
+\[ \frac{dE_k}{dt} = \rho_{\ell} \pi h v_f^2 (r v_f) = \pi \rho_{\ell} h r v_f^3 \]
+
+**3. Applying the Energy Conservation Principle**
+
+The problem states that only half of the released surface energy is transformed into kinetic energy. This can be written as:
+\[ \frac{dE_k}{dt} = \frac{1}{2} \left(-\frac{dE_s}{dt}\right) \]
+Substituting the expressions we derived:
+\[ \pi \rho_{\ell} h r v_f^3 = \frac{1}{2} (4\pi\sigma r v_f) \]
+\[ \pi \rho_{\ell} h r v_f^3 = 2\pi\sigma r v_f \]
+
+**4. Solving for \(v_f\)**
+
+We can simplify the equation by dividing both sides by \(\pi\), \(r\), and \(v_f\) (since \(r>0\) and \(v_f>0\)):
+\[ \rho_{\ell} h v_f^2 = 2\sigma \]
+Finally, we solve for \(v_f\):
+\[ v_f^2 = \frac{2\sigma}{\rho_{\ell} h} \]
+\[ v_f = \sqrt{\frac{2\sigma}{\rho_{\ell} h}} \]
+
+This expression gives the constant speed of the retracting film in terms of the liquid density \(\rho_{\ell}\), surface tension \(\sigma\), and film thickness \(h\).
+
+### Final Answer
+\[ \boxed{ v_{f} = \sqrt{\frac{2\sigma}{\rho_{\ell} h}} } \]

@@ -1,0 +1,62 @@
+Here is a detailed solution for the sub-problem D.3.
+
+### Part D.3: MOND and the Tully-Fisher Relation
+
+This problem asks us to use the MOdified Newtonian Dynamics (MOND) theory to derive the Tully-Fisher exponent, calculate the characteristic acceleration `a₀`, and verify that MOND operates in the correct regime for a galaxy like NGC 6946.
+
+#### 1. Determine the Tully-Fischer exponent in the MOND framework
+
+In MOND, Newton's second law is modified to \(\vec{F}=m \mu(\frac{a}{a_{0}}) \vec{a}\). For a mass `m` in a circular orbit of radius `r` around a central mass `M`, the gravitational force is still given by Newton's law of universal gravitation, \(F = \frac{G M m}{r^2}\). The acceleration is the centripetal acceleration, \(a = \frac{v_c^2}{r}\).
+
+Equating the gravitational force to the MOND inertial force, we get:
+\[ \frac{G M m}{r^2} = m \mu\left(\frac{v_c^2}{r a_0}\right) \frac{v_c^2}{r} \]
+Simplifying by `m` and `r`:
+\[ \frac{G M}{r} = \mu\left(\frac{v_c^2}{r a_0}\right) v_c^2 \]
+
+The problem specifies the regime of extremely low acceleration, \(a \ll a_0\). In this limit, the argument of the function \(\mu\), which is \(x = a/a_0\), is much smaller than 1 (\(x \ll 1\)). The function \(\mu(x)\) is given by \(\mu(x) = \frac{x}{1+x}\). For \(x \ll 1\), we can approximate \(\mu(x) \approx x\).
+
+Substituting this approximation into our equation:
+\[ \frac{G M}{r} \approx \left(\frac{v_c^2}{r a_0}\right) v_c^2 \]
+\[ \frac{G M}{r} \approx \frac{v_c^4}{r a_0} \]
+The radius `r` cancels out, leaving a direct relationship between the central mass `M` and the orbital velocity `v_c` (which is constant in this regime, so we can write it as \(v_{c, \infty}\)):
+\[ G M \approx \frac{v_{c, \infty}^4}{a_0} \]
+Rearranging for `M`, we get:
+\[ M \approx \left(\frac{1}{G a_0}\right) v_{c, \infty}^4 \]
+This equation has the form of the Tully-Fischer relation, \(M = \eta v_{c, \infty}^{\gamma}\). By comparison, we find that the Tully-Fischer exponent predicted by MOND in the low-acceleration limit is:
+\[ \gamma = 4 \]
+This theoretical value is very close to the empirical value of \(\gamma_{TF} = 3.75\) determined in sub-problem D.1.
+
+#### 2. Calculate the MOND acceleration constant \(a_0\)
+
+We can calculate \(a_0\) by rearranging the MOND Tully-Fischer relation:
+\[ a_0 = \frac{v_{c, \infty}^4}{G M} \]
+Here, `M` represents the mass causing the gravitational field, which in MOND is the total baryonic mass (mass of stars, gas, dust, etc.), as MOND is an alternative to dark matter. We can estimate the baryonic mass of NGC 6946 using its asymptotic velocity and the empirical Tully-Fischer relation shown in Fig. 4 (right).
+
+From Fig. 1, the asymptotic velocity for NGC 6946 is \(v_{c, \infty} \approx 160 \text{ km/s}\).
+In logarithmic scale, this is \(\log_{10}(v_{c, \infty} / (\text{km/s})) = \log_{10}(160) \approx 2.20\).
+Looking at the Tully-Fischer plot (Fig. 4, right), for an abscissa of 2.20, the corresponding ordinate on the best-fit line is approximately \(\log_{10}(M_{tot} / M_{\odot}) \approx 10.5\).
+This gives the total baryonic mass of NGC 6946:
+\[ M \approx 10^{10.5} M_{\odot} \approx 3.16 \times 10^{10} M_{\odot} \]
+
+Now we convert the values to SI units to calculate \(a_0\):
+*   \(v_{c, \infty} = 160 \text{ km/s} = 1.60 \times 10^5 \text{ m/s}\)
+*   \(M = 3.16 \times 10^{10} M_{\odot} = 3.16 \times 10^{10} \times (1.99 \times 10^{30} \text{ kg}) = 6.29 \times 10^{40} \text{ kg}\)
+*   \(G = 6.674 \times 10^{-11} \text{ N} \cdot \text{m}^2/\text{kg}^2\)
+
+Now, we compute \(a_0\):
+\[ a_0 = \frac{(1.60 \times 10^5 \text{ m/s})^4}{(6.674 \times 10^{-11} \text{ N} \cdot \text{m}^2/\text{kg}^2) \times (6.29 \times 10^{40} \text{ kg})} \]
+\[ a_0 = \frac{6.5536 \times 10^{20} \text{ m}^4/\text{s}^4}{4.198 \times 10^{30} \text{ m}^3/(\text{s}^2 \cdot \text{kg}) \cdot \text{kg}} = \frac{6.5536 \times 10^{20}}{4.198 \times 10^{30}} \text{ m/s}^2 \]
+\[ a_0 \approx 1.56 \times 10^{-10} \text{ m/s}^2 \]
+Rounding to two significant figures, consistent with the input data from the graph:
+\[ a_0 \approx 1.6 \times 10^{-10} \text{ m} \cdot \text{s}^{-2} \]
+
+#### 3. Show that MOND operates in the correct regime
+
+The deep MOND limit used to derive \(\gamma=4\) requires \(a \ll a_0\). We need to check if this condition holds for the outer regions of NGC 6946. In sub-problem D.2, we calculated the Newtonian acceleration \(a_m\) for these regions:
+\[ a_m \approx 9.2 \times 10^{-11} \text{ m} \cdot \text{s}^{-2} \]
+This is the actual acceleration experienced by the orbiting matter. Let's compare it to our calculated value of \(a_0\):
+\[ \frac{a_m}{a_0} = \frac{9.2 \times 10^{-11} \text{ m/s}^2}{1.6 \times 10^{-10} \text{ m/s}^2} \approx 0.58 \]
+The acceleration \(a_m\) is indeed smaller than \(a_0\), which confirms that the galaxy is in the MOND regime where dynamics are modified from the Newtonian case. The condition \(a \ll a_0\) is not strictly satisfied, as \(a_m\) is of the same order of magnitude as \(a_0\). This is consistent with the observed Tully-Fischer exponent (\(\gamma_{TF} \approx 3.75\)) being slightly different from the deep-MOND prediction (\(\gamma=4\)), as most galaxies lie in the transition region between Newtonian and deep-MOND dynamics.
+
+### Final Answer
+\[ \boxed{ \begin{aligned} \text{Tully-Fischer exponent (MOND): } & \gamma = 4 \\ \text{MOND acceleration constant: } & a_0 \approx 1.6 \times 10^{-10} \text{ m} \cdot \text{s}^{-2} \\ \text{Regime check: } & \text{The acceleration in the outer galaxy is } a_m \approx 9.2 \times 10^{-11} \text{ m/s}^2. \\ & \text{Since } a_m < a_0 \text{, the system is in the MOND regime.} \end{aligned} } \]

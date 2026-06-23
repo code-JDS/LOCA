@@ -1,0 +1,31 @@
+### Part A. Nucleation, growth and rise of bubbles
+
+#### A.1 Express the pressure \(P_{b}\) in terms of \(P_{0}\), \(a\) and \(\sigma\).
+
+The pressure difference between the inside and the outside of a spherical bubble is due to the surface tension of the liquid. This relationship is described by the Young-Laplace equation.
+
+Let's consider a spherical bubble of radius \(a\) submerged in a liquid.
+- The pressure inside the bubble is \(P_{b}\).
+- The pressure in the liquid just outside the bubble is \(P_{0}\).
+- The surface tension of the liquid is \(\sigma\).
+
+To derive the relationship, we can consider the equilibrium of one hemisphere of the bubble. The forces acting on the equatorial plane of this hemisphere are:
+1.  **Force due to internal pressure:** The pressure \(P_{b}\) acts outwards on the circular cross-sectional area \(\pi a^2\). The force is \(F_{int} = P_{b} \cdot \pi a^2\).
+2.  **Force due to external pressure:** The pressure \(P_{0}\) acts inwards on the same cross-sectional area. The force is \(F_{ext} = P_{0} \cdot \pi a^2\).
+3.  **Force due to surface tension:** The surface tension \(\sigma\) acts along the circumference of the circle, \(2\pi a\), pulling the hemisphere inwards to minimize the surface area. The force is \(F_{\sigma} = \sigma \cdot 2\pi a\).
+
+For the hemisphere to be in mechanical equilibrium, the outward force must balance the inward forces:
+\[ F_{int} = F_{ext} + F_{\sigma} \]
+\[ P_{b} \cdot \pi a^2 = P_{0} \cdot \pi a^2 + \sigma \cdot 2\pi a \]
+
+Now, we can solve for the pressure difference \((P_{b} - P_{0})\) by dividing the entire equation by \(\pi a^2\):
+\[ P_{b} = P_{0} + \frac{2\sigma \cdot \pi a}{\pi a^2} \]
+\[ P_{b} - P_{0} = \frac{2\sigma}{a} \]
+
+This is the Young-Laplace equation for a spherical bubble with a single interface. The question asks for the expression of the pressure \(P_{b}\). Rearranging the equation, we get:
+\[ P_{b} = P_{0} + \frac{2\sigma}{a} \]
+
+This equation shows that the pressure inside the bubble, \(P_{b}\), is greater than the surrounding liquid pressure, \(P_{0}\), by an amount \(2\sigma/a\), which is known as the Laplace pressure.
+
+### Final Answer
+\[ \boxed{P_{b} = P_{0} + \frac{2\sigma}{a}} \]

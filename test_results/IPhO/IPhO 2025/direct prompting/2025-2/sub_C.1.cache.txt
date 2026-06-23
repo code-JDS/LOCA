@@ -1,0 +1,76 @@
+### C.1 Determine the threshold `ξ*` such that `M` remains indefinitely at rest when `ξ > ξ*`.
+
+To solve this problem, we need to find the condition under which the driving force on the mass `M` is always smaller than the maximum static friction force `F_s`. The mass `M` will remain at rest at its initial position `x=0` if the net horizontal force exerted by the cables does not exceed the static friction force.
+
+**1. Forces on Mass M**
+
+The mass `M` is subjected to horizontal forces from the two cables and the friction from the surface. Let `T_R` be the tension in the right cable (pulling the barometric tube) and `T_L` be the tension in the left cable (pulling the cistern). The net force from the cables is `T_R - T_L`. The mass `M` will remain at rest if:
+\[ |T_R - T_L| \le F_s \]
+
+**2. Expressing the Tensions**
+
+The pulleys are ideal, so the horizontal tensions are equal to the vertical tensions supporting the tube and the cistern.
+- The tension `T_R` supports the barometric tube (empty mass `m_{tb}`) and the mercury it contains (mass `m_{Hg,in}`).
+  \[ T_R = (m_{tb} + m_{Hg,in})g \]
+- The tension `T_L` supports the cistern (empty mass `m_c`) and the mercury it contains (mass `m_{Hg,out}`).
+  \[ T_L = (m_c + m_{Hg,out})g \]
+
+The total mass of mercury in the system is constant: `m_{Hg,total} = m_{Hg,in} + m_{Hg,out}`.
+The net force from the cables is:
+\[ T_R - T_L = (m_{tb} - m_c)g + (m_{Hg,in} - m_{Hg,out})g \]
+Substituting `m_{Hg,out} = m_{Hg,total} - m_{Hg,in}`:
+\[ T_R - T_L = (m_{tb} - m_c - m_{Hg,total})g + 2g \cdot m_{Hg,in} \]
+
+The problem states that at `t=0`, `x=0`, and `P_1(0)=0` (so `P_a = P_0`), the tensions are balanced: `T_R(0) = T_L(0)`. Let `m_{Hg,in}(0)` be the mass of mercury in the tube at this initial state.
+\[ 0 = (m_{tb} - m_c - m_{Hg,total})g + 2g \cdot m_{Hg,in}(0) \]
+This implies that the constant term `(m_{tb} - m_c - m_{Hg,total})g` is equal to `-2g \cdot m_{Hg,in}(0)`.
+
+Substituting this back into the general expression for `T_R - T_L`, we find how the net force depends on the *change* in the mass of mercury in the tube:
+\[ T_R(t) - T_L(t) = -2g \cdot m_{Hg,in}(0) + 2g \cdot m_{Hg,in}(t) = 2g [m_{Hg,in}(t) - m_{Hg,in}(0)] \]
+
+**3. Relating Mercury Mass to Atmospheric Pressure**
+
+We need to find how `m_{Hg,in}` changes with the atmospheric pressure `P_a = P_0 + P_1(t)`, while the position `x` is held at `0`.
+Let `z_l` be the altitude of the mercury surface inside the tube and `z_{bath}` be the altitude of the mercury surface in the cistern. The barometric law (with `P_{sat}=0`) gives:
+\[ P_a = \rho g (z_l - z_{bath}) \]
+The total volume of mercury `V_l` is constant. It is the sum of the volume in the tube (`V_{in}`) and in the cistern (`V_{out}`).
+- The problem states `z_l` is always in the bulb. The volume in the tube is `V_{in} = S_t H_t + S_b (z_l - h_t - H_t)`, where `h_t` is the altitude of the tube-bulb junction. Since `x=0`, `h_t` is constant.
+- The volume in the cistern is `V_{out} = (S_c - S_t)(z_{bath} - z_c)`, where `z_c` is the altitude of the cistern's bottom. Since `x=0`, `z_c` is constant.
+
+The total volume is:
+\[ V_l = V_{in} + V_{out} = [S_t H_t + S_b (z_l - h_t - H_t)] + (S_c - S_t)(z_{bath} - z_c) \]
+Substitute `z_{bath} = z_l - P_a/(\rho g)`:
+\[ V_l = S_t H_t + S_b (z_l - h_t - H_t) + (S_c - S_t)(z_l - \frac{P_a}{\rho g} - z_c) \]
+We can group the terms containing the variable `z_l` and `P_a`:
+\[ V_l = z_l(S_b + S_c - S_t) - \frac{P_a}{\rho g}(S_c - S_t) + \text{Constant terms} \]
+Solving for `z_l`:
+\[ z_l = \frac{P_a}{\rho g} \frac{S_c - S_t}{S_b + S_c - S_t} + \text{Constant'} \]
+The mass of mercury in the tube is `m_{Hg,in} = \rho V_{in} = \rho [S_t H_t + S_b (z_l - h_t - H_t)] = \rho S_b z_l + \text{Constant''}`.
+The change in `m_{Hg,in}` with `P_a` is:
+\[ \frac{d m_{Hg,in}}{d P_a} = \rho S_b \frac{d z_l}{d P_a} = \rho S_b \left( \frac{1}{\rho g} \frac{S_c - S_t}{S_b + S_c - S_t} \right) = \frac{S_b (S_c - S_t)}{g(S_b + S_c - S_t)} \]
+The change in mass `m_{Hg,in}(t) - m_{Hg,in}(0)` due to the pressure perturbation `P_1(t) = P_a(t) - P_0` is:
+\[ m_{Hg,in}(t) - m_{Hg,in}(0) = \frac{d m_{Hg,in}}{d P_a} P_1(t) = \frac{S_b (S_c - S_t)}{g(S_b + S_c - S_t)} P_1(t) \]
+
+**4. Condition for Remaining at Rest**
+
+The net driving force is:
+\[ T_R(t) - T_L(t) = 2g [m_{Hg,in}(t) - m_{Hg,in}(0)] = \frac{2 S_b (S_c - S_t)}{S_b + S_c - S_t} P_1(t) \]
+The mass `M` remains at rest if `|T_R - T_L| \le F_s` for all `t`. This must hold for the maximum value of `|P_1(t)|`, which is the amplitude `A`.
+\[ \frac{2 S_b (S_c - S_t)}{S_b + S_c - S_t} A \le F_s \]
+The problem provides the definition of `ξ` and states that the approximation `S_t \ll S_b, S_c` is valid.
+Using this approximation, `S_c - S_t \approx S_c` and `S_b + S_c - S_t \approx S_b + S_c`. The inequality becomes:
+\[ \frac{2 S_b S_c}{S_b + S_c} A \le F_s \]
+Now, we use the approximate expression for `ξ`:
+\[ \xi = \frac{S_b+S_c}{S_b S_c} \frac{F_s}{A} \]
+From this, we express `F_s`:
+\[ F_s = \xi A \frac{S_b S_c}{S_b + S_c} \]
+Substitute this into our inequality:
+\[ \frac{2 S_b S_c}{S_b + S_c} A \le \xi A \frac{S_b S_c}{S_b + S_c} \]
+Simplifying this inequality by dividing by the positive common factor gives:
+\[ 2 \le \xi \]
+The mass `M` remains at rest if `\xi \ge 2`. The question asks for the threshold `ξ*` such that `M` remains at rest for `\xi > \xi*`. This threshold is the boundary value of the condition.
+
+Therefore, the threshold is `ξ* = 2`.
+
+### Final Answer
+\[ \boxed{\xi^{*} = 2} \]

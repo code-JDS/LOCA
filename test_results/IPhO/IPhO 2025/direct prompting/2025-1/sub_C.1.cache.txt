@@ -1,0 +1,51 @@
+### Part C - Mass distribution in our galaxy
+
+#### C.1 Find the equation of motion on \(z\) for the vertical motion of a point mass \(m\) in such a potential, assuming \(r\) is constant. Show that, if \(r < r_{0}\) , the galactic plane is a stable equilibrium state by giving the angular frequency \(\omega_{0}\) of small oscillations around it. (0.5 pt)
+
+**1. Equation of Motion**
+
+The gravitational potential is given by:
+\[\varphi_{G}(r, z)=\varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right]\]
+The potential energy of a point mass \(m\) in this potential is \(U_G(r, z) = m \varphi_G(r, z)\). The force on the mass is given by \(\vec{F} = -\nabla U_G\). We are interested in the vertical motion, so we need the z-component of the force, \(F_z\).
+\[F_z = -\frac{\partial U_G}{\partial z} = -m \frac{\partial \varphi_G}{\partial z}\]
+We compute the partial derivative of \(\varphi_G\) with respect to \(z\), treating \(r\) as a constant:
+\[\frac{\partial \varphi_G}{\partial z} = \frac{\partial}{\partial z} \left( \varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right] \right)\]
+Using the chain rule for the exponential term:
+\[\frac{\partial \varphi_G}{\partial z} = \varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \cdot \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right] \cdot \left(-\frac{2z}{z_0^2}\right)\]
+\[\frac{\partial \varphi_G}{\partial z} = -\frac{2z}{z_0^2} \varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right]\]
+The force \(F_z\) is then:
+\[F_z = -m \left( -\frac{2z}{z_0^2} \varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right] \right) = \frac{2mz}{z_0^2} \varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right]\]
+The equation of motion is \(m \ddot{z} = F_z\). Dividing by \(m\), we get:
+\[\ddot{z} = \frac{2z}{z_0^2} \varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right]\]
+
+**2. Stability Analysis**
+
+An equilibrium position occurs where the net force is zero. Let's evaluate \(F_z\) at \(z=0\) (the galactic plane):
+\[F_z(z=0) = \frac{2m(0)}{z_0^2} \varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \exp(0) = 0\]
+Thus, \(z=0\) is an equilibrium position.
+
+For the equilibrium to be stable, the force must be a restoring force, meaning it must be directed opposite to the displacement from equilibrium. Let's analyze the sign of \(F_z\) for a small displacement \(z\).
+\[F_z = \left[ \frac{2m}{z_0^2} \varphi_{0} \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right] \ln \left(\frac{r}{r_{0}}\right) \right] z\]
+The stability depends on the sign of the term in the square brackets. We are given \(\varphi_0 > 0\). The terms \(m\), \(z_0^2\), and the exponential are always positive. The sign is therefore determined by \(\ln(r/r_0)\).
+The problem specifies the condition \(r < r_0\). This implies \(\frac{r}{r_0} < 1\), and therefore \(\ln(\frac{r}{r_0}) < 0\).
+Consequently, the entire term in the square brackets is negative. We can write \(F_z = -k(z) \cdot z\), where \(k(z) > 0\). This shows that the force is always directed towards the equilibrium position \(z=0\). Therefore, the galactic plane is a stable equilibrium state.
+
+**3. Angular Frequency of Small Oscillations**
+
+For small oscillations around \(z=0\), we have \(|z| \ll z_0\). We can use the first-order Taylor approximation for the exponential term: \(\exp[- (z/z_0)^2] \approx 1\).
+The equation of motion simplifies to:
+\[\ddot{z} \approx \frac{2z}{z_0^2} \varphi_{0} \ln \left(\frac{r}{r_{0}}\right)\]
+Rearranging this into the standard form for simple harmonic motion (SHM), \(\ddot{z} + \omega_0^2 z = 0\):
+\[\ddot{z} - \left( \frac{2 \varphi_{0}}{z_0^2} \ln \left(\frac{r}{r_{0}}\right) \right) z = 0\]
+By comparison, we identify the square of the angular frequency \(\omega_0^2\):
+\[\omega_0^2 = - \frac{2 \varphi_{0}}{z_0^2} \ln \left(\frac{r}{r_{0}}\right)\]
+Since \(r < r_0\), \(\ln(r/r_0)\) is negative, which ensures that \(\omega_0^2\) is positive. We can write this more explicitly as \(\omega_0^2 = \frac{2 \varphi_{0}}{z_0^2} \ln \left(\frac{r_0}{r}\right)\).
+The angular frequency is the positive square root:
+\[\omega_0 = \sqrt{-\frac{2 \varphi_{0}}{z_0^2} \ln \left(\frac{r}{r_{0}}\right)}\]
+
+### Final Answer
+The equation of motion for the vertical motion is:
+\[ \ddot{z} = \frac{2z}{z_0^2} \varphi_{0} \ln \left(\frac{r}{r_{0}}\right) \exp \left[-\left(\frac{z}{z_{0}}\right)^{2}\right] \]
+At \(z=0\), the force \(F_z\) is zero, so it is an equilibrium position. For \(r < r_0\), the term \(\ln(r/r_0)\) is negative. This makes the force \(F_z\) a restoring force (\(F_z \propto -z\)), proving that the equilibrium at \(z=0\) is stable.
+The angular frequency of small oscillations around \(z=0\) is:
+\[ \boxed{ \omega_{0} = \sqrt{-\frac{2 \varphi_{0}}{z_0^2} \ln \left(\frac{r}{r_{0}}\right)} } \]

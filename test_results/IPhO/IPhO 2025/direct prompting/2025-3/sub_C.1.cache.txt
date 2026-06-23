@@ -1,0 +1,75 @@
+To determine the pressure \(P_i\) of the gaseous \(\text{CO}_2\) in the sealed bottle, we must consider the distribution of the total amount of \(\text{CO}_2\) between the liquid and gas phases. The system is in equilibrium at a given temperature \(T_0\).
+
+### 1. Mass Balance Equation
+
+The total number of moles of \(\text{CO}_2\), \(n_T\), is the sum of the moles dissolved in the liquid champagne, \(n_L\), and the moles in the gaseous phase in the headspace, \(n_G\).
+\[ n_T = n_L + n_G \]
+We are given \(n_T = 0.2 \text{ mol}\).
+
+### 2. Moles in the Liquid Phase (\(n_L\))
+
+The number of moles of \(\text{CO}_2\) dissolved in the liquid is the product of its molar concentration, \(c_{\ell}\), and the volume of the liquid, \(V_L\).
+\[ n_L = c_{\ell} V_L \]
+The concentration \(c_{\ell}\) is related to the partial pressure of \(\text{CO}_2\) in the gas phase, \(P_i\), by Henry's Law:
+\[ c_{\ell} = k_H P_i \]
+where \(k_H\) is Henry's constant, which depends on the temperature.
+Substituting this into the expression for \(n_L\), we get:
+\[ n_L = k_H P_i V_L \]
+
+### 3. Moles in the Gas Phase (\(n_G\))
+
+The headspace of volume \(V_G\) contains only gaseous \(\text{CO}_2\). Assuming it behaves as an ideal gas, the number of moles \(n_G\) can be found using the ideal gas law:
+\[ P_i V_G = n_G R T_0 \]
+where \(R\) is the ideal gas constant and \(T_0\) is the absolute temperature.
+Solving for \(n_G\), we get:
+\[ n_G = \frac{P_i V_G}{R T_0} \]
+
+### 4. Solving for the Pressure \(P_i\)
+
+Now we substitute the expressions for \(n_L\) and \(n_G\) back into the mass balance equation:
+\[ n_T = k_H P_i V_L + \frac{P_i V_G}{R T_0} \]
+We can factor out \(P_i\) to solve for it:
+\[ n_T = P_i \left( k_H V_L + \frac{V_G}{R T_0} \right) \]
+\[ P_i = \frac{n_T}{k_H V_L + \frac{V_G}{R T_0}} \]
+
+### 5. Numerical Calculation
+
+We will now calculate \(P_i\) for the two given temperatures.
+**Given data:**
+- \(n_T = 0.2 \text{ mol}\)
+- \(V_L = 750 \text{ mL} = 7.5 \times 10^{-4} \text{ m}^3\)
+- \(V_G = 25 \text{ mL} = 2.5 \times 10^{-5} \text{ m}^3\)
+- \(R = 8.314 \text{ J} \cdot \text{mol}^{-1} \cdot \text{K}^{-1}\)
+
+**Case 1: \(T_0 = 6^{\circ} \text{C}\)**
+- Temperature in Kelvin: \(T_0 = 6 + 273.15 = 279.15 \text{ K}\)
+- Henry's constant: \(k_H(6^{\circ} \text{C}) = 5.4 \times 10^{-4} \text{ mol} \cdot \text{m}^{-3} \cdot \text{Pa}^{-1}\)
+
+First, calculate the terms in the denominator:
+- \(k_H V_L = (5.4 \times 10^{-4} \text{ mol} \cdot \text{m}^{-3} \cdot \text{Pa}^{-1}) \times (7.5 \times 10^{-4} \text{ m}^3) = 4.05 \times 10^{-7} \text{ mol} \cdot \text{Pa}^{-1}\)
+- \(\frac{V_G}{R T_0} = \frac{2.5 \times 10^{-5} \text{ m}^3}{8.314 \text{ J} \cdot \text{mol}^{-1} \cdot \text{K}^{-1} \times 279.15 \text{ K}} = \frac{2.5 \times 10^{-5}}{2320.6} \text{ mol} \cdot \text{Pa}^{-1} = 1.077 \times 10^{-8} \text{ mol} \cdot \text{Pa}^{-1}\)
+
+The denominator is \(4.05 \times 10^{-7} + 1.077 \times 10^{-8} = 4.1577 \times 10^{-7} \text{ mol} \cdot \text{Pa}^{-1}\).
+Now, calculate \(P_i\):
+\[ P_i(6^{\circ} \text{C}) = \frac{0.2 \text{ mol}}{4.1577 \times 10^{-7} \text{ mol} \cdot \text{Pa}^{-1}} = 481035 \text{ Pa} \]
+Converting to bars (\(1 \text{ bar} = 10^5 \text{ Pa}\)):
+\[ P_i(6^{\circ} \text{C}) \approx 4.81 \text{ bar} \]
+
+**Case 2: \(T_0 = 20^{\circ} \text{C}\)**
+- Temperature in Kelvin: \(T_0 = 20 + 273.15 = 293.15 \text{ K}\)
+- Henry's constant: \(k_H(20^{\circ} \text{C}) = 3.3 \times 10^{-4} \text{ mol} \cdot \text{m}^{-3} \cdot \text{Pa}^{-1}\)
+
+Calculate the terms in the denominator:
+- \(k_H V_L = (3.3 \times 10^{-4} \text{ mol} \cdot \text{m}^{-3} \cdot \text{Pa}^{-1}) \times (7.5 \times 10^{-4} \text{ m}^3) = 2.475 \times 10^{-7} \text{ mol} \cdot \text{Pa}^{-1}\)
+- \(\frac{V_G}{R T_0} = \frac{2.5 \times 10^{-5} \text{ m}^3}{8.314 \text{ J} \cdot \text{mol}^{-1} \cdot \text{K}^{-1} \times 293.15 \text{ K}} = \frac{2.5 \times 10^{-5}}{2437.0} \text{ mol} \cdot \text{Pa}^{-1} = 1.026 \times 10^{-8} \text{ mol} \cdot \text{Pa}^{-1}\)
+
+The denominator is \(2.475 \times 10^{-7} + 1.026 \times 10^{-8} = 2.5776 \times 10^{-7} \text{ mol} \cdot \text{Pa}^{-1}\).
+Now, calculate \(P_i\):
+\[ P_i(20^{\circ} \text{C}) = \frac{0.2 \text{ mol}}{2.5776 \times 10^{-7} \text{ mol} \cdot \text{Pa}^{-1}} = 775920 \text{ Pa} \]
+Converting to bars:
+\[ P_i(20^{\circ} \text{C}) \approx 7.76 \text{ bar} \]
+
+As expected, the pressure is higher at a higher temperature because the solubility of \(\text{CO}_2\) decreases (lower \(k_H\)), forcing more \(\text{CO}_2\) into the gas phase.
+
+### Final Answer
+\[ \boxed{ P_{i}(6^{\circ} \text{C}) = 4.81 \text{ bar}, \quad P_{i}(20^{\circ} \text{C}) = 7.76 \text{ bar} } \]

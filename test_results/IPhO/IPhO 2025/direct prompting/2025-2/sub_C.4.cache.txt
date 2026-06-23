@@ -1,0 +1,89 @@
+Here is a detailed solution to the problem.
+
+### Analysis of Energy Dissipation
+
+The energy recovered by the clock in this model is the energy `W` dissipated by the solid friction force `F_s` on the mass `M` over one period `τ₁`. The work done by friction is given by `W = F_s \times d_{total}`, where `d_{total}` is the total distance traveled by the mass `M` during one period.
+
+The system is assumed to be in a permanent regime of oscillation. Due to the symmetric nature of the driving pressure `P₁(t)`, the motion of the mass `M` will also be symmetric. In one full period `τ₁`, the mass moves from its maximum positive displacement `+x_{max}` to its maximum negative displacement `-x_{max}` and back to `+x_{max}`. The total distance traveled is therefore `d_{total} = 4x_{max}`.
+The dissipated energy is:
+\[ W = 4 F_s x_{max} \]
+
+The maximum displacement `x_{max}` depends on which of the two regimes (identified in C.3) the system is in. The regimes are determined by the parameters `ξ` and `λ`.
+
+*   **Regime 1 (No stops):** The mass oscillates without reaching the stops at `±X`. This occurs when `λ > 1 - ξ/2`. The maximum displacement `x_{max}` is reached when the driving pressure is at its peak (`P₁ = A`). From the slip-line equation derived in C.3, `x/X = (1/λ)(P₁/A - ξ/2)`, we get:
+    \[ x_{max} = \frac{X}{\lambda} \left(1 - \frac{\xi}{2}\right) \]
+*   **Regime 2 (Hits stops):** The mass travels between the stops. This occurs when `λ ≤ 1 - ξ/2`. The maximum displacement is limited by the stops:
+    \[ x_{max} = X \]
+
+We want to maximize `W` by adjusting `F_s` and `X`.
+
+### Optimization Strategy
+
+Let's analyze the energy `W` in both regimes.
+
+1.  **In Regime 2 (`λ ≤ 1 - ξ/2`)**:
+    `W = 4 F_s X`. For a fixed friction force `F_s`, the dissipated energy `W` increases linearly with `X`. To maximize `W`, we should choose the largest possible `X` for that `F_s` within this regime. The boundary of the regime is given by the equality `λ = 1 - ξ/2`. Therefore, the maximum energy for a given `F_s` in this regime is achieved on this boundary.
+
+2.  **In Regime 1 (`λ > 1 - ξ/2`)**:
+    `W = 4 F_s x_{max} = 4 F_s \frac{X}{\lambda} \left(1 - \frac{\xi}{2}\right)`.
+    Let's substitute the definition of `λ = 2ρgX/A`:
+    \[ W = 4 F_s \frac{X}{2\rho g X / A} \left(1 - \frac{\xi}{2}\right) = \frac{2A F_s}{\rho g} \left(1 - \frac{\xi}{2}\right) \]
+    This expression for `W` is independent of `X`. For any point `(F_s, X)` in Regime 1, the energy `W` is the same as the energy at the point `(F_s, X_{boundary})` on the boundary, where `X_{boundary}` is the `X` value that satisfies `λ = 1 - ξ/2`.
+
+Since the maximum energy in Regime 2 is on the boundary, and the energy in Regime 1 is constant with `X` and equal to the value on the boundary, the global maximum for `W` must lie on the boundary line defined by `λ = 1 - ξ/2`.
+
+### Finding the Optimal Values
+
+The optimization problem reduces to maximizing `W` subject to the constraint `λ = 1 - ξ/2`.
+On this boundary, `x_{max} = X`, so `W = 4 F_s X`. We can use the constraint to express `X` in terms of `F_s`.
+Using the approximations `S_t \ll S_b, S_c` and `S_b \approx S_c`:
+\[ \xi \approx \frac{S_b+S_c}{S_b S_c} \frac{F_s}{A} \approx \frac{2S_c}{S_c^2} \frac{F_s}{A} = \frac{2 F_s}{A S_c} \]
+\[ \lambda \approx \frac{2\rho g X}{A} \]
+The constraint `λ = 1 - ξ/2` becomes:
+\[ \frac{2\rho g X}{A} = 1 - \frac{1}{2} \left(\frac{2 F_s}{A S_c}\right) = 1 - \frac{F_s}{A S_c} \]
+Solving for `X` as a function of `F_s`:
+\[ X(F_s) = \frac{A}{2\rho g} \left(1 - \frac{F_s}{A S_c}\right) \]
+Now, substitute this into the expression for `W`:
+\[ W(F_s) = 4 F_s X(F_s) = 4 F_s \frac{A}{2\rho g} \left(1 - \frac{F_s}{A S_c}\right) = \frac{2A}{\rho g} F_s - \frac{2}{\rho g S_c} F_s^2 \]
+This is a quadratic function of `F_s`, representing a downward-opening parabola. To find the maximum, we take the derivative with respect to `F_s` and set it to zero:
+\[ \frac{dW}{dF_s} = \frac{2A}{\rho g} - \frac{4}{\rho g S_c} F_s = 0 \]
+Solving for the optimal friction force `F_s^*`:
+\[ \frac{4 F_s^*}{\rho g S_c} = \frac{2A}{\rho g} \implies F_s^* = \frac{2A \rho g S_c}{4 \rho g} = \frac{A S_c}{2} \]
+
+Now we find the corresponding optimal stop distance `X^*` by substituting `F_s^*` back into the expression for `X(F_s)`:
+\[ X^* = \frac{A}{2\rho g} \left(1 - \frac{F_s^*}{A S_c}\right) = \frac{A}{2\rho g} \left(1 - \frac{A S_c / 2}{A S_c}\right) = \frac{A}{2\rho g} \left(1 - \frac{1}{2}\right) = \frac{A}{4\rho g} \]
+
+Finally, we calculate the maximum energy `W^*` using `W^* = 4 F_s^* X^*`:
+\[ W^* = 4 \left(\frac{A S_c}{2}\right) \left(\frac{A}{4\rho g}\right) = \frac{A^2 S_c}{2\rho g} \]
+
+### Numerical Calculation
+
+We are given:
+*   `A = 5 \times 10^2` Pa
+*   `S_c = 210` cm² = `2.1 \times 10^{-2}` m²
+*   `ρ = 13.5 \times 10^3` kg·m⁻³
+*   `g = 9.8` m·s⁻²
+
+We calculate the numerical value of `W^*`:
+\[ W^* = \frac{(5 \times 10^2)^2 \times (2.1 \times 10^{-2})}{2 \times (13.5 \times 10^3) \times 9.8} \]
+\[ W^* = \frac{(25 \times 10^4) \times (2.1 \times 10^{-2})}{26.46 \times 10^4} = \frac{52.5 \times 10^2}{26.46 \times 10^4} \]
+\[ W^* = \frac{5250}{264600} \approx 0.019841... \text{ J} \]
+Rounding to an appropriate number of significant figures (e.g., three):
+\[ W^* \approx 1.98 \times 10^{-2} \text{ J} \]
+
+### Final Answer
+
+The optimal values for the friction force `F_s` and the stop distance `X` that maximize the dissipated energy `W` are denoted `F_s^*` and `X^*`. The corresponding maximum energy is `W^*`.
+
+The expressions for these optimal values, using the approximations `S_b \approx S_c` and `S_t \ll S_b`, are:
+*   Optimal friction force:
+    \[ F_s^* = \frac{A S_c}{2} \]
+*   Optimal stop distance:
+    \[ X^* = \frac{A}{4\rho g} \]
+*   Maximum dissipated energy per cycle:
+    \[ W^* = \frac{A^2 S_c}{2\rho g} \]
+
+The numerical value for the maximum energy `W^*` is:
+\[ W^* = \frac{(5 \times 10^2 \text{ Pa})^2 \times (2.1 \times 10^{-2} \text{ m}^2)}{2 \times (13.5 \times 10^3 \text{ kg/m}^3) \times (9.8 \text{ m/s}^2)} \approx 1.98 \times 10^{-2} \text{ J} \]
+
+\[ \boxed{ F_s^* = \frac{A S_c}{2}, \quad X^* = \frac{A}{4\rho g}, \quad W^* = \frac{A^2 S_c}{2\rho g} \approx 1.98 \times 10^{-2} \text{ J} } \]

@@ -1,0 +1,34 @@
+### Part B - Rotation curves of galaxies
+
+**B.1 In the case of a circular orbit, determine the velocity \(v_{c}\) of an object on a circular orbit passing through in terms of \(r\) and \(\frac{d \varphi}{d r}\)**
+
+An object of mass \(m\) moving in a circular orbit of radius \(r\) at a constant tangential velocity \(v_c\) is subject to a centripetal force, \(F_c\), directed towards the center of the orbit. The magnitude of this force is given by Newton's second law:
+\[ F_c = \frac{m v_c^2}{r} \]
+
+In this problem, the object is moving under the influence of a gravitational field described by a spherically symmetric potential \(\varphi(r)\). The gravitational potential energy of the mass \(m\) is \(U(r) = m \varphi(r)\). The gravitational force, \(\vec{F}_g\), is the negative gradient of the potential energy:
+\[ \vec{F}_g = -\nabla U(r) = -m \nabla \varphi(r) \]
+
+Since the potential \(\varphi\) depends only on the radial distance \(r\), its gradient in spherical coordinates simplifies to:
+\[ \nabla \varphi(r) = \frac{d\varphi}{dr} \hat{r} \]
+where \(\hat{r}\) is the unit vector in the radial direction, pointing away from the center \(O\).
+
+The gravitational force is therefore:
+\[ \vec{F}_g = -m \frac{d\varphi}{dr} \hat{r} \]
+This force is directed along the radial line. For an attractive gravitational force, it must point towards the center of the galaxy (in the \(-\hat{r}\) direction). This implies that \(\frac{d\varphi}{dr}\) must be positive. The magnitude of the gravitational force is:
+\[ F_g = \left\| -m \frac{d\varphi}{dr} \hat{r} \right\| = m \frac{d\varphi}{dr} \]
+
+For a stable circular orbit, the gravitational force provides the necessary centripetal force. Therefore, we equate the magnitudes of the two forces:
+\[ F_c = F_g \]
+\[ \frac{m v_c^2}{r} = m \frac{d\varphi}{dr} \]
+
+We can cancel the mass \(m\) from both sides of the equation:
+\[ \frac{v_c^2}{r} = \frac{d\varphi}{dr} \]
+
+Finally, we solve for the circular velocity \(v_c\):
+\[ v_c^2 = r \frac{d\varphi}{dr} \]
+\[ v_c = \sqrt{r \frac{d\varphi}{dr}} \]
+
+This expression gives the velocity of an object on a circular orbit of radius \(r\) in terms of the radius and the radial derivative of the gravitational potential.
+
+### Final Answer
+\[ \boxed{v_c = \sqrt{r \frac{d\varphi}{dr}}} \]

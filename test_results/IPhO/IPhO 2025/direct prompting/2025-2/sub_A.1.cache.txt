@@ -1,0 +1,56 @@
+### A.1: Pressure and Force on the Submerged Tube
+
+This sub-problem asks for two quantities for the configuration shown in Fig. 1 (case b), where a cylindrical tube is lifted to a height \(h\) but remains completely filled with liquid:
+1.  The pressure \(P_w\) in the water at the top of the tube.
+2.  The force \(\vec{F}\) required to maintain the tube in equilibrium.
+
+---
+
+#### 1. Calculation of the Pressure \(P_w\)
+
+We apply the fundamental principle of hydrostatics, which relates pressure difference to height difference in a static fluid. Let's consider two points:
+-   Point A is at the free surface of the water bath outside the tube. Its altitude is \(z_A = 0\), and the pressure is the atmospheric pressure, \(P_A = P_0\).
+-   Point B is at the top of the water column inside the tube. Its altitude is \(z_B = h\), and the pressure is \(P_w\).
+
+The hydrostatic pressure relation is given by:
+\[ P_A - P_B = \rho g (z_B - z_A) \]
+Substituting the values for our points A and B:
+\[ P_0 - P_w = \rho g (h - 0) \]
+Solving for \(P_w\), we get:
+\[ P_w = P_0 - \rho g h \]
+
+This expression shows that the pressure at the top of the water column decreases linearly as the tube is lifted. This is valid as long as \(P_w\) remains positive and above the saturated vapor pressure of the liquid, ensuring no vacuum or vapor bubble forms.
+
+---
+
+#### 2. Calculation of the Force \(\vec{F}\)
+
+To find the force \(\vec{F}\) required to keep the tube in equilibrium, we analyze the forces acting on the tube in the vertical direction. The tube is stationary, so the net force on it is zero. The vertical forces are:
+
+1.  **Applied Force:** \(\vec{F} = F \overrightarrow{u_{z}}\), directed upwards.
+2.  **Gravitational Force:** \(\vec{W} = -mg \overrightarrow{u_{z}}\), the weight of the tube, directed downwards.
+3.  **Net Pressure Force on the Top Surface:** The top surface of the tube is a circular disk of area \(S\) at altitude \(h\).
+    -   The air outside at pressure \(P_0\) exerts an upward force \(\vec{F}_{air,top} = P_0 S \overrightarrow{u_{z}}\).
+    -   The water inside at pressure \(P_w\) exerts a downward force \(\vec{F}_{w,top} = -P_w S \overrightarrow{u_{z}}\).
+    -   The net force on the top surface is the sum of these two: \(\vec{F}_{top} = (P_0 - P_w) S \overrightarrow{u_{z}}\).
+4.  **Pressure Force on the Side Walls:** The pressure forces on the vertical walls of the tube (both inner and outer surfaces) are purely horizontal. Due to the cylindrical symmetry, these forces cancel each other out and have no net vertical component.
+
+The condition for static equilibrium (\(\sum \vec{F} = \vec{0}\)) in the vertical direction is:
+\[ \vec{F} + \vec{W} + \vec{F}_{top} = \vec{0} \]
+Substituting the expressions for the forces:
+\[ F \overrightarrow{u_{z}} - mg \overrightarrow{u_{z}} + (P_0 - P_w) S \overrightarrow{u_{z}} = \vec{0} \]
+Now, we substitute the expression for \(P_w = P_0 - \rho g h\) into the equilibrium equation:
+\[ F - mg + (P_0 - (P_0 - \rho g h)) S = 0 \]
+\[ F - mg + (\rho g h) S = 0 \]
+Solving for the magnitude \(F\):
+\[ F = mg - \rho g h S \]
+The force vector \(\vec{F}\) is therefore:
+\[ \vec{F} = (mg - \rho g h S) \overrightarrow{u_{z}} \]
+
+This result indicates that the required force depends on the weight of the tube and a term related to the height of the water column above the external water level. The term \(-\rho g h S\) represents the net upward "suction" force on the top of the tube due to the pressure difference. If this suction force is larger than the tube's weight, a downward force (\(F<0\)) would be needed to maintain equilibrium.
+
+### Final Answer
+The pressure \(P_w\) at the top of the tube is given by:
+\[ P_w = P_0 - \rho g h \]
+The force \(\vec{F}\) necessary to maintain the tube in equilibrium is:
+\[ \boxed{ P_w = P_0 - \rho g h \quad \text{and} \quad \vec{F} = (mg - \rho g h S) \overrightarrow{u_{z}} } \]

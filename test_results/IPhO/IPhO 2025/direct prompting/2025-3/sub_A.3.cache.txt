@@ -1,0 +1,88 @@
+This problem asks us to analyze the growth of a CO₂ bubble in a glass of champagne. We need to determine the number of moles of CO₂ in the bubble, derive the time evolution of the bubble's radius for two different growth models, compare these models with experimental data, and finally calculate the relevant physical constant for the model that fits the data.
+
+### 1. Number of Moles in the Bubble (\(n_c\))
+
+We model the CO₂ inside the bubble as an ideal gas. The ideal gas law is given by:
+\[ P_b V_b = n_c R T_0 \]
+where \(P_b\) is the pressure inside the bubble, \(V_b\) is the volume of the bubble, \(n_c\) is the number of moles of CO₂, \(R\) is the ideal gas constant, and \(T_0\) is the temperature.
+
+The bubble is spherical with radius \(a\), so its volume is \(V_b = \frac{4}{3}\pi a^3\).
+The problem states that for the bubbles being studied, they are large enough that the excess pressure due to surface tension can be neglected. This means the pressure inside the bubble is approximately equal to the ambient pressure in the liquid, which is the atmospheric pressure \(P_0\).
+\[ P_b \approx P_0 \]
+Substituting these into the ideal gas law:
+\[ P_0 \left( \frac{4}{3}\pi a^3 \right) = n_c R T_0 \]
+Solving for \(n_c\), we get the number of moles of CO₂ in the bubble as a function of its radius \(a\):
+\[ n_c(a) = \frac{4\pi P_0 a^3}{3 R T_0} \]
+
+### 2. Bubble Growth Models: Finding \(a(t)\)
+
+The growth of the bubble is due to the diffusion of dissolved CO₂ from the liquid into the bubble. The rate of change of the number of moles in the bubble, \(\frac{dn_c}{dt}\), is equal to the molar flux \(j\) multiplied by the surface area of the bubble, \(A_b = 4\pi a^2\).
+\[ \frac{dn_c}{dt} = j \cdot A_b = j \cdot 4\pi a^2 \]
+We can also find \(\frac{dn_c}{dt}\) by differentiating our expression for \(n_c(a)\) with respect to time:
+\[ \frac{dn_c}{dt} = \frac{d}{dt} \left( \frac{4\pi P_0 a^3}{3 R T_0} \right) = \frac{4\pi P_0}{3 R T_0} \cdot 3a^2 \frac{da}{dt} = \frac{4\pi P_0 a^2}{R T_0} \frac{da}{dt} \]
+Equating the two expressions for \(\frac{dn_c}{dt}\):
+\[ \frac{4\pi P_0 a^2}{R T_0} \frac{da}{dt} = j \cdot 4\pi a^2 \]
+This simplifies to a general relationship between the bubble growth rate \(\frac{da}{dt}\) and the molar flux \(j\):
+\[ \frac{da}{dt} = \frac{R T_0}{P_0} j \]
+The problem provides two models for the flux \(j\), both depending on the concentration difference \(c_{\ell} - c_b\). Since we assume \(P_b \approx P_0\), Henry's law (\(c_b = k_H P_b\)) implies \(c_b \approx k_H P_0 = c_0\). Thus, the driving concentration difference is \(c_{\ell} - c_0\).
+
+**Model (1): \(j = \frac{D}{a}(c_{\ell} - c_b) \approx \frac{D}{a}(c_{\ell} - c_0)\)**
+Substituting this into our growth rate equation:
+\[ \frac{da}{dt} = \frac{R T_0}{P_0} \left( \frac{D}{a}(c_{\ell} - c_0) \right) \]
+This is a separable differential equation:
+\[ a \frac{da}{dt} = \frac{D R T_0 (c_{\ell} - c_0)}{P_0} \]
+We integrate both sides, with the radius going from \(a_0\) at \(t=0\) to \(a(t)\) at time \(t\):
+\[ \int_{a_0}^{a(t)} a' da' = \int_0^t \frac{D R T_0 (c_{\ell} - c_0)}{P_0} dt' \]
+\[ \frac{1}{2} [a'^2]_{a_0}^{a(t)} = \frac{D R T_0 (c_{\ell} - c_0)}{P_0} [t']_0^t \]
+\[ \frac{1}{2} (a(t)^2 - a_0^2) = \frac{D R T_0 (c_{\ell} - c_0)}{P_0} t \]
+Solving for \(a(t)\):
+\[ a(t) = \sqrt{a_0^2 + \frac{2 D R T_0 (c_{\ell} - c_0)}{P_0} t} \]
+
+**Model (2): \(j = K(c_{\ell} - c_b) \approx K(c_{\ell} - c_0)\)**
+Substituting this into our growth rate equation:
+\[ \frac{da}{dt} = \frac{R T_0}{P_0} \left( K(c_{\ell} - c_0) \right) \]
+In this model, the right-hand side is a constant. Let's call it \(C\).
+\[ \frac{da}{dt} = C = \frac{K R T_0 (c_{\ell} - c_0)}{P_0} \]
+Integrating with respect to time:
+\[ \int_{a_0}^{a(t)} da' = \int_0^t C dt' \]
+\[ a(t) - a_0 = C \cdot t \]
+Solving for \(a(t)\):
+\[ a(t) = a_0 + \left( \frac{K R T_0 (c_{\ell} - c_0)}{P_0} \right) t \]
+
+### 3. Model Comparison and Calculation of K
+
+We now compare the two models with the experimental data shown in Fig. 2.
+- **Model (1)** predicts that \(a(t)\) grows as the square root of time, \(a(t) \propto \sqrt{t}\) (assuming \(a \gg a_0\)). This corresponds to a curve that is steep at the beginning and becomes less steep as time progresses.
+- **Model (2)** predicts that \(a(t)\) grows linearly with time, \(a(t) \propto t\). This corresponds to a straight line on an \(a\) vs. \(t\) plot.
+
+The graph in Fig. 2 clearly shows the bubble radius increasing linearly with time. Therefore, **Model (2) is the one that explains the experimental results.**
+
+Now, we calculate the constant \(K\) using the data from the experiment. From Model (2), the slope of the \(a(t)\) graph is the growth rate \(\frac{da}{dt}\):
+\[ \frac{da}{dt} = \frac{K R T_0 (c_{\ell} - c_0)}{P_0} \]
+The problem states that the slope from Fig. 2 is \(0.23 \text{ mm/s}\), which is \(0.23 \times 10^{-3} \text{ m/s}\).
+We are also given that \(c_{\ell} \approx 4c_0\), which means \(c_{\ell} - c_0 \approx 3c_0\). Using \(c_0 = k_H P_0\), we have \(c_{\ell} - c_0 \approx 3k_H P_0\).
+Substituting this into the slope equation:
+\[ \frac{da}{dt} = \frac{K R T_0 (3k_H P_0)}{P_0} = 3 K R T_0 k_H \]
+We can now solve for \(K\):
+\[ K = \frac{da/dt}{3 R T_0 k_H} \]
+We use the given values:
+- \(\frac{da}{dt} = 0.23 \times 10^{-3} \text{ m/s}\)
+- \(R = 8.314 \text{ J} \cdot \text{mol}^{-1} \cdot \text{K}^{-1}\)
+- \(T_0 = 20^\circ C = 293.15 \text{ K}\)
+- \(k_H(20^\circ C) = 3.3 \times 10^{-4} \text{ mol} \cdot \text{m}^{-3} \cdot \text{Pa}^{-1}\)
+
+Plugging in the numbers:
+\[ K = \frac{0.23 \times 10^{-3} \text{ m/s}}{3 \times (8.314 \text{ J} \cdot \text{mol}^{-1} \cdot \text{K}^{-1}) \times (293.15 \text{ K}) \times (3.3 \times 10^{-4} \text{ mol} \cdot \text{m}^{-3} \cdot \text{Pa}^{-1})} \]
+First, let's check the units of the denominator:
+\( (\text{J} \cdot \text{mol}^{-1} \cdot \text{K}^{-1}) \cdot \text{K} \cdot (\text{mol} \cdot \text{m}^{-3} \cdot \text{Pa}^{-1}) = \text{J} \cdot \text{m}^{-3} \cdot \text{Pa}^{-1} \).
+Since \(1 \text{ J} = 1 \text{ Pa} \cdot \text{m}^3\), the units become \((\text{Pa} \cdot \text{m}^3) \cdot \text{m}^{-3} \cdot \text{Pa}^{-1} = 1\). The denominator is dimensionless, so \(K\) has units of m/s, as expected.
+
+Now, the calculation:
+\[ K = \frac{0.23 \times 10^{-3}}{3 \times 8.314 \times 293.15 \times 3.3 \times 10^{-4}} = \frac{0.23 \times 10^{-3}}{2.4123} \]
+\[ K \approx 9.534 \times 10^{-5} \text{ m/s} \]
+Rounding to two significant figures, consistent with the given data:
+\[ K \approx 9.5 \times 10^{-5} \text{ m/s} \]
+
+### Final Answer
+
+The final answer is $\boxed{n_c = \frac{4\pi P_0 a^3}{3 R T_0} \text{; Model (1): } a(t) = \sqrt{a_0^2 + \frac{2 D R T_0 (c_{\ell} - c_0)}{P_0} t} \text{; Model (2): } a(t) = a_0 + \frac{K R T_0 (c_{\ell} - c_0)}{P_0} t \text{. Model (2) explains the results. } K \approx 9.5 \times 10^{-5} \text{ m/s}}$.

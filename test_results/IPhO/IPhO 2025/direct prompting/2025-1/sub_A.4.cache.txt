@@ -1,0 +1,37 @@
+### Part A - Hydrogen fine and hyperfine structures
+
+#### A.4 Determine the magnitude \(B_{1}\) of \(\vec{B}_{1}\) at the position of the electron in terms of \(\mu_{0}\), \(e\), \(\alpha\), \(c\) and \(r_{1}\).
+
+To determine the magnetic field \(\vec{B}_1\) at the position of the electron, we work in the electron's rest frame. In this frame, the proton, with charge \(+e\), is seen as orbiting the electron in a circular path. For the ground state of the hydrogen atom (\(n=1\)), the radius of this orbit is the Bohr radius, \(r_1\), and the orbital speed of the proton is \(v_1\). From sub-problem A.2, we know that \(v_1 = \alpha c\).
+
+An orbiting point charge constitutes an electric current. This current, in turn, generates a magnetic field. We can model the orbiting proton as a circular current loop.
+
+1.  **Calculate the equivalent current \(I_1\):**
+    The period of the proton's orbit is the circumference of the orbit divided by its speed:
+    \[ T_1 = \frac{2\pi r_1}{v_1} \]
+    The equivalent current \(I_1\) is the charge passing a point on the orbit per unit time, which is the proton's charge \(e\) divided by the orbital period \(T_1\):
+    \[ I_1 = \frac{e}{T_1} = \frac{e v_1}{2\pi r_1} \]
+
+2.  **Calculate the magnetic field \(B_1\):**
+    The magnitude of the magnetic field at the center of a circular current loop of radius \(r\) carrying a current \(I\) is given by the formula:
+    \[ B = \frac{\mu_0 I}{2r} \]
+    The electron is located at the center of the proton's orbit. Therefore, the magnitude of the magnetic field \(B_1\) at the electron's position is:
+    \[ B_1 = \frac{\mu_0 I_1}{2r_1} \]
+    Substituting the expression for \(I_1\) into this equation, we get:
+    \[ B_1 = \frac{\mu_0}{2r_1} \left( \frac{e v_1}{2\pi r_1} \right) = \frac{\mu_0 e v_1}{4\pi r_1^2} \]
+
+3.  **Express \(B_1\) in the required terms:**
+    The problem asks for \(B_1\) in terms of \(\mu_0\), \(e\), \(\alpha\), \(c\), and \(r_1\). We use the result from sub-problem A.2, \(v_1 = \alpha c\), and substitute it into our expression for \(B_1\):
+    \[ B_1 = \frac{\mu_0 e (\alpha c)}{4\pi r_1^2} \]
+
+This is the final expression for the magnitude of the magnetic field produced by the orbiting proton at the location of the electron.
+
+Alternatively, one could use the Biot-Savart law for a point charge \(q\) moving with velocity \(\vec{v}\):
+\[ \vec{B} = \frac{\mu_0}{4\pi} \frac{q (\vec{v} \times \hat{r})}{r^2} \]
+Here, \(q=+e\), \(\vec{v}=\vec{v}_1\), and \(\vec{r}\) is the vector from the proton to the electron, so its magnitude is \(r_1\). Since the orbit is circular, the velocity vector \(\vec{v}_1\) is always perpendicular to the position vector \(\vec{r}\). Thus, the magnitude of the cross product is \(|\vec{v}_1 \times \hat{r}| = v_1 \cdot 1 \cdot \sin(90^\circ) = v_1\). The magnitude of the magnetic field is then:
+\[ B_1 = \frac{\mu_0}{4\pi} \frac{e v_1}{r_1^2} \]
+Substituting \(v_1 = \alpha c\), we obtain the same result:
+\[ B_1 = \frac{\mu_0 e \alpha c}{4\pi r_1^2} \]
+
+### Final Answer
+\[ \boxed{B_1 = \frac{\mu_0 e \alpha c}{4\pi r_1^2}} \]

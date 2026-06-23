@@ -1,0 +1,79 @@
+### Part B - Two-part barometric tube
+
+#### B.1 - Identifying the volume for the additional mass `m_add`
+
+**1. Objective**
+
+The problem asks to identify the volume of mercury that corresponds to the term `m_add` in the expression for the pulling force `F`:
+\[\vec{F}=\left(m_{tb}+m_{add }\right) g \vec{u_{z}} \tag{1}\]
+where `F` is the magnitude of the force, `m_tb` is the mass of the empty tube, and `g` is the acceleration due to gravity. This means we need to find a physical interpretation for `m_add`.
+
+**2. Force Analysis**
+
+To find an expression for `F`, we apply Newton's first law to the system composed of the two-part tube and the mercury contained within it. The system is in equilibrium, so the sum of vertical forces is zero. The external vertical forces are:
+1.  The pulling force `F` (upwards).
+2.  The weight of the empty tube, `m_tb * g` (downwards).
+3.  The weight of the mercury inside the tube, `m_Hg * g` (downwards).
+4.  The pressure force from the external mercury bath acting on the open bottom of the tube. This force is directed upwards.
+
+The equilibrium equation is:
+\[F - m_{tb}g - m_{Hg}g + F_{pressure} = 0\]
+\[F = m_{tb}g + m_{Hg}g - F_{pressure}\]
+
+**3. Calculating the Forces**
+
+*   **Pressure inside the tube:** The space above the mercury column at altitude `z_l` is a vacuum (since `P_sat = 0`). Therefore, the pressure at the top of the mercury column is zero. By hydrostatics, the pressure at any altitude `z < z_l` inside the mercury is `P_in(z) = \rho g (z_l - z)`.
+
+*   **Barometric height `z_l`:** The pressure just inside the tube's opening must equal the pressure just outside at the same altitude. The opening is at `z_{bottom} = h_t - H_t`. The external bath surface is at `z=0`.
+    *   Pressure inside at `z_{bottom}`: `P_in(h_t - H_t) = \rho g (z_l - (h_t - H_t))`.
+    *   Pressure outside at `z_{bottom}`: `P_out(h_t - H_t) = P_a - \rho g (h_t - H_t)`.
+    Equating them: `\rho g (z_l - h_t + H_t) = P_a - \rho g (h_t - H_t)`, which simplifies to `\rho g z_l = P_a`.
+    Thus, the height of the mercury column is constant and determined by the atmospheric pressure: `z_l = P_a / (\rho g)`.
+
+*   **Upward pressure force `F_pressure`:** This force acts on the opening area `S_t` at altitude `h_t - H_t`.
+    `F_{pressure} = P_{out}(h_t - H_t) \cdot S_t = (P_a - \rho g (h_t - H_t)) S_t`.
+
+*   **Mass of mercury inside `m_Hg`:** The figure shows the mercury level `z_l` is in the bulb, which means `h_t < z_l < h_t + H_b`. The volume of mercury is the sum of the volume in the tube part and the volume in the bulb part.
+    *   Volume in tube part (from `h_t - H_t` to `h_t`): `V_t = S_t H_t`.
+    *   Volume in bulb part (from `h_t` to `z_l`): `V_b = S_b (z_l - h_t)`.
+    *   Total mass: `m_{Hg} = \rho (V_t + V_b) = \rho (S_t H_t + S_b (z_l - h_t))`.
+
+**4. Deriving `m_add`**
+
+Substitute the expressions for `m_Hg` and `F_{pressure}` into the force equation:
+\[F = m_{tb}g + \rho g (S_t H_t + S_b (z_l - h_t)) - (P_a - \rho g (h_t - H_t)) S_t\]
+Using `P_a = \rho g z_l`:
+\[F = m_{tb}g + \rho g S_t H_t + \rho g S_b (z_l - h_t) - (\rho g z_l - \rho g (h_t - H_t)) S_t\]
+\[F = m_{tb}g + \rho g S_t H_t + \rho g S_b z_l - \rho g S_b h_t - \rho g z_l S_t + \rho g h_t S_t - \rho g H_t S_t\]
+The terms `\rho g S_t H_t` and `- \rho g H_t S_t` cancel out. Grouping the remaining terms:
+\[F = m_{tb}g + (\rho g S_b z_l - \rho g z_l S_t) - (\rho g S_b h_t - \rho g h_t S_t)\]
+\[F = m_{tb}g + \rho g z_l (S_b - S_t) - \rho g h_t (S_b - S_t)\]
+\[F = m_{tb}g + \rho g (S_b - S_t) (z_l - h_t)\]
+
+Comparing this with the given equation `F = (m_{tb} + m_{add})g`, we identify:
+\[m_{add}g = \rho g (S_b - S_t) (z_l - h_t)\]
+\[m_{add} = \rho (S_b - S_t) (z_l - h_t)\]
+
+**5. Physical Interpretation and Description of the Volume**
+
+The expression for `m_{add}` is the product of the mercury density `\rho` and a volume `V_{add} = (S_b - S_t) (z_l - h_t)`.
+*   `(z_l - h_t)` is the height of the mercury column within the bulb.
+*   `(S_b - S_t)` is the cross-sectional area of the annular "shoulder" at the junction between the bulb and the tube.
+
+Therefore, `V_{add}` is the volume of an annular cylinder. This volume corresponds precisely to the portion of the mercury in the bulb that rests on the shoulder of the tube, i.e., the part that is not directly above the narrow tube section.
+
+The weight of the central column of mercury (with cross-section `S_t`) is fully supported by the upward pressure from the external bath, resulting in no net force on the tube (as for a simple barometer). The additional force `m_{add}g` that the pulling force `F` must support is the weight of the mercury in this annular volume, which rests directly on the tube's shoulder.
+
+**Description for coloring:**
+On Figure 3(1), the mercury is the gray liquid. The volume responsible for `m_{add}` is the part of this mercury located in the upper, wider section (the bulb). This volume does not include the central column that is a vertical extension of the lower, narrow tube.
+
+Therefore, the area to be colored corresponds to the two rectangular regions of mercury situated on the left and right sides within the bulb. These regions extend vertically from the level of the tube-bulb junction (`h_t`) up to the free surface of the mercury (`z_l`), and horizontally from the inner walls of the bulb to the imaginary vertical lines extending up from the walls of the narrow tube.
+
+### Final Answer
+The term `m_{add}` in the force equation `\vec{F}=\left(m_{tb}+m_{add }\right) g \vec{u_{z}}` represents an additional mass whose weight must be supported by the pulling force, besides the tube's own weight. Through force analysis on the tube and the mercury inside, we find that `m_{add} = \rho (S_b - S_t) (z_l - h_t)`, where `\rho` is the mercury density, `S_b` and `S_t` are the cross-sections of the bulb and tube, `h_t` is the altitude of their junction, and `z_l` is the altitude of the mercury surface inside.
+
+This mass corresponds to the volume of mercury `V_{add} = (S_b - S_t) (z_l - h_t)`. This is the volume of the annular part of the mercury column inside the bulb, which rests directly on the horizontal shoulder of the tube at the junction `h_t`. The weight of the central part of the mercury column is balanced by the external pressure, but the weight of this annular part is not and must be supported by the pulling force.
+
+On the provided diagram (Fig. 3(1)), this volume is represented by the area of mercury inside the bulb, excluding the central vertical strip that has the same width as the narrow tube below.
+
+\[ \boxed{ \text{The area to be colored is the portion of mercury inside the bulb that rests on the annular shoulder at the junction } h_t. \text{ In the 2D cross-section of Fig. 3(1), this corresponds to the two rectangular sections of mercury on the left and right sides of the bulb, extending from the junction level } (h_t) \text{ up to the mercury surface level } (z_l).} } \]

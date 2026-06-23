@@ -1,0 +1,65 @@
+Here is the detailed solution for sub-problem A.3.
+
+### Part A.3: Electron's Mechanical Energy
+
+This problem requires us to determine the mechanical energy of an electron in the Bohr model of the hydrogen atom. We need to find its expression for any allowed orbit \(n\), then specify it for the ground state (\(n=1\)), and finally calculate its numerical value.
+
+**1. Derivation of the electron's mechanical energy \(E_n\)**
+
+The total mechanical energy \(E_n\) of the electron in the n-th orbit is the sum of its kinetic energy \(K_n\) and its electrostatic potential energy \(U_n\).
+
+The kinetic energy is given by:
+\[ K_n = \frac{1}{2} m_e v_n^2 \]
+where \(m_e\) is the electron mass and \(v_n\) is its velocity on the n-th orbit.
+
+The electrostatic potential energy of the electron-proton system is:
+\[ U_n = -\frac{e^2}{4\pi\varepsilon_0 r_n} \]
+where \(e\) is the elementary charge, \(\varepsilon_0\) is the vacuum permittivity, and \(r_n\) is the radius of the n-th orbit.
+
+The total energy is therefore:
+\[ E_n = K_n + U_n = \frac{1}{2} m_e v_n^2 - \frac{e^2}{4\pi\varepsilon_0 r_n} \]
+
+For a stable circular orbit, the Coulomb force provides the centripetal force. This was established in sub-problem A.1:
+\[ \frac{m_e v_n^2}{r_n} = \frac{e^2}{4\pi\varepsilon_0 r_n^2} \]
+Multiplying both sides by \(r_n\), we get a relation for the kinetic energy term:
+\[ m_e v_n^2 = \frac{e^2}{4\pi\varepsilon_0 r_n} \]
+Thus, the kinetic energy can be expressed as:
+\[ K_n = \frac{1}{2} m_e v_n^2 = \frac{1}{2} \left( \frac{e^2}{4\pi\varepsilon_0 r_n} \right) = \frac{e^2}{8\pi\varepsilon_0 r_n} \]
+Notice that \(K_n = -\frac{1}{2} U_n\), which is a result of the virial theorem for a \(1/r\) potential.
+
+Now, we can substitute this expression for \(K_n\) back into the total energy equation:
+\[ E_n = K_n + U_n = \frac{e^2}{8\pi\varepsilon_0 r_n} - \frac{e^2}{4\pi\varepsilon_0 r_n} = -\frac{e^2}{8\pi\varepsilon_0 r_n} \]
+
+The problem asks for \(E_n\) in terms of \(e\), \(\varepsilon_0\), \(r_1\), and \(n\). From sub-problem A.2, we know that the quantized radii are given by \(r_n = n^2 r_1\), where \(r_1\) is the Bohr radius. Substituting this into our expression for \(E_n\):
+\[ E_n = -\frac{e^2}{8\pi\varepsilon_0 (n^2 r_1)} = -\frac{1}{n^2} \frac{e^2}{8\pi\varepsilon_0 r_1} \]
+
+**2. Ground state energy \(E_1\) in terms of \(\alpha\), \(m_e\), and \(c\)**
+
+The ground state energy \(E_1\) corresponds to the principal quantum number \(n=1\). Using the formula above:
+\[ E_1 = -\frac{e^2}{8\pi\varepsilon_0 r_1} \]
+We need to express this in terms of the fine-structure constant \(\alpha\), the electron mass \(m_e\), and the speed of light \(c\). From sub-problem A.2, we have:
+\[ \alpha = \frac{e^2}{4\pi\varepsilon_0 \hbar c} \quad \text{and} \quad r_1 = \frac{\hbar}{m_e c \alpha} \]
+Let's first express \(e^2\) from the definition of \(\alpha\): \(e^2 = 4\pi\varepsilon_0 \hbar c \alpha\).
+Substitute this into the expression for \(E_1\):
+\[ E_1 = -\frac{4\pi\varepsilon_0 \hbar c \alpha}{8\pi\varepsilon_0 r_1} = -\frac{\hbar c \alpha}{2 r_1} \]
+Now, substitute the expression for \(r_1\):
+\[ E_1 = -\frac{\hbar c \alpha}{2} \left( \frac{1}{r_1} \right) = -\frac{\hbar c \alpha}{2} \left( \frac{m_e c \alpha}{\hbar} \right) \]
+Simplifying this expression, we get:
+\[ E_1 = -\frac{1}{2} m_e c^2 \alpha^2 \]
+
+**3. Numerical value of \(E_1\) in eV**
+
+To compute the numerical value of \(E_1\), we use the expression derived above and the given value for \(\alpha\).
+The rest energy of the electron is \(m_e c^2 \approx 0.511 \text{ MeV} = 5.11 \times 10^5 \text{ eV}\).
+The fine-structure constant is given as \(\alpha \approx 7.27 \times 10^{-3}\).
+
+Plugging these values into the equation for \(E_1\):
+\[ E_1 = -\frac{1}{2} (5.11 \times 10^5 \text{ eV}) \times (7.27 \times 10^{-3})^2 \]
+\[ E_1 = -\frac{1}{2} (5.11 \times 10^5 \text{ eV}) \times (5.28529 \times 10^{-5}) \]
+\[ E_1 \approx -13.503 \text{ eV} \]
+Rounding to three significant figures, as is common in this problem set:
+\[ E_1 \approx -13.5 \text{ eV} \]
+This value is the ionization energy of hydrogen in the Bohr model, consistent with the well-known experimental value of -13.6 eV. The small discrepancy is due to the approximate value of \(\alpha\) used and the simplifications of the Bohr model.
+
+### Final Answer
+\[ \boxed{ \begin{aligned} E_n &= -\frac{1}{n^2} \frac{e^2}{8\pi\varepsilon_0 r_1} \\ E_1 &= -\frac{1}{2} m_e c^2 \alpha^2 \\ E_1 &\approx -13.5 \text{ eV} \end{aligned} } \]

@@ -1,0 +1,60 @@
+### A.4 Give the expression of the main forces exerted on a vertically rising bubble. Obtain the expression of \(v(a)\). Give a numerical estimate of \(\eta\) using \(\rho_{\ell}\), \(g_{0}\) and quantities measured on Fig. 3.
+
+#### 1. Main forces on a rising bubble
+
+A bubble of radius \(a\) and volume \(V_b = \frac{4}{3}\pi a^3\) rising vertically in a liquid is subjected to three main forces:
+
+1.  **Buoyant Force (\(F_B\)):** This is an upward force equal to the weight of the liquid displaced by the bubble.
+    \[ F_B = \rho_{\ell} V_b g_0 = \frac{4}{3}\pi a^3 \rho_{\ell} g_0 \]
+    where \(\rho_{\ell}\) is the density of the liquid and \(g_0\) is the acceleration due to gravity.
+
+2.  **Gravitational Force (\(F_g\)):** This is the downward force due to the mass of the gas (CO₂) inside the bubble.
+    \[ F_g = m_{gas} g_0 = \rho_{gas} V_b g_0 = \frac{4}{3}\pi a^3 \rho_{gas} g_0 \]
+    where \(\rho_{gas}\) is the density of the gas inside the bubble.
+
+3.  **Drag Force (\(F_D\)):** This is a downward force that opposes the bubble's motion. The problem states to use Stokes' law:
+    \[ F_D = 6 \pi \eta a v \]
+    where \(\eta\) is the dynamic viscosity of the liquid and \(v\) is the bubble's velocity.
+
+#### 2. Expression for terminal velocity \(v(a)\)
+
+The problem states that the bubble can be assumed to be travelling at its terminal velocity. At terminal velocity, the net force on the bubble is zero. The upward buoyant force is balanced by the sum of the downward gravitational and drag forces.
+\[ F_B = F_g + F_D \]
+Substituting the expressions for the forces:
+\[ \frac{4}{3}\pi a^3 \rho_{\ell} g_0 = \frac{4}{3}\pi a^3 \rho_{gas} g_0 + 6 \pi \eta a v \]
+We can solve for the terminal velocity \(v\):
+\[ 6 \pi \eta a v = \frac{4}{3}\pi a^3 (\rho_{\ell} - \rho_{gas}) g_0 \]
+\[ v = \frac{\frac{4}{3}\pi a^3 (\rho_{\ell} - \rho_{gas}) g_0}{6 \pi \eta a} \]
+\[ v(a) = \frac{2 a^2 g_0 (\rho_{\ell} - \rho_{gas})}{9 \eta} \]
+The density of the liquid champagne is \(\rho_{\ell} = 1.0 \times 10^3 \, \text{kg} \cdot \text{m}^{-3}\). The density of CO₂ gas at atmospheric pressure is much smaller (e.g., \(\rho_{gas} \approx 1.8 \, \text{kg} \cdot \text{m}^{-3}\) as given in part B). Since \(\rho_{gas} \ll \rho_{\ell}\), we can make the excellent approximation \(\rho_{\ell} - \rho_{gas} \approx \rho_{\ell}\).
+The expression for the terminal velocity simplifies to:
+\[ v(a) \approx \frac{2 \rho_{\ell} g_0 a^2}{9 \eta} \]
+
+#### 3. Numerical estimate of \(\eta\)
+
+To estimate the dynamic viscosity \(\eta\), we rearrange the simplified expression for \(v(a)\):
+\[ \eta \approx \frac{2 \rho_{\ell} g_0 a^2}{9 v} \]
+The problem provides the following information based on Fig. 3:
+*   Radius of a bubble: \(a = 0.19 \, \text{mm} = 1.9 \times 10^{-4} \, \text{m}\)
+*   Velocity of that bubble: \(v = 4.5 \, \text{cm/s} = 4.5 \times 10^{-2} \, \text{m/s}\)
+
+We also use the given data and standard constants:
+*   Density of the liquid: \(\rho_{\ell} = 1.0 \times 10^3 \, \text{kg} \cdot \text{m}^{-3}\)
+*   Acceleration due to gravity: \(g_0 \approx 9.81 \, \text{m} \cdot \text{s}^{-2}\)
+
+Now, we substitute these values into the equation for \(\eta\):
+\[ \eta \approx \frac{2 \times (1.0 \times 10^3 \, \text{kg} \cdot \text{m}^{-3}) \times (9.81 \, \text{m} \cdot \text{s}^{-2}) \times (1.9 \times 10^{-4} \, \text{m})^2}{9 \times (4.5 \times 10^{-2} \, \text{m/s})} \]
+\[ \eta \approx \frac{2 \times 10^3 \times 9.81 \times (3.61 \times 10^{-8}) \, \text{kg} \cdot \text{m}^{-1} \cdot \text{s}^{-2}}{40.5 \times 10^{-2} \, \text{m/s}} \]
+\[ \eta \approx \frac{7.083 \times 10^{-4} \, \text{kg} \cdot \text{m}^{-1} \cdot \text{s}^{-2}}{0.405 \, \text{m/s}} \]
+\[ \eta \approx 1.749 \times 10^{-3} \, \text{kg} \cdot \text{m}^{-1} \cdot \text{s}^{-1} \]
+The unit \(\text{kg} \cdot \text{m}^{-1} \cdot \text{s}^{-1}\) is equivalent to Pa·s. Rounding to two significant figures, consistent with the input data (\(a\) and \(v\)):
+\[ \eta \approx 1.7 \times 10^{-3} \, \text{Pa} \cdot \text{s} \]
+
+### Final Answer
+The main forces on the bubble are the upward buoyant force \(F_B = \frac{4}{3}\pi a^3 \rho_{\ell} g_0\), the downward gravitational force \(F_g = \frac{4}{3}\pi a^3 \rho_{gas} g_0\), and the downward drag force \(F_D = 6 \pi \eta a v\).
+At terminal velocity, these forces balance, yielding the velocity as a function of radius:
+\[ v(a) = \frac{2 a^2 g_0 (\rho_{\ell} - \rho_{gas})}{9 \eta} \approx \frac{2 \rho_{\ell} g_0 a^2}{9 \eta} \]
+Using the provided data from Fig. 3 (\(a = 1.9 \times 10^{-4} \, \text{m}\), \(v = 4.5 \times 10^{-2} \, \text{m/s}\)), the viscosity is estimated as:
+\[ \eta \approx \frac{2 \times (1.0 \times 10^3) \times 9.81 \times (1.9 \times 10^{-4})^2}{9 \times (4.5 \times 10^{-2})} \approx 1.7 \times 10^{-3} \, \text{Pa} \cdot \text{s} \]
+
+\[ \boxed{ \begin{aligned} \text{Forces: } & F_B = \frac{4}{3}\pi a^3 \rho_{\ell} g_0 \text{ (up)}, \quad F_g = \frac{4}{3}\pi a^3 \rho_{gas} g_0 \text{ (down)}, \quad F_D = 6 \pi \eta a v \text{ (down)} \\ v(a) &= \frac{2 a^2 g_0 (\rho_{\ell} - \rho_{gas})}{9 \eta} \\ \eta &\approx 1.7 \times 10^{-3} \, \text{Pa} \cdot \text{s} \end{aligned} } \]
